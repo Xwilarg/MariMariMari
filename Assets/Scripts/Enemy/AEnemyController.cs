@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TouhouPride.Enemy
 {
-    public abstract class AEnemyController : MonoBehaviour
+    public abstract class AEnemyController : ACharacter
     {
         private bool _isActive;
         protected bool IsActive

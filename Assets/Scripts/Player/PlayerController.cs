@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 namespace TouhouPride.Player
 {
-    public class PlayerController : MonoBehaviour
+    public class PlayerController : ACharacter
     {
         public static PlayerController Instance { private set; get; }
 
