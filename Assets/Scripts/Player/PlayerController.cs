@@ -18,6 +18,7 @@ namespace TouhouPride.Player
         private void Awake()
         {
             Instance = this;
+            Init();
 
             _rb = GetComponent<Rigidbody2D>();
         }

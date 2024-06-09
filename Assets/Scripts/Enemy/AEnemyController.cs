@@ -10,11 +10,11 @@ namespace TouhouPride.Enemy
         {
             set
             {
-                _isActive = value;
-                if (value)
+                if (!_isActive && value) // First time being activated
                 {
                     StartCoroutine(AttackTimerCoroutine());
                 }
+                _isActive = value;
             }
             get => _isActive;
         }
@@ -27,6 +27,7 @@ namespace TouhouPride.Enemy
         private void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
+            Init();
         }
 
         private void FixedUpdate()
@@ -39,6 +40,13 @@ namespace TouhouPride.Enemy
             {
                 _rb.velocity = Vector2.zero;
             }
+        }
+
+        protected override void TakeDamage()
+        {
+            base.TakeDamage();
+
+            IsActive = true;
         }
 
         private IEnumerator AttackTimerCoroutine()

@@ -15,3 +15,4 @@ MonoBehaviour:
   Speed: 3
   AttackType: 0
   ReloadTime: 1
+  MaxHealth: 5

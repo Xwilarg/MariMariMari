@@ -10,6 +10,16 @@ namespace TouhouPride
         private PlayerInfo _info;
         public PlayerInfo Info => _info;
 
+        private int _health;
+
+        protected virtual void TakeDamage()
+        { }
+
+        protected void Init()
+        {
+            _health = _info.MaxHealth;
+        }
+
         protected void Shoot(Vector2 direction, bool targetEnemy)
         {
             switch (_info.AttackType)
@@ -30,7 +40,16 @@ namespace TouhouPride
 
         public void TakeDamage(int amount)
         {
-            Destroy(gameObject); // TODO
+            _health -= amount;
+
+            if (_health <= 0)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                TakeDamage();
+            }
         }
     }
 }
