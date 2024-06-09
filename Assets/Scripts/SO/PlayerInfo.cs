@@ -6,5 +6,6 @@ namespace TouhouPride.SO
     public class PlayerInfo : ScriptableObject
     {
         public float Speed;
+        public AttackType AttackType;
     }
 }

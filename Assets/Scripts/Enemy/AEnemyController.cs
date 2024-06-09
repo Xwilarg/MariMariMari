@@ -22,7 +22,7 @@ namespace TouhouPride.Enemy
         private Rigidbody2D _rb;
 
         protected abstract Vector2 Move();
-        protected abstract void Attack();
+        protected abstract Vector2? DoesAttack();
 
         private void Awake()
         {
@@ -46,7 +46,11 @@ namespace TouhouPride.Enemy
             while (true)
             {
                 yield return new WaitForSeconds(2f);
-                Attack();
+                var attackDir = DoesAttack();
+                if (attackDir.HasValue)
+                {
+                    Shoot(attackDir.Value, false);
+                }
             }
         }
 

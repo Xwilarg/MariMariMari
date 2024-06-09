@@ -8,11 +8,10 @@ namespace TouhouPride.Player
     {
         public static PlayerController Instance { private set; get; }
 
-        [SerializeField]
-        private PlayerInfo _info;
-
         private Rigidbody2D _rb;
         private Vector2 _mov;
+
+        private Vector2 _lastDir = Vector2.up;
 
         private void Awake()
         {
@@ -23,12 +22,24 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
-            _rb.velocity = _mov * _info.Speed;
+            _rb.velocity = _mov * Info.Speed;
         }
 
         public void OnMove(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>();
+            if (_mov.magnitude != 0f)
+            {
+                _lastDir = _mov;
+            }
+        }
+
+        public void OnShoot(InputAction.CallbackContext value)
+        {
+            if (value.performed)
+            {
+                Shoot(_lastDir, true);
+            }
         }
     }
 }
