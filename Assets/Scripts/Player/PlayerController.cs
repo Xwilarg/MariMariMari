@@ -6,6 +6,8 @@ namespace TouhouPride.Player
 {
     public class PlayerController : MonoBehaviour
     {
+        public static PlayerController Instance { private set; get; }
+
         [SerializeField]
         private PlayerInfo _info;
 
@@ -14,6 +16,8 @@ namespace TouhouPride.Player
 
         private void Awake()
         {
+            Instance = this;
+
             _rb = GetComponent<Rigidbody2D>();
         }
 
