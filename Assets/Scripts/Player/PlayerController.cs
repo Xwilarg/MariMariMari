@@ -1,4 +1,3 @@
-using TouhouPride.SO;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
