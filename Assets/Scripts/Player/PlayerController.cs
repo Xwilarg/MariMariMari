@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,8 @@ namespace TouhouPride.Player
 
         private Vector2 _lastDir = Vector2.up;
 
+        private bool _canShoot = true;
+
         private void Awake()
         {
             Instance = this;
@@ -22,6 +25,13 @@ namespace TouhouPride.Player
         private void FixedUpdate()
         {
             _rb.velocity = _mov * Info.Speed;
+        }
+
+        public IEnumerator ReloadCoroutine()
+        {
+            _canShoot = false;
+            yield return new WaitForSeconds(Info.ReloadTime);
+            _canShoot = true;
         }
 
         public void OnMove(InputAction.CallbackContext value)
@@ -35,9 +45,10 @@ namespace TouhouPride.Player
 
         public void OnShoot(InputAction.CallbackContext value)
         {
-            if (value.performed)
+            if (value.performed && _canShoot)
             {
                 Shoot(_lastDir, true);
+                StartCoroutine(ReloadCoroutine());
             }
         }
     }

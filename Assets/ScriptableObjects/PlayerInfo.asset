@@ -13,3 +13,5 @@ MonoBehaviour:
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
   Speed: 5
+  AttackType: 0
+  ReloadTime: 0.5

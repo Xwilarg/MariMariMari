@@ -7,5 +7,6 @@ namespace TouhouPride.SO
     {
         public float Speed;
         public AttackType AttackType;
+        public float ReloadTime;
     }
 }

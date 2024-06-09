@@ -45,7 +45,7 @@ namespace TouhouPride.Enemy
         {
             while (true)
             {
-                yield return new WaitForSeconds(2f);
+                yield return new WaitForSeconds(Info.ReloadTime);
                 var attackDir = DoesAttack();
                 if (attackDir.HasValue)
                 {
