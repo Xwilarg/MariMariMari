@@ -23,38 +23,7 @@ namespace TouhouPride
 
         protected void Shoot(Vector2 direction, bool targetEnemy)
         {
-            direction = direction.normalized;
-
-            switch (_info.AttackType)
-            {
-                case AttackType.Straight:
-                    var prefab = ResourcesManager.Instance.Bullet;
-                    
-                    var go = Instantiate(prefab, transform.position, Quaternion.identity);
-                    
-                    go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
-                    
-                    // TODO: i feel like this should possibly be done by the bullet itself? (feels like coupling as is)
-                    // Throw the projectile in direction
-                    go.GetComponent<StandardBullet>().Movement(direction);
-                    
-                    break;
-                case AttackType.Wave:
-                    /*
-                    // TODO; actually make it wavey
-                    var prefab = ResourcesManager.Instance.Bullet;
-
-                    var go = Instantiate(prefab, transform.position, Quaternion.identity);
-                    go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
-
-                    // TODO:
-                    // Throw the projectile in direction
-                    
-                    
-                    // Make a projectile script that GetComponent<ACharacter> and call TakeDamage()
-                    */
-                    break;
-            }
+            ShootingManager.Instance.Shoot(direction, targetEnemy, _info.AttackType, transform.position);
         }
 
         public void TakeDamage(int amount)
