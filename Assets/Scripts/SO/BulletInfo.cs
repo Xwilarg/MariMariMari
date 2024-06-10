@@ -13,8 +13,5 @@ namespace TouhouPride.SO
 
         [Tooltip("Time before bullet automatically destroys self.")]
         public float timeToLive = 5;
-        
-        [Tooltip("Does the bullet deal damage to the player? If false, it does.")]
-        public bool isFriendly = false;
     }
 }

@@ -1,5 +1,4 @@
-using System;
-using TMPro;
+using TouhouPride;
 using TouhouPride.SO;
 using UnityEngine;
 
@@ -34,6 +33,10 @@ namespace Projectiles
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            if (other.collider.TryGetComponent<ACharacter>(out var c))
+            {
+                c.TakeDamage(_bulletInfo.damage);
+            }
             Destroy(this.gameObject);
         }
     }
