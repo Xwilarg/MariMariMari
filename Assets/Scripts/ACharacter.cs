@@ -23,6 +23,8 @@ namespace TouhouPride
 
         protected void Shoot(Vector2 direction, bool targetEnemy)
         {
+            direction = direction.normalized;
+
             switch (_info.AttackType)
             {
                 case AttackType.Straight:
