@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace TouhouPride.Player
 {
@@ -14,6 +15,12 @@ namespace TouhouPride.Player
         private Vector2 _lastDir = Vector2.up;
 
         private bool _canShoot = true;
+
+        private bool _isStrafing = false;
+
+        // rapid fire stuff
+        [SerializeField] private bool _canRapidFire = true;
+        private bool _isCurrentlyFiring = false;
 
         private void Awake()
         {
@@ -35,21 +42,73 @@ namespace TouhouPride.Player
             _canShoot = true;
         }
 
+        public IEnumerator RapidFireCoroutine()
+        {
+            Shoot(_lastDir, true);
+            _canShoot = false;
+            yield return new WaitForSeconds(Info.ReloadTime);
+            _canShoot = true;
+
+            if (_isCurrentlyFiring)
+            {
+                // this is probably a bad idea.
+                StartCoroutine(RapidFireCoroutine());
+            }
+        }
+
         public void OnMove(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>();
             if (_mov.magnitude != 0f)
             {
-                _lastDir = _mov;
+                if (!_isStrafing)
+                {
+                    _lastDir = _mov;
+                }
+            }
+        }
+
+        public void OnStrafe(InputAction.CallbackContext value)
+        {
+            if (value.started)
+            {
+                print("is strafing");
+                _isStrafing = true;
+            }
+
+            if (value.canceled)
+            {
+                print("no longer strafing");
+                _isStrafing = false;
             }
         }
 
         public void OnShoot(InputAction.CallbackContext value)
         {
-            if (value.performed && _canShoot)
+            if (_canRapidFire)
             {
-                Shoot(_lastDir, true);
-                StartCoroutine(ReloadCoroutine());
+                // if button pressed, start fire
+                if (value.started)
+                {
+                    _isCurrentlyFiring = true;
+                    StartCoroutine(RapidFireCoroutine());
+                }
+                
+                // if button release, cease fire.
+                if (value.canceled)
+                {
+                    _isCurrentlyFiring = false;
+                }
+            }
+
+            else
+            {
+                // if button performed, start fire
+                if (value.performed && _canShoot)
+                {
+                    Shoot(_lastDir, true);
+                    StartCoroutine(ReloadCoroutine());
+                }
             }
         }
     }
