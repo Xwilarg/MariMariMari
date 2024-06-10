@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 namespace TouhouPride.Player
 {
@@ -18,8 +17,6 @@ namespace TouhouPride.Player
 
         private bool _isStrafing = false;
 
-        // rapid fire stuff
-        [SerializeField] private bool _canRapidFire = true;
         private bool _isCurrentlyFiring = false;
 
         private void Awake()
@@ -33,13 +30,6 @@ namespace TouhouPride.Player
         private void FixedUpdate()
         {
             _rb.velocity = _mov * Info.Speed;
-        }
-
-        public IEnumerator ReloadCoroutine()
-        {
-            _canShoot = false;
-            yield return new WaitForSeconds(Info.ReloadTime);
-            _canShoot = true;
         }
 
         public IEnumerator RapidFireCoroutine()
@@ -84,32 +74,20 @@ namespace TouhouPride.Player
 
         public void OnShoot(InputAction.CallbackContext value)
         {
-            if (_canRapidFire)
+            // if button pressed, start fire
+            if (value.started)
             {
-                // if button pressed, start fire
-                if (value.started)
+                _isCurrentlyFiring = true;
+                if (_canShoot)
                 {
-                    _isCurrentlyFiring = true;
-                    if (_canShoot)
-                    {
-                        StartCoroutine(RapidFireCoroutine());
-                    }
-                }
-                
-                // if button release, cease fire.
-                else if (value.canceled)
-                {
-                    _isCurrentlyFiring = false;
+                    StartCoroutine(RapidFireCoroutine());
                 }
             }
-            else
+
+            // if button release, cease fire.
+            else if (value.canceled)
             {
-                // if button performed, start fire
-                if (value.performed && _canShoot)
-                {
-                    Shoot(_lastDir, true);
-                    StartCoroutine(ReloadCoroutine());
-                }
+                _isCurrentlyFiring = false;
             }
         }
     }
