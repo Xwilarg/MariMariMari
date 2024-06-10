@@ -1,4 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TouhouPride;
+using TouhouPride.Manager;
 using UnityEngine;
 
 public class FollowerController : MonoBehaviour
@@ -13,10 +17,14 @@ public class FollowerController : MonoBehaviour
 
     private const float FollowOffset = 3f;
 
+    private List<ACharacter> _enemies = new();
+
     private void Awake()
     {
         transform.position = _target.position;
         _lastFollowerPos = transform.position;
+
+        StartCoroutine(Shoot());
     }
 
     private void Update()
@@ -50,6 +58,33 @@ public class FollowerController : MonoBehaviour
         var me01 = me / max;
 
         transform.position = Vector2.Lerp(zero.Position, next.Position, me01);
+    }
+
+    private IEnumerator Shoot()
+    {
+        while (true)
+        {
+            if (_enemies.Any())
+            {
+                var closest = _enemies.OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).First();
+                ShootingManager.Instance.Shoot(closest.transform.position - transform.position, true, AttackType.Straight, transform.position);
+                yield return new WaitForSeconds(2f);
+            }
+            else
+            {
+                yield return new WaitForEndOfFrame();
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        _enemies.Add(collision.GetComponent<ACharacter>());
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        _enemies.Remove(collision.GetComponent<ACharacter>());
     }
 
     private class DistanceInfo
