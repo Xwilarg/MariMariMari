@@ -33,8 +33,6 @@ namespace TouhouPride
                     var go = Instantiate(prefab, transform.position, Quaternion.identity);
                     
                     go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
-
-                    print(direction);
                     
                     // TODO: i feel like this should possibly be done by the bullet itself? (feels like coupling as is)
                     // Throw the projectile in direction
