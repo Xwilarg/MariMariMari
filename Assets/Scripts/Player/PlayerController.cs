@@ -51,8 +51,7 @@ namespace TouhouPride.Player
 
             if (_isCurrentlyFiring)
             {
-                // this is probably a bad idea.
-                StartCoroutine(RapidFireCoroutine());
+                yield return RapidFireCoroutine();
             }
         }
 
@@ -91,16 +90,18 @@ namespace TouhouPride.Player
                 if (value.started)
                 {
                     _isCurrentlyFiring = true;
-                    StartCoroutine(RapidFireCoroutine());
+                    if (_canShoot)
+                    {
+                        StartCoroutine(RapidFireCoroutine());
+                    }
                 }
                 
                 // if button release, cease fire.
-                if (value.canceled)
+                else if (value.canceled)
                 {
                     _isCurrentlyFiring = false;
                 }
             }
-
             else
             {
                 // if button performed, start fire
