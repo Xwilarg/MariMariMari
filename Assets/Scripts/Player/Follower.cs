@@ -27,7 +27,6 @@ public class Follower : MonoBehaviour
     {
         _sr = GetComponent<SpriteRenderer>();
         _controller = GetComponent<PlayerController>();
-        transform.position = _target.transform.position;
 
         StartCoroutine(Shoot());
     }
@@ -35,6 +34,7 @@ public class Follower : MonoBehaviour
     private void OnEnable()
     {
         _enemies.Clear();
+        transform.position = _target.transform.position;
         _lastFollowerPos = transform.position;
         _totalDistance = 0f;
     }
