@@ -21,12 +21,8 @@ namespace TouhouPride.Manager
 	        // wait
 	        yield return new WaitForSeconds(0.5f);
 	        
-	        print("homing in");
-	        
 	        // home in
 	        _enemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
-	        
-	        print("target: " + _enemiesInScene[0]);
 
 	        
 	        if (bullet && _enemiesInScene.Length > 0)
@@ -88,7 +84,6 @@ namespace TouhouPride.Manager
 					break;
 				case AttackType.Laser:
 					//TODO; instantiate laser
-					print("direction: " + direction);
 					
 					var laserPrefab = ResourcesManager.Instance.Laser;
 					var goLaser = Instantiate(laserPrefab, pos, Quaternion.identity);

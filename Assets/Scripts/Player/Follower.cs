@@ -48,6 +48,12 @@ public class Follower : MonoBehaviour
         enabled = isFollowing;
     }
 
+    public void Switch()
+    {
+        _target.GetComponent<Follower>().SetInfo(false);
+        SetInfo(true);
+    }
+
     private void Update()
     {
         if (_target == null || _lastFollowerPos == (Vector2)_target.transform.position)

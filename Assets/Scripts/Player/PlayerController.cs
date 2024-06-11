@@ -1,4 +1,5 @@
 using System.Collections;
+using TouhouPride.Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +11,7 @@ namespace TouhouPride.Player
 
         private Rigidbody2D _rb;
         private Vector2 _mov;
+        private Follower _follower;
 
         private Vector2 _lastDir = Vector2.up;
 
@@ -25,10 +27,12 @@ namespace TouhouPride.Player
             base.Awake();
 
             _rb = GetComponent<Rigidbody2D>();
+            _follower = GetComponent<Follower>();
         }
 
         protected virtual void Start()
         {
+            InputsManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(false);
         }
 
@@ -59,6 +63,14 @@ namespace TouhouPride.Player
                 {
                     _lastDir = _mov;
                 }
+            }
+        }
+
+        public void OnSwitchCharacter(InputAction.CallbackContext value)
+        {
+            if (value.started)
+            {
+                _follower.Switch();
             }
         }
 
