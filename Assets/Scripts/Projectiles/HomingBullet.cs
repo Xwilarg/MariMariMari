@@ -5,9 +5,7 @@ namespace Projectiles
 {
     public class HomingBullet: StandardBullet
     {
-        // TODO; implement homing behavior
         public GameObject target;
-        public GameObject[] targets;
 
         public bool isTargeting = false;
 
@@ -21,7 +19,7 @@ namespace Projectiles
 
         public void Start()
         {
-            targets = GameObject.FindGameObjectsWithTag("Enemy");
+            GameObject.FindGameObjectsWithTag("Enemy");
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -51,7 +49,6 @@ namespace Projectiles
                 }
                 else
                 {
-                    
                     Vector2 newPosition =
                         Vector2.MoveTowards(transform.position, target.transform.position, targetSpeed * Time.deltaTime); //_bulletInfo.bulletSpeed * Time.deltaTime);
                     _rigidbody2D.MovePosition(newPosition);

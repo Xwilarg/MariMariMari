@@ -76,17 +76,20 @@ namespace TouhouPride.Manager
 					
 					var homingPrefab = ResourcesManager.Instance.Bullet;
 					
-					var goTwo = Instantiate(homingPrefab, pos, Quaternion.identity);
+					var goHoming = Instantiate(homingPrefab, pos, Quaternion.identity);
 
-					goTwo.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+					goHoming.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
 
 					// TODO: i feel like this should possibly be done by the bullet itself? (feels like coupling as is)
 					// Throw the projectile in direction
-					goTwo.GetComponent<StandardBullet>().Movement(direction);
+					goHoming.GetComponent<StandardBullet>().Movement(direction);
 					
-					StartCoroutine(homeIn(goTwo));
+					StartCoroutine(homeIn(goHoming));
 					break;
 				case AttackType.Laser:
+					//TODO; instantiate laser
+					
+					//TODO; keep it attached to player object (following position and rotation around player position)
 					
 					break;
 			}
