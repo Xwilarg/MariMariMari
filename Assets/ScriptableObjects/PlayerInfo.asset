@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PlayerInfo
   m_EditorClassIdentifier: 
   Speed: 5
-  AttackType: 0
+  AttackType: 2
   ReloadTime: 0.5
   MaxHealth: 10

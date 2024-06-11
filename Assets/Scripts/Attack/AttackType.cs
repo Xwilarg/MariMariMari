@@ -3,6 +3,9 @@ namespace TouhouPride
     public enum AttackType
     {
         Straight,
-        Wave
+        Wave,
+        // adding these
+        Homing,
+        Laser
     }
 }

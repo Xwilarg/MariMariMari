@@ -1,3 +1,4 @@
+using System;
 using TouhouPride;
 using TouhouPride.SO;
 using UnityEngine;
@@ -6,9 +7,9 @@ namespace Projectiles
 {
     public class StandardBullet : MonoBehaviour
     {
-        [SerializeField] private BulletInfo _bulletInfo;
+        [SerializeField] protected BulletInfo _bulletInfo;
         
-        private Rigidbody2D _rigidbody2D;
+        protected Rigidbody2D _rigidbody2D;
 
         public Vector2 direction = Vector2.zero;
 
