@@ -11,6 +11,7 @@ namespace TouhouPride.Manager
         public static InputsManager Instance { private set; get; }
 
         private List<PlayerController> _controllers = new();
+        private PlayerController[] Controllers => _controllers.Where(x => x.enabled).ToArray();
 
         private void Awake()
         {
@@ -24,22 +25,22 @@ namespace TouhouPride.Manager
 
         public void OnMove(InputAction.CallbackContext value)
         {
-            foreach (var c  in _controllers.Where(x => x.enabled)) c.OnMove(value);
+            foreach (var c in Controllers) c.OnMove(value);
         }
 
         public void OnSwitchCharacter(InputAction.CallbackContext value)
         {
-            foreach (var c in _controllers.Where(x => x.enabled).ToArray()) c.OnSwitchCharacter(value);
+            foreach (var c in Controllers) c.OnSwitchCharacter(value);
         }
 
         public void OnStrafe(InputAction.CallbackContext value)
         {
-            foreach (var c in _controllers.Where(x => x.enabled)) c.OnStrafe(value);
+            foreach (var c in Controllers) c.OnStrafe(value);
         }
 
         public void OnShoot(InputAction.CallbackContext value)
         {
-            foreach (var c in _controllers.Where(x => x.enabled)) c.OnShoot(value);
+            foreach (var c in Controllers) c.OnShoot(value);
         }
     }
 }

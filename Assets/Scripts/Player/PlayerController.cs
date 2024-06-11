@@ -47,6 +47,9 @@ namespace TouhouPride.Player
         private void OnDisable()
         {
             _rb.velocity = Vector2.zero;
+            _mov = Vector2.zero;
+            _isCurrentlyFiring = false;
+            _isStrafing = false;
         }
 
         public void TargetMe()
