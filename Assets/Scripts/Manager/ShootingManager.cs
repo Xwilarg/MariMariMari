@@ -88,8 +88,18 @@ namespace TouhouPride.Manager
 					break;
 				case AttackType.Laser:
 					//TODO; instantiate laser
+					print("direction: " + direction);
+					
+					var laserPrefab = ResourcesManager.Instance.Laser;
+					var goLaser = Instantiate(laserPrefab, pos, Quaternion.identity);
+					goLaser.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+					
+					goLaser.GetComponent<LaserBullet>().Movement(direction);
+					
+					goLaser.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x)));
 					
 					//TODO; keep it attached to player object (following position and rotation around player position)
+					//goLaser.GetComponent<LaserBullet>().SetAim(direction);
 					
 					break;
 			}

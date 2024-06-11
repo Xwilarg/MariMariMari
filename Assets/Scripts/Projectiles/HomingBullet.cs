@@ -56,7 +56,5 @@ namespace Projectiles
             }
             Destroy(this.gameObject, _bulletInfo.timeToLive);
         }
-        
-         
     }
 }
