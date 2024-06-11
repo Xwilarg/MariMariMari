@@ -1,4 +1,3 @@
-using Projectiles;
 using TouhouPride.Manager;
 using TouhouPride.SO;
 using UnityEngine;
@@ -16,7 +15,7 @@ namespace TouhouPride
         protected virtual void TakeDamage()
         { }
 
-        protected void Init()
+        protected virtual void Awake()
         {
             _health = _info.MaxHealth;
         }

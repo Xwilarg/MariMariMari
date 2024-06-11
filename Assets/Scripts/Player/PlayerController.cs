@@ -19,12 +19,17 @@ namespace TouhouPride.Player
 
         private bool _isCurrentlyFiring = false;
 
-        private void Awake()
+        protected override void Awake()
         {
             Instance = this;
-            Init();
+            base.Awake();
 
             _rb = GetComponent<Rigidbody2D>();
+        }
+
+        protected virtual void Start()
+        {
+            GetComponent<Follower>().SetInfo(false);
         }
 
         private void FixedUpdate()

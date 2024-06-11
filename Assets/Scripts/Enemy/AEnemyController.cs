@@ -24,10 +24,10 @@ namespace TouhouPride.Enemy
         protected abstract Vector2 Move();
         protected abstract Vector2? DoesAttack();
 
-        private void Awake()
+        protected override void Awake()
         {
             _rb = GetComponent<Rigidbody2D>();
-            Init();
+            base.Awake();
         }
 
         private void FixedUpdate()
