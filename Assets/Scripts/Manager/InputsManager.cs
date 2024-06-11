@@ -29,7 +29,7 @@ namespace TouhouPride.Manager
 
         public void OnSwitchCharacter(InputAction.CallbackContext value)
         {
-            foreach (var c in _controllers.Where(x => x.enabled)) c.OnSwitchCharacter(value);
+            foreach (var c in _controllers.Where(x => x.enabled).ToArray()) c.OnSwitchCharacter(value);
         }
 
         public void OnStrafe(InputAction.CallbackContext value)

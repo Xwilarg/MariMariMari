@@ -41,6 +41,8 @@ public class Follower : MonoBehaviour
 
     public void SetInfo(bool isFollowing)
     {
+        Debug.Log($"Setting info for {name} to {isFollowing}");
+
         gameObject.layer = LayerMask.NameToLayer(isFollowing ? "Follower" : "Player");
         _sr.sortingOrder = isFollowing ? -1 : 0;
 
