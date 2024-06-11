@@ -54,6 +54,9 @@ namespace Projectiles
                     _rigidbody2D.MovePosition(newPosition);
                 }
             }
+            Destroy(this.gameObject, _bulletInfo.timeToLive);
         }
+        
+         
     }
 }
