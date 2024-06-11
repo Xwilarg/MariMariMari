@@ -29,15 +29,10 @@ namespace TouhouPride.Manager
 	        print("target: " + _enemiesInScene[0]);
 
 	        
-	        if (bullet)
+	        if (bullet && _enemiesInScene.Length > 0)
 	        {
+		        // lets just target first in array for now.
 		        bullet.GetComponent<HomingBullet>().StartTargeting(_enemiesInScene[0]);
-		        // lets just see what happens if we only target the first one for now
-		        /*
-		        bullet.GetComponent<HomingBullet>().target = _enemiesInScene[0];
-		        bullet.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-		        bullet.GetComponent<HomingBullet>().isTargeting = true;
-		        */
 	        }
         }
 
@@ -89,11 +84,7 @@ namespace TouhouPride.Manager
 					// Throw the projectile in direction
 					goTwo.GetComponent<StandardBullet>().Movement(direction);
 					
-					// wait a few seconds; after go is shot, move the bullet towards an enemy reference. 
-					//if (_enemiesInScene.Length > 0)
-					//{
-						StartCoroutine(homeIn(goTwo));
-					//}
+					StartCoroutine(homeIn(goTwo));
 					break;
 				case AttackType.Laser:
 					
