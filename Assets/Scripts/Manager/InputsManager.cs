@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TouhouPride.Player;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,22 +24,22 @@ namespace TouhouPride.Manager
 
         public void OnMove(InputAction.CallbackContext value)
         {
-            foreach (var c  in _controllers) if (c.enabled) c.OnMove(value);
+            foreach (var c  in _controllers.Where(x => x.enabled)) c.OnMove(value);
         }
 
         public void OnSwitchCharacter(InputAction.CallbackContext value)
         {
-            foreach (var c in _controllers) if (c.enabled) c.OnSwitchCharacter(value);
+            foreach (var c in _controllers.Where(x => x.enabled)) c.OnSwitchCharacter(value);
         }
 
         public void OnStrafe(InputAction.CallbackContext value)
         {
-            foreach (var c in _controllers) if (c.enabled) c.OnStrafe(value);
+            foreach (var c in _controllers.Where(x => x.enabled)) c.OnStrafe(value);
         }
 
         public void OnShoot(InputAction.CallbackContext value)
         {
-            foreach (var c in _controllers) if (c.enabled) c.OnShoot(value);
+            foreach (var c in _controllers.Where(x => x.enabled)) c.OnShoot(value);
         }
     }
 }

@@ -46,6 +46,11 @@ public class Follower : MonoBehaviour
 
         _controller.enabled = !isFollowing;
         enabled = isFollowing;
+
+        if (!isFollowing)
+        {
+            _controller.TargetMe();
+        }
     }
 
     public void Switch()

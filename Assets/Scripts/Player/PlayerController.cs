@@ -1,5 +1,6 @@
 using System.Collections;
 using TouhouPride.Manager;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,8 @@ namespace TouhouPride.Player
     public class PlayerController : ACharacter
     {
         public static PlayerController Instance { private set; get; }
+
+        [SerializeField] CinemachineCamera _cam;
 
         private Rigidbody2D _rb;
         private Vector2 _mov;
@@ -39,6 +42,16 @@ namespace TouhouPride.Player
         private void FixedUpdate()
         {
             _rb.velocity = _mov * Info.Speed;
+        }
+
+        private void OnDisable()
+        {
+            _rb.velocity = Vector2.zero;
+        }
+
+        public void TargetMe()
+        {
+            _cam.Target.TrackingTarget = transform;
         }
 
         public IEnumerator RapidFireCoroutine()
