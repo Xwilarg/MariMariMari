@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 3
   AttackType: 0
-  ReloadTime: 100
-  MaxHealth: 50
+  ReloadTime: 1
+  MaxHealth: 10
