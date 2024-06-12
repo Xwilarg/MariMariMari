@@ -63,7 +63,7 @@ namespace TouhouPride.Enemy
                 if (attackDir.HasValue)
                 {
                     var hit = Physics2D.Raycast(transform.position, attackDir.Value, 100f, _targettingLayer);
-                    Debug.DrawLine(transform.position, hit.collider == null ? attackDir.Value : hit.point, Color.red, 1f);
+                    Debug.DrawLine(transform.position, hit.collider == null ? (transform.position + (Vector3)attackDir.Value) : hit.point, Color.red, 1f);
                     if (hit.collider != null && hit.collider.CompareTag("Player"))
                     {
                         Shoot(attackDir.Value, false);

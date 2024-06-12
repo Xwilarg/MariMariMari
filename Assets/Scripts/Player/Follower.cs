@@ -30,8 +30,9 @@ public class Follower : MonoBehaviour
         _sr = GetComponent<SpriteRenderer>();
         _controller = GetComponent<PlayerController>();
 
+        var l1 = 1 << LayerMask.NameToLayer("Enemy");
         var l2 = 1 << LayerMask.NameToLayer("Wall");
-        _targettingLayer = l2;
+        _targettingLayer = l1 | l2;
 
         StartCoroutine(Shoot());
     }
@@ -122,7 +123,7 @@ public class Follower : MonoBehaviour
                     }
                     else
                     {
-                        Debug.DrawLine(transform.position, hit.collider == null ? attackDir : hit.point, Color.blue, 1f);
+                        Debug.DrawLine(transform.position, hit.collider == null ? (transform.position + attackDir) : hit.point, Color.blue, 1f);
                     }
                 }
 
@@ -137,7 +138,7 @@ public class Follower : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("what");
+        Debug.Log($"{collision.name} added to {name}");
         _enemies.Add(collision.GetComponent<ACharacter>());
     }
 
