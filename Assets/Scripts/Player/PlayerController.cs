@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TouhouPride.Manager;
 using Unity.Cinemachine;
@@ -122,6 +123,12 @@ namespace TouhouPride.Player
             {
                 _isCurrentlyFiring = false;
             }
+        }
+
+        public void OnLoveMeterActionUse(InputAction.CallbackContext value)
+        {
+            // todo; get the current partner.
+            LoveMeter.Instance.UsePower(Partners.Alice);
         }
     }
 }
