@@ -1,5 +1,5 @@
 using TouhouPride.Enemy;
-using TouhouPride.Player;
+using TouhouPride.Manager;
 using UnityEngine;
 
 namespace TouhouPride
@@ -8,7 +8,7 @@ namespace TouhouPride
     {
         protected override Vector2? DoesAttack()
         {
-            return PlayerController.Instance.transform.position - transform.position;
+            return InputsManager.Instance.GetPriorityTarget(transform.position).transform.position - transform.position;
         }
 
         protected override Vector2 Move() => Vector2.zero;

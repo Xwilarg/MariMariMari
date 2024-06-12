@@ -1277,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follower
       objectReference: {fileID: 0}
+    - target: {fileID: 499027861407857607, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1031241667858255043, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -3316,6 +3320,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 499027861407857607, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 499027861407857607, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1031241667858255043, guid: f2568532e120766498e0a2d0d6055457, type: 3}

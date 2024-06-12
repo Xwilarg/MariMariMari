@@ -13,6 +13,10 @@ namespace TouhouPride.Manager
         private List<PlayerController> _controllers = new();
         private PlayerController[] Controllers => _controllers.Where(x => x.enabled).ToArray();
 
+        public PlayerController GetPriorityTarget(Vector2 _)
+            => Controllers.First(x => x.enabled);
+            //=> Controllers.OrderBy(x => Vector2.Distance(x.transform.position, pos)).First();
+
         private void Awake()
         {
             Instance = this;
