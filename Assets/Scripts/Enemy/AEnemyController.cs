@@ -28,11 +28,18 @@ namespace TouhouPride.Enemy
 
         protected override void Awake()
         {
-            _rb = GetComponent<Rigidbody2D>();
-            var l1 = 1 << LayerMask.NameToLayer("Wall");
-            var l2 = 1 << LayerMask.NameToLayer("Player");
-            _targettingLayer = l1 | l2;
             base.Awake();
+
+            _rb = GetComponent<Rigidbody2D>();
+            _targettingLayer = LayerMask.GetMask("Wall", "Player");
+
+            GetComponentInChildren<Detector>().OnEnter.AddListener((c) =>
+            {
+                if (c.CompareTag("Player"))
+                {
+                    IsActive = true;
+                }
+            });
         }
 
         private void FixedUpdate()
@@ -73,14 +80,6 @@ namespace TouhouPride.Enemy
                         yield return new WaitForEndOfFrame();
                     }
                 }
-            }
-        }
-
-        private void OnTriggerEnter2D(Collider2D collision)
-        {
-            if (collision.CompareTag("Player"))
-            {
-                IsActive = true;
             }
         }
     }

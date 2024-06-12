@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7385215b78885004a9d105c6024b2de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _info: {fileID: 11400000, guid: 1663ee0be13ffb381b91045ec0030d25, type: 2}
+  _info: {fileID: 11400000, guid: 2b3d00c0ea1389d478a3cce424429e8f, type: 2}
   _cam: {fileID: 1545825856}
 --- !u!1001 &1473715894
 PrefabInstance:

@@ -30,9 +30,23 @@ public class Follower : MonoBehaviour
         _sr = GetComponent<SpriteRenderer>();
         _controller = GetComponent<PlayerController>();
 
-        var l1 = 1 << LayerMask.NameToLayer("Enemy");
-        var l2 = 1 << LayerMask.NameToLayer("Wall");
-        _targettingLayer = l1 | l2;
+        _targettingLayer = LayerMask.GetMask("Wall", "Enemy");
+
+        var d = GetComponentInChildren<Detector>();
+        d.OnEnter.AddListener((c) =>
+        {
+            if (c.CompareTag("Enemy"))
+            {
+                _enemies.Add(c.GetComponent<ACharacter>());
+            }
+        });
+        d.OnExit.AddListener((c) =>
+        {
+            if (c.CompareTag("Enemy"))
+            {
+                _enemies.Remove(c.GetComponent<ACharacter>());
+            }
+        });
 
         StartCoroutine(Shoot());
     }
@@ -133,18 +147,9 @@ public class Follower : MonoBehaviour
             {
                 yield return new WaitForEndOfFrame();
             }
+
+            _enemies.RemoveAll(x => x.gameObject == null);
         }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        Debug.Log($"{collision.name} added to {name}");
-        _enemies.Add(collision.GetComponent<ACharacter>());
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        _enemies.Remove(collision.GetComponent<ACharacter>());
     }
 
     private class DistanceInfo
