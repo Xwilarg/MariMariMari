@@ -26,27 +26,12 @@ public class LoveMeter : MonoBehaviour
     {
         print("added point: " + partner);
         
+        pointList.Add(partner);
+        
         if (pointList.Count == LoveMeterSize)
         {
-            print("DOOR STUCK!");
-            
-            // add new love point to end of list
-            pointList.Add(partner);
-            
+            // remove first point
             pointList.RemoveAt(0);
-            
-            //pointList.Insert(0, partner);
-            //pointList.Sort();
-
-            
-            
-        }
-        else
-        {
-            // add love point
-            // sort array by love points
-            pointList.Add(partner);
-            //pointList.Sort();
         }
     }
 
@@ -56,7 +41,7 @@ public class LoveMeter : MonoBehaviour
         int currentContents = 0;
         
         // check if the criteria is met
-        for (int i = 0; i < LoveMeterSize; i++)
+        for (int i = 0; i < pointList.Count; i++)
         {
             if (pointList[i] == partner)
             {
@@ -64,40 +49,14 @@ public class LoveMeter : MonoBehaviour
             }
         }
 
-        if (currentContents > ActionRequirement)
+        if (currentContents >= ActionRequirement)
         {
             for (int i = 0; i < ActionRequirement; i++)
             {
                 pointList.Remove(partner);
             }
-            
             return true;
         }
-        
-        // 
-        
-        // todo; this functionality.
         return false;
-    }
-    
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // debug
-        if (Input.GetKey("r"))
-        {
-            AddPoint(Partners.Reimu);
-        }
-        
-        if (Input.GetKey("a"))
-        {
-            AddPoint(Partners.Alice);
-        }
     }
 }

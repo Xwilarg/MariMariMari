@@ -46,5 +46,23 @@ namespace TouhouPride.Manager
         {
             foreach (var c in Controllers) c.OnShoot(value);
         }
+
+        public void OnLoveMeterActionUse(InputAction.CallbackContext value)
+        {
+            print("doing the thang");
+
+            if (value.started)
+            {
+                // todo; get the current partner.
+                if (LoveMeter.Instance.UsePower(Partners.Alice))
+                {
+                    print("yes");
+                }
+                else
+                {
+                    print("no");
+                }
+            }
+        }
     }
 }

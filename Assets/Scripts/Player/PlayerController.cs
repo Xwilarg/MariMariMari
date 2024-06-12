@@ -124,11 +124,25 @@ namespace TouhouPride.Player
                 _isCurrentlyFiring = false;
             }
         }
-
+        
         public void OnLoveMeterActionUse(InputAction.CallbackContext value)
         {
-            // todo; get the current partner.
-            LoveMeter.Instance.UsePower(Partners.Alice);
+
+            if (value.started)
+            {
+                print("use love meter");
+            
+                // todo; get the current partner.
+                if (LoveMeter.Instance.UsePower(Partners.Alice))
+                {
+                    print("yes");
+                }
+                else
+                {
+                    print("no");
+                }
+            }
+            
         }
     }
 }
