@@ -23,10 +23,15 @@ public class Follower : MonoBehaviour
 
     private readonly List<ACharacter> _enemies = new();
 
+    private int _targettingLayer;
+
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
         _controller = GetComponent<PlayerController>();
+
+        var l2 = 1 << LayerMask.NameToLayer("Wall");
+        _targettingLayer = l2;
 
         StartCoroutine(Shoot());
     }
@@ -102,9 +107,26 @@ public class Follower : MonoBehaviour
             }
             if (_enemies.Any())
             {
-                var closest = _enemies.OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).First();
-                ShootingManager.Instance.Shoot(closest.transform.position - transform.position, true, _controller.Info.AttackType, transform.position);
-                yield return new WaitForSeconds(_controller.Info.ReloadTime);
+                var closests = _enemies.OrderBy(x => Vector2.Distance(x.transform.position, transform.position));
+                bool didShoot = false;
+                foreach (var closest in closests)
+                {
+                    var attackDir = closest.transform.position - transform.position;
+                    var hit = Physics2D.Raycast(transform.position, attackDir, 100f, _targettingLayer);
+                    if (hit.collider != null && hit.collider.CompareTag("Enemy"))
+                    {
+                        ShootingManager.Instance.Shoot(attackDir, true, _controller.Info.AttackType, transform.position);
+                        didShoot = true;
+                        Debug.DrawLine(transform.position, hit.point, Color.black, 1f);
+                        break;
+                    }
+                    else
+                    {
+                        Debug.DrawLine(transform.position, hit.collider == null ? attackDir : hit.point, Color.blue, 1f);
+                    }
+                }
+
+                yield return (didShoot ? new WaitForSeconds(_controller.Info.ReloadTime) : new WaitForEndOfFrame());
             }
             else
             {
@@ -115,6 +137,7 @@ public class Follower : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("what");
         _enemies.Add(collision.GetComponent<ACharacter>());
     }
 
