@@ -103,8 +103,8 @@ public class Follower : MonoBehaviour
             if (_enemies.Any())
             {
                 var closest = _enemies.OrderBy(x => Vector2.Distance(x.transform.position, transform.position)).First();
-                ShootingManager.Instance.Shoot(closest.transform.position - transform.position, true, AttackType.Straight, transform.position);
-                yield return new WaitForSeconds(2f);
+                ShootingManager.Instance.Shoot(closest.transform.position - transform.position, true, _controller.Info.AttackType, transform.position);
+                yield return new WaitForSeconds(_controller.Info.ReloadTime);
             }
             else
             {
