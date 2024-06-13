@@ -1544,11 +1544,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <stage>k__BackingField:
     Guid:
-      Data1: 1065734515
-      Data2: 1242126726
-      Data3: -1027588676
-      Data4: 164465831
-    Path: event:/MUSIC_Screen-Partner
+      Data1: 1711699704
+      Data2: 1196065259
+      Data3: 231527601
+      Data4: -1050029658
+    Path: event:/MUSIC_Stage
   <partnerSelect>k__BackingField:
     Guid:
       Data1: 1065734515
