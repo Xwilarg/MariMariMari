@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TouhouPride.Manager;
 using Unity.Cinemachine;
@@ -122,6 +123,26 @@ namespace TouhouPride.Player
             {
                 _isCurrentlyFiring = false;
             }
+        }
+        
+        public void OnLoveMeterActionUse(InputAction.CallbackContext value)
+        {
+
+            if (value.started)
+            {
+                print("use love meter");
+            
+                // todo; get the current partner.
+                if (LoveMeter.Instance.UsePower(Partners.Alice))
+                {
+                    print("yes");
+                }
+                else
+                {
+                    print("no");
+                }
+            }
+            
         }
     }
 }
