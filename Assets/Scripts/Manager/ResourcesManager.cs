@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TouhouPride.Manager
 {
@@ -16,6 +17,7 @@ namespace TouhouPride.Manager
         private void Awake()
         {
             Instance = this;
+            SceneManager.LoadScene("Map", LoadSceneMode.Additive);
         }
     }
 }
