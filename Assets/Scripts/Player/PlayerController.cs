@@ -157,7 +157,7 @@ namespace TouhouPride.Player
                 for (int i = EnemyManager.Instance.Enemies.Count - 1; i >= 0; i--)
                 {
                     var e = EnemyManager.Instance.Enemies[i];
-                    if (bounds.Contains(e.transform.position))
+                    if (bounds.Contains((Vector2)e.transform.position))
                     {
                         e.TakeDamage(9999);
                     }
