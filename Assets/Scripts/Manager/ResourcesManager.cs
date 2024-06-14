@@ -9,6 +9,10 @@ namespace TouhouPride.Manager
         private GameObject _bullet;
         public GameObject Bullet => _bullet;
 
+        [SerializeField]
+        private GameObject _homingBullet;
+        public GameObject HomingBullet => _homingBullet;
+
         [SerializeField] private GameObject _laser;
         public GameObject Laser => _laser;
 

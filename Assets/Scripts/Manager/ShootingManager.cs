@@ -70,7 +70,7 @@ namespace TouhouPride.Manager
 
 					// TODO: get enemies in immediate vicinity, and then aim the bullet there. 
 
-					var homingPrefab = ResourcesManager.Instance.Bullet;
+					var homingPrefab = ResourcesManager.Instance.HomingBullet;
 
 					var goHoming = Instantiate(homingPrefab, pos, Quaternion.identity);
 
