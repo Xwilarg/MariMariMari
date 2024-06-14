@@ -20,7 +20,7 @@ namespace TouhouPride
 
         protected virtual void Start()
         {
-            _health = _info.MaxHealth;
+            _health = Info.MaxHealth;
         }
 
         protected void Shoot(Vector2 direction, bool targetEnemy)
