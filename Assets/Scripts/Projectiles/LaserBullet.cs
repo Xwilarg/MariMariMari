@@ -7,29 +7,36 @@ namespace Projectiles
 {
     public class LaserBullet: StandardBullet
     {
-        public override void Movement(Vector2 direction)
+
+        // For some reason, trying to do GetComponent 
+        private LineRenderer _lineRenderer;
+        public Transform laserHit;
+        public float laserRange = 10;
+        
+        public bool laserIsActive;
+
+        //public Vector2 aim;
+        
+        private void Awake()
         {
-            base.Movement(direction);
+            // get line renderer component.
+            _lineRenderer = GetComponent<LineRenderer>();
+            //_lineRenderer.enabled = true;
+            _lineRenderer.useWorldSpace = true;
+            // disable line renderer component.
+
         }
 
-        public void SetAim(Vector2 aimDirection)
+        public void DrawLaser(Vector2 origin, Vector2 target)
         {
-            //base.Movement(new Vector2((float)Math.Sin(_rigidbody2D.rotation), (float)-Math.Cos(_rigidbody2D.rotation)));
-            //base._rigidbody2D.MoveRotation(Vector2.Angle(Vector2.up, aimDirection));
-            //transform.rotation.SetFromToRotation();
-            
-            // want to rotate z value
-            
-            
-            
-            //var transformRotation = transform.rotation;
-            //transformRotation.eulerAngles = aimDirection;
+            _lineRenderer.SetPosition(0, origin);
+            _lineRenderer.SetPosition(1, target);
+        }
 
-            float rotation = (float)Math.Asin(aimDirection.x) + -(float)Math.Acos(aimDirection.y);
+        private void Update()
+        {
+            //DrawLaser(transform.position, Vector2.left);
             
-            transform.Rotate(0, 0, rotation);
-            
-            print("new: " + transform.rotation);
         }
     }
 }

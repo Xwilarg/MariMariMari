@@ -32,6 +32,12 @@ namespace TouhouPride.Manager
 			}
 		}
 
+		public IEnumerator fireLaser()
+		{
+			// wait
+			yield return new WaitForSeconds(0.5f);
+		}
+
 		public void Shoot(Vector2 direction, bool targetEnemy, AttackType attack, Vector2 pos)
 		{
 			direction = direction.normalized;
@@ -83,18 +89,24 @@ namespace TouhouPride.Manager
 					StartCoroutine(homeIn(goHoming));
 					break;
 				case AttackType.Laser:
-					//TODO; instantiate laser
-
 					var laserPrefab = ResourcesManager.Instance.Laser;
-					var goLaser = Instantiate(laserPrefab, pos, Quaternion.identity);
-					goLaser.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
-
-					goLaser.GetComponent<LaserBullet>().Movement(direction);
-
-					goLaser.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x)));
-
-					//TODO; keep it attached to player object (following position and rotation around player position)
-					//goLaser.GetComponent<LaserBullet>().SetAim(direction);
+					
+					// instantiate
+					var laser = Instantiate(laserPrefab, pos, Quaternion.identity);
+					laser.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+					
+					// raycast.
+					Debug.DrawRay(pos, direction * 300, Color.yellow, 10);
+					RaycastHit2D hit = Physics2D.Raycast(pos, direction, 300, laser.layer);
+					
+					if (hit.collider != null)
+					{
+						laser.GetComponent<LaserBullet>().DrawLaser(pos, hit.transform.position);
+					}
+					else
+					{
+						laser.GetComponent<LaserBullet>().DrawLaser(pos, direction * 300);
+					}
 
 					break;
 			}
