@@ -173,11 +173,11 @@
                 },
                 {
                     "name": "",
-                    "id": "3a8c0f48-cc8f-4b9d-a000-3b30539d9980",
-                    "path": "<Keyboard>/c",
+                    "id": "51f25d7f-bd08-469f-a71a-85fc8ee93bd7",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": "",
                     "action": "PartnerSwitch",
                     "isComposite": false,
                     "isPartOfComposite": false

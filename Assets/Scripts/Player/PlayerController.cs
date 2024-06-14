@@ -150,8 +150,13 @@ namespace TouhouPride.Player
 
         public void OnBomb(InputAction.CallbackContext value)
         {
-            if (value.started && _bombCount > 0)
+            //if (value.started && _bombCount > 0)
+            // pass in partner once we keep track of that.
+            if (value.started && LoveMeter.Instance.CanBomb())
             {
+                print("bomb");
+                LoveMeter.Instance.UsePower(Partners.Reimu);
+                
                 var bounds = _mainCam.CalculateBounds();
 
                 for (int i = EnemyManager.Instance.Enemies.Count - 1; i >= 0; i--)
