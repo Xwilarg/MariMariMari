@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 73ce45bd95697094c91b30d4f44a74b5, type: 3}
-  m_Name: PlayerInfoLaser
+  m_Name: Reimu
   m_EditorClassIdentifier: 
+  Name: Reimu
   Speed: 5
-  AttackType: 3
-  ReloadTime: 0.1
-  MaxHealth: 10
+  AttackType: 2
+  ReloadTime: 0.5
+  MaxHealth: 9999

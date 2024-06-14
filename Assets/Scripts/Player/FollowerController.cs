@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using TouhouPride.Manager;
 using TouhouPride.SO;
 using UnityEngine;
@@ -20,6 +22,8 @@ namespace TouhouPride.Player
             base.Awake();
             _allPlayers.Add(Info);
             _allPlayers.AddRange(_altInfo);
+
+            _infoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));
         }
 
         protected override void Start()
