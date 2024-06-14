@@ -20,9 +20,10 @@ namespace TouhouPride.Player
 
         private bool _canShoot = true;
 
-        private bool _isStrafing = false;
+        private bool _isDashing;
+        private bool _canDash = true;
 
-        private bool _isCurrentlyFiring = false;
+        private bool _isCurrentlyFiring;
 
         protected override void Awake()
         {
@@ -41,7 +42,14 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
-            _rb.velocity = _mov * Info.Speed;
+            if (_isDashing)
+            {
+                _rb.velocity = _lastDir * 3f * Info.Speed;
+            }
+            else
+            {
+                _rb.velocity = _mov * Info.Speed;
+            }
         }
 
         private void OnDisable()
@@ -49,7 +57,7 @@ namespace TouhouPride.Player
             _rb.velocity = Vector2.zero;
             _mov = Vector2.zero;
             _isCurrentlyFiring = false;
-            _isStrafing = false;
+            _isDashing = false;
         }
 
         public void TargetMe()
@@ -59,26 +67,41 @@ namespace TouhouPride.Player
 
         public IEnumerator RapidFireCoroutine()
         {
-            Shoot(_lastDir, true);
-            _canShoot = false;
-            yield return new WaitForSeconds(Info.ReloadTime);
-            _canShoot = true;
-
-            if (_isCurrentlyFiring)
+            while (_isDashing) yield return new WaitForEndOfFrame(); // Can't shoot while dashing
+            if (_isCurrentlyFiring && _canShoot)
             {
-                yield return RapidFireCoroutine();
+                Shoot(_lastDir, true);
+                _canShoot = false;
+                yield return new WaitForSeconds(Info.ReloadTime);
+                _canShoot = true;
+
+                if (_isCurrentlyFiring)
+                {
+                    yield return RapidFireCoroutine();
+                }
             }
+        }
+
+        private IEnumerator DashExecute()
+        {
+            _isDashing = true;
+            _canDash = false;
+
+            yield return new WaitForSeconds(.5f);
+
+            _isDashing = false;
+
+            yield return new WaitForSeconds(1f);
+
+            _canDash = true;
         }
 
         public void OnMove(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>();
-            if (_mov.magnitude != 0f)
+            if (_mov.magnitude != 0f && !_isDashing)
             {
-                if (!_isStrafing)
-                {
-                    _lastDir = _mov;
-                }
+                _lastDir = _mov;
             }
         }
 
@@ -90,18 +113,11 @@ namespace TouhouPride.Player
             }
         }
 
-        public void OnStrafe(InputAction.CallbackContext value)
+        public void OnDash(InputAction.CallbackContext value)
         {
-            if (value.started)
+            if (value.started && _canDash)
             {
-                print("is strafing");
-                _isStrafing = true;
-            }
-
-            if (value.canceled)
-            {
-                print("no longer strafing");
-                _isStrafing = false;
+                StartCoroutine(DashExecute());
             }
         }
 
