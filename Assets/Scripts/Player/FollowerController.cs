@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TouhouPride.Manager;
 using TouhouPride.SO;
 using UnityEngine;
 
@@ -23,7 +24,7 @@ namespace TouhouPride.Player
 
         protected override void Start()
         {
-            base.Start();
+            InputsManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(true);
         }
     }

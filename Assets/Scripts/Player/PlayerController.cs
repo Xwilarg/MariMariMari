@@ -36,6 +36,7 @@ namespace TouhouPride.Player
 
         protected override void Start()
         {
+            // TODO: fuckery with child class
             InputsManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(false);
         }
