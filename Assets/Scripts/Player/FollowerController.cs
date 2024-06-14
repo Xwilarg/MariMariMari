@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using TouhouPride.Manager;
@@ -20,7 +19,7 @@ namespace TouhouPride.Player
         protected override void Awake()
         {
             base.Awake();
-            _allPlayers.Add(Info);
+            _allPlayers.Add(_info);
             _allPlayers.AddRange(_altInfo);
 
             _infoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));

@@ -4,6 +4,7 @@ using System.Linq;
 using TouhouPride;
 using TouhouPride.Manager;
 using TouhouPride.Player;
+using TouhouPride.Utils;
 using UnityEngine;
 
 public class Follower : MonoBehaviour

@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7385215b78885004a9d105c6024b2de0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _info: {fileID: 11400000, guid: 2b3d00c0ea1389d478a3cce424429e8f, type: 2}
+  _info: {fileID: 11400000, guid: 426df202e7056ad449ad746d5e4a737f, type: 2}
   _cam: {fileID: 1545825856}
   _altInfo:
   - {fileID: 11400000, guid: 1663ee0be13ffb381b91045ec0030d25, type: 2}
@@ -792,6 +792,26 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 41df65c9-85fd-4fdf-8c75-6d58c4973a2f
     m_ActionName: 'Player/Dash[/Keyboard/shift]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70265ee9-9ec4-4f13-b4d6-4d3a8a2863f0
+    m_ActionName: 'Player/PartnerSwitch[/Keyboard/c]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1943740244}
+        m_TargetAssemblyTypeName: TouhouPride.Manager.InputsManager, Assembly-CSharp
+        m_MethodName: OnBomb
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d8040edb-1420-47ed-8794-b1b986d0b601
+    m_ActionName: 'Player/Bomb[/Keyboard/c]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -809,6 +829,7 @@ GameObject:
   - component: {fileID: 1943740242}
   - component: {fileID: 1943740243}
   - component: {fileID: 1943740244}
+  - component: {fileID: 1943740245}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -869,6 +890,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1652ef37819b29149a421ad1cedcccd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1943740245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943740240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4551abbd4a09484d930707899c8201b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1976303375

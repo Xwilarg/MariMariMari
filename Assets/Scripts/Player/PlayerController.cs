@@ -1,5 +1,6 @@
 using System.Collections;
 using TouhouPride.Manager;
+using TouhouPride.Utils;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -11,6 +12,7 @@ namespace TouhouPride.Player
         public static PlayerController Instance { private set; get; }
 
         [SerializeField] CinemachineCamera _cam;
+        private Camera _mainCam;
 
         private Rigidbody2D _rb;
         private Vector2 _mov;
@@ -25,6 +27,8 @@ namespace TouhouPride.Player
 
         private bool _isCurrentlyFiring;
 
+        private int _bombCount = 3;
+
         protected override void Awake()
         {
             Instance = this;
@@ -32,6 +36,8 @@ namespace TouhouPride.Player
 
             _rb = GetComponent<Rigidbody2D>();
             _follower = GetComponent<Follower>();
+
+            _mainCam = Camera.main;
         }
 
         protected override void Start()
@@ -139,6 +145,25 @@ namespace TouhouPride.Player
             else if (value.canceled)
             {
                 _isCurrentlyFiring = false;
+            }
+        }
+
+        public void OnBomb(InputAction.CallbackContext value)
+        {
+            if (value.started && _bombCount > 0)
+            {
+                var bounds = _mainCam.CalculateBounds();
+
+                for (int i = EnemyManager.Instance.Enemies.Count - 1; i >= 0; i--)
+                {
+                    var e = EnemyManager.Instance.Enemies[i];
+                    if (bounds.Contains(e.transform.position))
+                    {
+                        e.TakeDamage(9999);
+                    }
+                }
+
+                _bombCount--;
             }
         }
     }

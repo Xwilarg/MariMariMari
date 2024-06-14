@@ -46,5 +46,10 @@ namespace TouhouPride.Manager
         {
             foreach (var c in Controllers) c.OnShoot(value);
         }
+
+        public void OnBomb(InputAction.CallbackContext value)
+        {
+            foreach (var c in Controllers) c.OnBomb(value);
+        }
     }
 }

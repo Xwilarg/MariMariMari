@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace TouhouPride
+namespace TouhouPride.Utils
 {
     public class Detector : MonoBehaviour
     {

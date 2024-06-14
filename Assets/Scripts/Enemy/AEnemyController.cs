@@ -1,4 +1,6 @@
 using System.Collections;
+using TouhouPride.Manager;
+using TouhouPride.Utils;
 using UnityEngine;
 
 namespace TouhouPride.Enemy
@@ -40,6 +42,13 @@ namespace TouhouPride.Enemy
                     IsActive = true;
                 }
             });
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+
+            EnemyManager.Instance.Register(this);
         }
 
         private void FixedUpdate()

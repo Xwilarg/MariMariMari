@@ -7,7 +7,7 @@ namespace TouhouPride
     public abstract class ACharacter : MonoBehaviour
     {
         [SerializeField]
-        private PlayerInfo _info;
+        protected PlayerInfo _info;
         public virtual PlayerInfo Info { get => _info; }
 
         private int _health;
