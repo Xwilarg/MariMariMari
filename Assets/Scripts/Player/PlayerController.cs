@@ -34,7 +34,7 @@ namespace TouhouPride.Player
             _follower = GetComponent<Follower>();
         }
 
-        protected virtual void Start()
+        protected override void Start()
         {
             InputsManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(false);

@@ -611,6 +611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _info: {fileID: 11400000, guid: 2b3d00c0ea1389d478a3cce424429e8f, type: 2}
   _cam: {fileID: 1545825856}
+  _altInfo:
+  - {fileID: 11400000, guid: 1663ee0be13ffb381b91045ec0030d25, type: 2}
 --- !u!1001 &1473715894
 PrefabInstance:
   m_ObjectHideFlags: 0

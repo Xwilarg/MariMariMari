@@ -8,7 +8,7 @@ namespace TouhouPride
     {
         [SerializeField]
         private PlayerInfo _info;
-        public PlayerInfo Info => _info;
+        public virtual PlayerInfo Info { get => _info; }
 
         private int _health;
 
@@ -16,6 +16,9 @@ namespace TouhouPride
         { }
 
         protected virtual void Awake()
+        { }
+
+        protected virtual void Start()
         {
             _health = _info.MaxHealth;
         }
