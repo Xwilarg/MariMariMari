@@ -38,12 +38,12 @@ public class LoveMeter : MonoBehaviour
         {
             return;
         }
-        
-        if (!pointList.ContainsKey(partner)) pointList.Add(partner, 0);
+
+        Debug.Log($"[LOVE] ({partner}) {pointList[partner]} +1");
         pointList[partner]++;
 
         // check if we need to do switch.
-        var fc = PlayerManager.Instance.GetFollower();
+        var fc = PlayerManager.Instance.Follower;
         if (fc.Info.Name != partner)
         {
             // switch partner here.
@@ -53,6 +53,7 @@ public class LoveMeter : MonoBehaviour
     
     public bool CanBomb(string partner)
     {
+        Debug.Log($"[BOMB] ({partner}) {pointList[partner]} >= {ActionRequirement}");
         return pointList[partner] >= ActionRequirement;
     }
 

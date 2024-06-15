@@ -149,9 +149,10 @@ namespace TouhouPride.Player
         public void OnBomb(InputAction.CallbackContext value)
         {
             // pass in partner once we keep track of that.
-            if (value.started && LoveMeter.Instance.CanBomb(Info.Name))
+            if (value.started && LoveMeter.Instance.CanBomb(PlayerManager.Instance.Follower.Info.Name))
             {
-                LoveMeter.Instance.UsePower(Info.Name);
+                Debug.Log("bombing");
+                LoveMeter.Instance.UsePower(PlayerManager.Instance.Follower.Info.Name);
                 
                 var bounds = _mainCam.CalculateBounds();
 

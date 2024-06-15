@@ -1,6 +1,5 @@
 using TouhouPride.SO;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PartnerPickup : MonoBehaviour
 {

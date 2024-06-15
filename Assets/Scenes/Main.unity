@@ -869,7 +869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 1005665979229693349, guid: 69f14f39b3cc9c94f9561f0921e18c18, type: 3}
-  _homingBullet: {fileID: 0}
+  _homingBullet: {fileID: 1005665979229693349, guid: efa11a3061a74e4f69f5813d6ab5c35e, type: 3}
   _laser: {fileID: 9198713039953645994, guid: d59914056b19b66f098980659783df5e, type: 3}
 --- !u!114 &1943740243
 MonoBehaviour:
@@ -919,8 +919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1060b177e6fa816968e71508ccf35dc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoveMeterSize: 9
-  ActionRequirement: 3
 --- !u!1 &1976303375
 GameObject:
   m_ObjectHideFlags: 0

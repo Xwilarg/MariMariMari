@@ -11,14 +11,15 @@ namespace TouhouPride.Manager
         public static PlayerManager Instance { private set; get; }
 
         private List<PlayerController> _controllers = new();
+        private FollowerController _fc;
         private PlayerController[] Controllers => _controllers.Where(x => x.enabled).ToArray();
 
         public PlayerController GetPriorityTarget(Vector2 _)
             => Controllers.First(x => x.enabled);
-            //=> Controllers.OrderBy(x => Vector2.Distance(x.transform.position, pos)).First();
+        //=> Controllers.OrderBy(x => Vector2.Distance(x.transform.position, pos)).First();
 
-        public FollowerController GetFollower()
-            => Controllers.Select(x => x.GetComponent<FollowerController>()).First(x => x != null);
+        public FollowerController Follower
+            => _fc;
 
         private void Awake()
         {
@@ -28,6 +29,10 @@ namespace TouhouPride.Manager
         public void Register(PlayerController controller)
         {
             _controllers.Add(controller);
+            if (controller.TryGetComponent<FollowerController>(out var fc))
+            {
+                _fc = fc;
+            }
         }
 
         public void OnMove(InputAction.CallbackContext value)
