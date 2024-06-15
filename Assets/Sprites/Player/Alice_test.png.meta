@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 439b2cc68a7326e40820ed598e24fd23
+guid: 6f228514faee9a4a39cad08b8e9a328d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -82,7 +82,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 24
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -120,20 +120,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Win64
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -143,19 +130,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -533,7 +507,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Alice_test_0: 4371804520588118532
+      Alice_test_1: 399764475167337983
+      Alice_test_10: 3048731798174872180
+      Alice_test_11: -2304972037026325811
+      Alice_test_12: 3093104056634236476
+      Alice_test_13: -1168583545490818583
+      Alice_test_14: -324143353225547947
+      Alice_test_15: -8243681302793051561
+      Alice_test_2: -6565871526603229928
+      Alice_test_3: -8205713187876335423
+      Alice_test_4: -7534469271848559509
+      Alice_test_5: 529871477497464379
+      Alice_test_6: 7417067772168063879
+      Alice_test_7: 561169710329803043
+      Alice_test_8: -7512213323859028497
+      Alice_test_9: -964423658991662660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

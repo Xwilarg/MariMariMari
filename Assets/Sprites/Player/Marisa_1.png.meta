@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: 3a143689d42b7a2fa8336bf93c9b9cb7
+guid: 88f6ce85cae2bd3b0b361666d7ae8c3a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8767200824082276445
-    second: Reimu_0
+      213: 7491310765940113222
+    second: Marisa_1_0
   - first:
-      213: 1338874460256256461
-    second: Reimu_1
+      213: -6736087949459982208
+    second: Marisa_1_1
   - first:
-      213: -1131576681008145888
-    second: Reimu_2
+      213: 8059057358148828903
+    second: Marisa_1_2
   - first:
-      213: -4679629360715545439
-    second: Reimu_3
+      213: -7358664904294159432
+    second: Marisa_1_3
   - first:
-      213: 4615818392882043668
-    second: Reimu_4
+      213: 2916106562726423296
+    second: Marisa_1_4
   - first:
-      213: -6101997543622703970
-    second: Reimu_5
+      213: 620090757461343068
+    second: Marisa_1_5
   - first:
-      213: 7114744499622939105
-    second: Reimu_6
+      213: -8446629405342470683
+    second: Marisa_1_6
   - first:
-      213: -2836760404333508046
-    second: Reimu_7
+      213: -4147400982794922370
+    second: Marisa_1_7
   - first:
-      213: 6829374227019835196
-    second: Reimu_8
+      213: 1779561021303690598
+    second: Marisa_1_8
   - first:
-      213: -8829904120530732246
-    second: Reimu_9
+      213: -2372367084871118717
+    second: Marisa_1_9
   - first:
-      213: -2052366024491400038
-    second: Reimu_10
+      213: -3909838949788654940
+    second: Marisa_1_10
   - first:
-      213: -4611033721800571815
-    second: Reimu_11
+      213: 5300779852043967889
+    second: Marisa_1_11
   - first:
-      213: 6058701194337530189
-    second: Reimu_12
+      213: 2706509827484947397
+    second: Marisa_1_12
   - first:
-      213: -3299872499759693518
-    second: Reimu_13
+      213: 1739260424574318113
+    second: Marisa_1_13
   - first:
-      213: 4476510074139831889
-    second: Reimu_14
+      213: 919019270810108478
+    second: Marisa_1_14
   - first:
-      213: 4253185899174845923
-    second: Reimu_15
+      213: -346334477155431918
+    second: Marisa_1_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -145,353 +145,353 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reimu_0
+      name: Marisa_1_0
       rect:
         serializedVersion: 2
         x: 8
-        y: 99
+        y: 97
         width: 16
-        height: 27
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d50afe9e2ba5ba970800000000000000
-      internalID: 8767200824082276445
+      spriteID: 64f7be1737b76f760800000000000000
+      internalID: 7491310765940113222
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_1
+      name: Marisa_1_1
       rect:
         serializedVersion: 2
         x: 40
-        y: 98
+        y: 96
         width: 16
         height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc1ca6a5a33a49210800000000000000
-      internalID: 1338874460256256461
+      spriteID: 088f5a403bb9482a0800000000000000
+      internalID: -6736087949459982208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_2
+      name: Marisa_1_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 98
-        width: 16
+        x: 73
+        y: 96
+        width: 15
         height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02ad4640105db40f0800000000000000
-      internalID: -1131576681008145888
+      spriteID: 7ee75f0f7f587df60800000000000000
+      internalID: 8059057358148828903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_3
+      name: Marisa_1_3
       rect:
         serializedVersion: 2
         x: 106
-        y: 98
+        y: 95
         width: 16
         height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1a4cf02e3ed9e0fb0800000000000000
-      internalID: -4679629360715545439
+      spriteID: 8bba966e145c0e990800000000000000
+      internalID: -7358664904294159432
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_4
-      rect:
-        serializedVersion: 2
-        x: 9
-        y: 67
-        width: 15
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 41bd2776f5eae0040800000000000000
-      internalID: 4615818392882043668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reimu_5
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 67
-        width: 15
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e9400185099515ba0800000000000000
-      internalID: -6101997543622703970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reimu_6
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 66
-        width: 16
-        height: 28
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1e980b74d66acb260800000000000000
-      internalID: 7114744499622939105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reimu_7
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 66
-        width: 16
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23aceca217dc1a8d0800000000000000
-      internalID: -2836760404333508046
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reimu_8
+      name: Marisa_1_4
       rect:
         serializedVersion: 2
         x: 8
-        y: 35
-        width: 15
-        height: 27
-      alignment: 9
-      pivot: {x: 0.53333336, y: 0.5185185}
+        y: 65
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c37a9b70dafc6ce50800000000000000
-      internalID: 6829374227019835196
+      spriteID: 00b6e76f777187820800000000000000
+      internalID: 2916106562726423296
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_9
+      name: Marisa_1_5
       rect:
         serializedVersion: 2
         x: 42
-        y: 35
-        width: 15
-        height: 27
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2bf1073cf0e57580800000000000000
-      internalID: -8829904120530732246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reimu_10
-      rect:
-        serializedVersion: 2
-        x: 73
-        y: 34
-        width: 14
+        y: 65
+        width: 16
         height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a940c1189f78483e0800000000000000
-      internalID: -2052366024491400038
+      spriteID: c5b7cfe22410b9800800000000000000
+      internalID: 620090757461343068
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_11
+      name: Marisa_1_6
       rect:
         serializedVersion: 2
-        x: 106
-        y: 35
+        x: 72
+        y: 64
         width: 15
         height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 954cab4a2415200c0800000000000000
-      internalID: -4611033721800571815
+      spriteID: 5ed6139de4b87ca80800000000000000
+      internalID: -8446629405342470683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_12
+      name: Marisa_1_7
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 63
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e76176fa7c87176c0800000000000000
+      internalID: -4147400982794922370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_1_8
       rect:
         serializedVersion: 2
         x: 8
-        y: 2
+        y: 33
         width: 16
-        height: 27
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4139b8c2a4d41450800000000000000
-      internalID: 6058701194337530189
+      spriteID: 66510f2025542b810800000000000000
+      internalID: 1779561021303690598
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_13
+      name: Marisa_1_9
       rect:
         serializedVersion: 2
-        x: 40
-        y: 3
+        x: 38
+        y: 34
         width: 16
-        height: 27
+        height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2314eb7e17f7432d0800000000000000
-      internalID: -3299872499759693518
+      spriteID: 3809d65a4b8a31fd0800000000000000
+      internalID: -2372367084871118717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_14
+      name: Marisa_1_10
       rect:
         serializedVersion: 2
         x: 73
-        y: 2
-        width: 14
+        y: 32
+        width: 15
         height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15eef82e132cf1e30800000000000000
-      internalID: 4476510074139831889
+      spriteID: 4a26cdcb0367db9c0800000000000000
+      internalID: -3909838949788654940
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reimu_15
+      name: Marisa_1_11
       rect:
         serializedVersion: 2
-        x: 103
-        y: 3
-        width: 15
-        height: 28
+        x: 106
+        y: 33
+        width: 16
+        height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ed540c7a0a560b30800000000000000
-      internalID: 4253185899174845923
+      spriteID: 19dd0a1d037209940800000000000000
+      internalID: 5300779852043967889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_1_12
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1
+        width: 16
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c3185039547f8520800000000000000
+      internalID: 2706509827484947397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_1_13
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 2
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 126b5a22428132810800000000000000
+      internalID: 1739260424574318113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_1_14
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 15
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e32006a582301cc00800000000000000
+      internalID: 919019270810108478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Marisa_1_15
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 1
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21a0ea3c0a2913bf0800000000000000
+      internalID: -346334477155431918
       vertices: []
       indices: 
       edges: []
@@ -500,7 +500,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bbb55c7cc509714dcaef16f924b58edb
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -508,22 +508,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Reimu_0: 8767200824082276445
-      Reimu_1: 1338874460256256461
-      Reimu_10: -2052366024491400038
-      Reimu_11: -4611033721800571815
-      Reimu_12: 6058701194337530189
-      Reimu_13: -3299872499759693518
-      Reimu_14: 4476510074139831889
-      Reimu_15: 4253185899174845923
-      Reimu_2: -1131576681008145888
-      Reimu_3: -4679629360715545439
-      Reimu_4: 4615818392882043668
-      Reimu_5: -6101997543622703970
-      Reimu_6: 7114744499622939105
-      Reimu_7: -2836760404333508046
-      Reimu_8: 6829374227019835196
-      Reimu_9: -8829904120530732246
+      Marisa_1_0: 7491310765940113222
+      Marisa_1_1: -6736087949459982208
+      Marisa_1_10: -3909838949788654940
+      Marisa_1_11: 5300779852043967889
+      Marisa_1_12: 2706509827484947397
+      Marisa_1_13: 1739260424574318113
+      Marisa_1_14: 919019270810108478
+      Marisa_1_15: -346334477155431918
+      Marisa_1_2: 8059057358148828903
+      Marisa_1_3: -7358664904294159432
+      Marisa_1_4: 2916106562726423296
+      Marisa_1_5: 620090757461343068
+      Marisa_1_6: -8446629405342470683
+      Marisa_1_7: -4147400982794922370
+      Marisa_1_8: 1779561021303690598
+      Marisa_1_9: -2372367084871118717
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
