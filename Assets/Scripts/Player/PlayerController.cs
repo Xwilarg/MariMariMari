@@ -19,6 +19,7 @@ namespace TouhouPride.Player
         private Rigidbody2D _rb;
         private Vector2 _mov;
         protected Follower _follower;
+        private Animator _anim;
 
         private Vector2 _lastDir = Vector2.up;
 
@@ -36,6 +37,7 @@ namespace TouhouPride.Player
 
             _rb = GetComponent<Rigidbody2D>();
             _follower = GetComponent<Follower>();
+            _anim = GetComponent<Animator>();
 
             _mainCam = Camera.main;
         }
@@ -62,6 +64,16 @@ namespace TouhouPride.Player
             {
                 _rb.velocity = _mov * Info.Speed;
             }
+
+            _anim.SetFloat("X", OneOne(_lastDir.x));
+            _anim.SetFloat("Y", OneOne(_lastDir.y));
+        }
+
+        private float OneOne(float x)
+        {
+            if (x < 0f) return -1f;
+            if (x > 0f) return 1f;
+            return 0f;
         }
 
         private void OnDisable()
