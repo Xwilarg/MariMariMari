@@ -414,9 +414,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_text
-      value: "Marisa\u2019s close friend, an incident-solving rival, and one true
-        love.\r\nWith her traditional yin-yang orbs, she sports a powerful homing
-        shot.\r\nThey shoot as straight as the red-white miko herself.\r"
+      value: "Marisa's close friend, an incident-solving rival, and one true love.\r\nWith
+        her traditional yin-yang orbs, she sports a powerful homing shot.\r\nThey
+        shoot as straight as the red-white miko herself.\r"
       objectReference: {fileID: 0}
     - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_fontSize
@@ -802,6 +802,16 @@ PrefabInstance:
     - target: {fileID: 4425459829914196079, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_Name
       value: Alice
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_text
+      value: 'Marisa''s close friend, a fellow witch, and one true love.
+
+        With
+        the power of her dolls, she can fire powerful, forward beams.
+
+        They''re
+        able to be aimed more directly than her feelings.'
       objectReference: {fileID: 0}
     - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_fontSize
