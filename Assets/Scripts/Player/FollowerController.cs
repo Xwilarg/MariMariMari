@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
+using TouhouPride.Love;
 using TouhouPride.Manager;
 using TouhouPride.SO;
 using UnityEngine;
@@ -13,9 +13,21 @@ namespace TouhouPride.Player
         private PlayerInfo[] _altInfo;
 
         private List<PlayerInfo> _allPlayers = new();
-        public int _infoIndex;
+        private int _infoIndex;
+        public int InfoIndex
+        {
+            set
+            {
+                Debug.Log($"[FLLW] Changed from {_allPlayers[_infoIndex].Name} to {_allPlayers[value].Name}");
+                _infoIndex = value;
+            }
+            get
+            {
+                return _infoIndex;
+            }
+        }
 
-        public override PlayerInfo Info => _altInfo[_infoIndex];
+        public override PlayerInfo Info => _allPlayers[InfoIndex];
         
         protected override void Awake()
         {
@@ -23,7 +35,7 @@ namespace TouhouPride.Player
             _allPlayers.Add(_info);
             _allPlayers.AddRange(_altInfo);
 
-            _infoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));
+            InfoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));
         }
 
         protected override void Start()
@@ -39,7 +51,7 @@ namespace TouhouPride.Player
 
         public void SwapInfo(string target)
         {
-            _infoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == target));
+            InfoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == target));
         }
     }
 }

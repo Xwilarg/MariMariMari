@@ -1,4 +1,5 @@
 using System.Collections;
+using TouhouPride.Love;
 using TouhouPride.Manager;
 using TouhouPride.Utils;
 using Unity.Cinemachine;
@@ -151,7 +152,6 @@ namespace TouhouPride.Player
             // pass in partner once we keep track of that.
             if (value.started && LoveMeter.Instance.CanBomb(PlayerManager.Instance.Follower.Info.Name))
             {
-                Debug.Log("bombing");
                 LoveMeter.Instance.UsePower(PlayerManager.Instance.Follower.Info.Name);
                 
                 var bounds = _mainCam.CalculateBounds();

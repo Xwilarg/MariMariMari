@@ -1,19 +1,22 @@
 using TouhouPride.SO;
 using UnityEngine;
 
-public class PartnerPickup : MonoBehaviour
+namespace TouhouPride.Love
 {
-    // TODO; probably want to pick graphic / animation based on this value here.
-    [SerializeField]
-    private PlayerInfo _partnerTarget;
-    
-    private void OnTriggerEnter2D(Collider2D other)
+    public class PartnerPickup : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        // TODO; probably want to pick graphic / animation based on this value here.
+        [SerializeField]
+        private PlayerInfo _partnerTarget;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            LoveMeter.Instance.AddPoint(_partnerTarget.Name);
-            
-            Destroy(gameObject);
+            if (other.CompareTag("Player"))
+            {
+                LoveMeter.Instance.AddPoint(_partnerTarget.Name);
+
+                Destroy(gameObject);
+            }
         }
     }
 }
