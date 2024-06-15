@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
-using TouhouPride;
+using TouhouPride.Manager;
 using TouhouPride.Player;
 using UnityEngine;
 
@@ -11,81 +11,68 @@ public class LoveMeter : MonoBehaviour
 {
     public static LoveMeter Instance { private set; get; }
 
-    public int LoveMeterSize = 9;
-    public int ActionRequirement = 3;
+    private int LoveMeterSize = 9;
+    private int ActionRequirement = 3;
+    [Tooltip("Amount of point we are starting wise")] private int BasePoint = 2;
 
-    public Partners currentPartner = Partners.Reimu;
-    
-    // oops forgot to initialize the singleton lol
+    public string CurrentPartner { set; get; }
+
     private void Awake()
     {
         Instance = this;
     }
-    
-    // the list itself.
-    public List<Partners> pointList = new List<Partners>();
 
-    public void AddPoint(Partners partner)
+    /// <summary>
+    /// Contains point for each character
+    /// </summary>
+    public Dictionary<string, int> pointList = new();
+
+    public void Init(string partner)
     {
-        print("added point: " + partner);
-        
-        pointList.Add(partner);
-        
-        if (pointList.Count == LoveMeterSize)
+        pointList.Add(partner, BasePoint);
+    }
+
+    public void AddPoint(string partner)
+    {
+        if (pointList.Sum(x => x.Value) == LoveMeterSize) // Bar is already full
         {
-            // remove first point
-            pointList.RemoveAt(0);
+            return;
         }
         
-        // check if we need to do switch. 
-        if (currentPartner != partner)
+        if (!pointList.ContainsKey(partner)) pointList.Add(partner, 0);
+        pointList[partner]++;
+
+        // check if we need to do switch.
+        var fc = PlayerManager.Instance.GetFollower();
+        if (fc.Info.Name != partner)
         {
             // switch partner here.
-            PartnerSwitch();
+            PartnerSwitch(fc, partner);
         }
     }
     
-    public bool CanBomb()
+    public bool CanBomb(string partner)
     {
-        int currentContents = 0;
-        
-        // check if the criteria is met
-        for (int i = 0; i < pointList.Count; i++)
-        {
-            if (pointList[i] == currentPartner)
-            {
-                print("point: " + i);
-                currentContents++;
-            }
-            if (currentContents == ActionRequirement)
-            {
-                print("we good");
-                // bombing condition has been met
-                return true;
-            }
-        }
-        return false;
+        return pointList[partner] >= ActionRequirement;
     }
 
     // uses the designated amount of power for the love meter.
-    public bool UsePower(Partners partner)
+    public bool UsePower(string partner)
     {
-        for (int i = 0; i < ActionRequirement; i++)
-        {
-            pointList.Remove(partner);
-        }
+        pointList[partner] -= ActionRequirement;
         return true;
     }
     
-    public void PartnerSwitch()
+    public void PartnerSwitch(FollowerController fc, string newPartner)
     {
         GameObject followerRef = GameObject.Find("Follower");
         
         if ((followerRef!= null) && (followerRef.activeSelf))
         {
-            followerRef.GetComponent<FollowerController>().SwapInfo(currentPartner);
-            
-            
+            followerRef.GetComponent<FollowerController>().SwapInfo(newPartner);
+            CurrentPartner = newPartner;
+
+
 
             //LoveMeter.Instance.currentPartner = followerRef.GetComponent<FollowerController>()._info;
         }

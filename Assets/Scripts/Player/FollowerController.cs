@@ -16,9 +16,6 @@ namespace TouhouPride.Player
         public int _infoIndex;
 
         public override PlayerInfo Info => _altInfo[_infoIndex];
-
-        public PlayerInfo aliceObj;
-        public PlayerInfo reimuObj;
         
         protected override void Awake()
         {
@@ -31,29 +28,18 @@ namespace TouhouPride.Player
 
         protected override void Start()
         {
-            InputsManager.Instance.Register(this);
+            PlayerManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(true);
+
+            foreach (var p in _allPlayers)
+            {
+                LoveMeter.Instance.Init(p.Name);
+            }
         }
 
-        public void SwapInfo(Partners partner)
+        public void SwapInfo(string target)
         {
-            switch (partner)
-            {
-                case Partners.Alice:
-                    print("please turn into reimu FUCK");
-                    //_info = reimuObj;
-                    SwitchplayerInfo(reimuObj);
-                    LoveMeter.Instance.currentPartner = Partners.Reimu;
-                    break;
-                case Partners.Reimu:
-                    print("please turn into alice FUCk");
-                    //_info = aliceObj;
-                    SwitchplayerInfo(aliceObj);
-                    LoveMeter.Instance.currentPartner = Partners.Alice;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(partner), partner, null);
-            }
+            _infoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == target));
         }
     }
 }

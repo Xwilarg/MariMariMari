@@ -27,8 +27,6 @@ namespace TouhouPride.Player
 
         private bool _isCurrentlyFiring;
 
-        private int _bombCount = 3;
-
         protected override void Awake()
         {
             Instance = this;
@@ -44,7 +42,7 @@ namespace TouhouPride.Player
         {
             base.Start();
             // TODO: fuckery with child class
-            InputsManager.Instance.Register(this);
+            PlayerManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(false);
         }
 
@@ -150,12 +148,10 @@ namespace TouhouPride.Player
 
         public void OnBomb(InputAction.CallbackContext value)
         {
-            //if (value.started && _bombCount > 0)
             // pass in partner once we keep track of that.
-            if (value.started && LoveMeter.Instance.CanBomb())
+            if (value.started && LoveMeter.Instance.CanBomb(Info.Name))
             {
-                print("bomb");
-                LoveMeter.Instance.UsePower(Partners.Reimu);
+                LoveMeter.Instance.UsePower(Info.Name);
                 
                 var bounds = _mainCam.CalculateBounds();
 
@@ -167,8 +163,6 @@ namespace TouhouPride.Player
                         e.TakeDamage(9999);
                     }
                 }
-
-                _bombCount--;
             }
         }
     }

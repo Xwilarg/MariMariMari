@@ -64,7 +64,7 @@ namespace TouhouPride.Enemy
         }
 
         protected Vector2? AttackClosest()
-            => InputsManager.Instance.GetPriorityTarget(transform.position).transform.position - transform.position;
+            => PlayerManager.Instance.GetPriorityTarget(transform.position).transform.position - transform.position;
 
         protected override void TakeDamage()
         {

@@ -6,9 +6,9 @@ using UnityEngine.InputSystem;
 
 namespace TouhouPride.Manager
 {
-    public class InputsManager : MonoBehaviour
+    public class PlayerManager : MonoBehaviour
     {
-        public static InputsManager Instance { private set; get; }
+        public static PlayerManager Instance { private set; get; }
 
         private List<PlayerController> _controllers = new();
         private PlayerController[] Controllers => _controllers.Where(x => x.enabled).ToArray();
@@ -16,6 +16,9 @@ namespace TouhouPride.Manager
         public PlayerController GetPriorityTarget(Vector2 _)
             => Controllers.First(x => x.enabled);
             //=> Controllers.OrderBy(x => Vector2.Distance(x.transform.position, pos)).First();
+
+        public FollowerController GetFollower()
+            => Controllers.Select(x => x.GetComponent<FollowerController>()).First(x => x != null);
 
         private void Awake()
         {

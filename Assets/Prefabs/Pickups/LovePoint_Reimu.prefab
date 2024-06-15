@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1514310007033722756}
   - component: {fileID: 3982050020900784122}
   - component: {fileID: 7452909980151245085}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: LovePoint_Reimu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,4 +137,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dfeae067e3a6af088cff1cf426f6edd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partnerValue: 2
+  _partnerTarget: {fileID: 11400000, guid: 426df202e7056ad449ad746d5e4a737f, type: 2}

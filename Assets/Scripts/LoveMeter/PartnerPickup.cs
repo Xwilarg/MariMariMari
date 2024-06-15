@@ -1,29 +1,20 @@
-using System;
-using TouhouPride;
+using TouhouPride.SO;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PartnerPickup : MonoBehaviour
 {
     // TODO; probably want to pick graphic / animation based on this value here.
-    public Partners partnerValue;
-
-    public UnityEvent pickupCollect;
+    [SerializeField]
+    private PlayerInfo _partnerTarget;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("Collision!");
-        if (other.name == "Player")
+        if (other.CompareTag("Player"))
         {
-            pickupCollect.Invoke();
-            LoveMeter.Instance.AddPoint(partnerValue);
+            LoveMeter.Instance.AddPoint(_partnerTarget.Name);
             
             Destroy(gameObject);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        print(other);
     }
 }
