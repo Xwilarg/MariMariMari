@@ -43,13 +43,19 @@ namespace TouhouPride.Player
 
             _mainCam = Camera.main;
         }
-
+        
         protected override void Start()
         {
             base.Start();
             // TODO: fuckery with child class
             PlayerManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(false);
+        }
+
+        // I didn't want to make _lastDir public, but I still wanted the follower class to be able to refer to it. 
+        public Vector2 GetLastDirection()
+        {
+            return _lastDir;
         }
 
         private void FixedUpdate()
@@ -71,7 +77,12 @@ namespace TouhouPride.Player
 
             _anim.SetFloat("X", OneOne(_lastDir.x));
             _anim.SetFloat("Y", OneOne(_lastDir.y));
-            _anim.enabled = _rb.velocity.magnitude != 0f;
+            _anim.enabled = getVelocityMagnitude();
+        }
+
+        public bool getVelocityMagnitude()
+        {
+            return _rb.velocity.magnitude != 0f;
         }
 
         private float OneOne(float x)

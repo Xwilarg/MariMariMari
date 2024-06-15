@@ -131,7 +131,20 @@ public class Follower : MonoBehaviour
         var me01 = me / max;
 
         transform.position = Vector2.Lerp(zero.Position, next.Position, me01);
+        
+        // Animation stuff; we'll just copy the target's current float values.
+        _anim.SetFloat("X", OneOne(_target.GetLastDirection().x));
+        _anim.SetFloat("Y", OneOne(_target.GetLastDirection().y));
+        _anim.enabled = _target.getVelocityMagnitude();
     }
+    
+    private float OneOne(float x)
+    {
+        if (x < 0f) return -1f;
+        if (x > 0f) return 1f;
+        return 0f;
+    }
+
 
     private IEnumerator Shoot()
     {
