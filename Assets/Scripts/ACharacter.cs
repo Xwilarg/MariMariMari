@@ -41,5 +41,10 @@ namespace TouhouPride
                 TakeDamage();
             }
         }
+
+        public void SwitchplayerInfo(PlayerInfo info)
+        {
+            _info = info;
+        }
     }
 }

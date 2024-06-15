@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TouhouPride;
+using TouhouPride.Player;
 using UnityEngine;
 
 /**
@@ -35,6 +36,13 @@ public class LoveMeter : MonoBehaviour
             // remove first point
             pointList.RemoveAt(0);
         }
+        
+        // check if we need to do switch. 
+        if (currentPartner != partner)
+        {
+            // switch partner here.
+            PartnerSwitch();
+        }
     }
     
     public bool CanBomb()
@@ -49,50 +57,37 @@ public class LoveMeter : MonoBehaviour
                 print("point: " + i);
                 currentContents++;
             }
-            else
-            {
-                print("no point");
-            }
-
             if (currentContents == ActionRequirement)
             {
                 print("we good");
+                // bombing condition has been met
                 return true;
-                break;
             }
         }
         return false;
     }
 
-    // making this return a bool for now lolol.
+    // uses the designated amount of power for the love meter.
     public bool UsePower(Partners partner)
     {
-        /*
-        int currentContents = 0;
-        
-        // check if the criteria is met
-        for (int i = 0; i < pointList.Count; i++)
-        {
-            if (pointList[i] == partner)
-            {
-                currentContents++;
-            }
-        }
-
-        if (currentContents >= ActionRequirement)
-        {
-            for (int i = 0; i < ActionRequirement; i++)
-            {
-                pointList.Remove(partner);
-            }
-            return true;
-        }
-        return false;
-        */
         for (int i = 0; i < ActionRequirement; i++)
         {
             pointList.Remove(partner);
         }
         return true;
+    }
+    
+    public void PartnerSwitch()
+    {
+        GameObject followerRef = GameObject.Find("Follower");
+        
+        if ((followerRef!= null) && (followerRef.activeSelf))
+        {
+            followerRef.GetComponent<FollowerController>().SwapInfo(currentPartner);
+            
+            
+
+            //LoveMeter.Instance.currentPartner = followerRef.GetComponent<FollowerController>()._info;
+        }
     }
 }

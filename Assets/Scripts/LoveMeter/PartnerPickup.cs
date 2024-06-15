@@ -1,30 +1,23 @@
 using System;
 using TouhouPride;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PartnerPickup : MonoBehaviour
 {
     // TODO; probably want to pick graphic / animation based on this value here.
     public Partners partnerValue;
+
+    public UnityEvent pickupCollect;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         print("Collision!");
         if (other.name == "Player")
         {
+            pickupCollect.Invoke();
             LoveMeter.Instance.AddPoint(partnerValue);
+            
             Destroy(gameObject);
         }
     }
