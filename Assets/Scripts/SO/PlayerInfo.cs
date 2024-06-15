@@ -14,5 +14,6 @@ namespace TouhouPride.SO
 
         public Color Color;
         public TextAsset EndStory;
+        public Animator CharacterAnimator;
     }
 }

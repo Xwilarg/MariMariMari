@@ -662,15 +662,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.023012552
+    x: 0.058937196
     y: 0
-    width: 0.95397484
+    width: 0.8811594
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.6041665
+  orthographic size: 6.0625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1169,7 +1169,7 @@ PrefabInstance:
       objectReference: {fileID: 460836145}
     - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_Color.b
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_Color.g
@@ -1177,8 +1177,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_Color.r
-      value: 0.20764458
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681548416974071730, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: d34aba8691d7677bda2976c67e8ae398, type: 2}
     m_RemovedComponents:
     - {fileID: 6335026600493299082, guid: f2568532e120766498e0a2d0d6055457, type: 3}
     m_RemovedGameObjects: []
@@ -1529,6 +1537,7 @@ GameObject:
   - component: {fileID: 1943740244}
   - component: {fileID: 1943740245}
   - component: {fileID: 1943740246}
+  - component: {fileID: 1943740247}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1621,6 +1630,22 @@ MonoBehaviour:
   LoveMeterSize: 9
   ActionRequirement: 3
   BasePoint: 2
+--- !u!114 &1943740247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943740240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca4953b077af5a4dbcbec3e11bd6461, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cam: {fileID: 1545825856}
+  _display: {fileID: 0}
+  _container: {fileID: 0}
+  _nameText: {fileID: 0}
 --- !u!1 &1976303375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1813,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3681548416974071730, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: d34aba8691d7677bda2976c67e8ae398, type: 2}
     - target: {fileID: 6335026600493299082, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: _cam
       value: 

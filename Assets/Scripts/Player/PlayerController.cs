@@ -52,11 +52,14 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
+            /*
+             PLEASE REMEMBER TO UNCOMMENT THIS
             if (VNManager.Instance.IsPlayingStory)
             {
                 _rb.velocity = Vector2.zero;
             }
-            else if (_isDashing)
+            else*/
+            if (_isDashing)
             {
                 _rb.velocity = _lastDir * 3f * Info.Speed;
             }
