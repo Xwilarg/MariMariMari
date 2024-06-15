@@ -13,5 +13,6 @@ namespace TouhouPride.SO
         public int Range;
 
         public Color Color;
+        public TextAsset EndStory;
     }
 }
