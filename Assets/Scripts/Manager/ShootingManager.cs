@@ -1,6 +1,7 @@
 using System.Collections;
 using Projectiles;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TouhouPride.Manager
 {
@@ -16,7 +17,7 @@ namespace TouhouPride.Manager
 			Instance = this;
 		}
 
-		public IEnumerator homeIn(GameObject bullet)
+		private IEnumerator HomeIn(GameObject bullet)
 		{
 			// wait
 			yield return new WaitForSeconds(0.5f);
@@ -45,8 +46,6 @@ namespace TouhouPride.Manager
 
 					go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
 
-					// TODO: i feel like this should possibly be done by the bullet itself? (feels like coupling as is)
-					// Throw the projectile in direction
 					go.GetComponent<StandardBullet>().Movement(direction);
 
 					break;
@@ -76,26 +75,34 @@ namespace TouhouPride.Manager
 
 					goHoming.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
 
-					// TODO: i feel like this should possibly be done by the bullet itself? (feels like coupling as is)
 					// Throw the projectile in direction
 					goHoming.GetComponent<StandardBullet>().Movement(direction);
 
-					StartCoroutine(homeIn(goHoming));
+					StartCoroutine(HomeIn(goHoming));
 					break;
 				case AttackType.Laser:
-					//TODO; instantiate laser
+					var layer = LayerMask.GetMask(targetEnemy ? "Enemy" : "Player", "Wall");
+					var maxDist = 10f;
 
-					var laserPrefab = ResourcesManager.Instance.Laser;
-					var goLaser = Instantiate(laserPrefab, pos, Quaternion.identity);
-					goLaser.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+                    var laserPrefab = ResourcesManager.Instance.Laser;
+                    var goLaser = Instantiate(laserPrefab, pos, Quaternion.identity);
+					Destroy(goLaser, 1f);
+					var laser = goLaser.GetComponent<LineRenderer>();
 
-					goLaser.GetComponent<LaserBullet>().Movement(direction);
+                    var hit = Physics2D.Raycast(pos, direction, maxDist, layer);
+					if (hit.collider != null)
+                    {
+                        laser.SetPositions(new[] { (Vector3)pos, (Vector3)(hit.point) });
+						if (hit.collider.TryGetComponent<ACharacter>(out var c))
+						{
+							c.TakeDamage(1);
+						}
+                    }
+					else
+                    {
+						laser.SetPositions(new[] { (Vector3)pos, (Vector3)(pos + (direction * maxDist)) });
 
-					goLaser.transform.rotation = Quaternion.Euler(0, 0, (Mathf.Rad2Deg * Mathf.Atan2(direction.y, direction.x)));
-
-					//TODO; keep it attached to player object (following position and rotation around player position)
-					//goLaser.GetComponent<LaserBullet>().SetAim(direction);
-
+                    }
 					break;
 			}
 		}

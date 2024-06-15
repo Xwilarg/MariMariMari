@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Alice
   Speed: 5
   AttackType: 3
-  ReloadTime: 0.1
+  ReloadTime: 1
   MaxHealth: 10
