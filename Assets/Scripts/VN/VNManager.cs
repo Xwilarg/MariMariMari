@@ -113,7 +113,6 @@ namespace TouhouPride.VN
             else if (!_story.canContinue && !_story.currentChoices.Any())
             {
                 _container.SetActive(false);
-                SceneManager.LoadScene("Main");
             }
         }
 
