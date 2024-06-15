@@ -374,11 +374,69 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_text
-      value: Reimu
+      value: Reimu Hakurei
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4425459829914196079, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_Name
       value: Reimu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_text
+      value: "Marisa\u2019s close friend, an incident-solving rival, and one true
+        love.\r\nWith her traditional yin-yang orbs, she sports a powerful homing
+        shot.\r\nThey shoot as straight as the red-white miko herself.\r"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -730,45 +788,45 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_text
-      value: Alice
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4425459829914196079, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_Name
       value: Alice
       objectReference: {fileID: 0}
-    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontSize
+      value: 27
       objectReference: {fileID: 0}
-    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1177117205}
-    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadCharacter
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TouhouPride.Menu.LevelSelector, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
-      value: 
-      objectReference: {fileID: 11400000, guid: 1663ee0be13ffb381b91045ec0030d25, type: 2}
-    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: TouhouPride.SO.PlayerInfo, Assembly-CSharp
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
