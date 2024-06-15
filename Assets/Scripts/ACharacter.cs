@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using TouhouPride.Manager;
+using TouhouPride.Map;
 using TouhouPride.SO;
 using UnityEngine;
 
@@ -11,6 +13,12 @@ namespace TouhouPride
         public virtual PlayerInfo Info { get => _info; }
 
         private int _health;
+
+        private List<IRequirement<ACharacter>> _requirements = new();
+        public void AddRequirement(IRequirement<ACharacter> req)
+        {
+            _requirements.Add(req);
+        }
 
         protected virtual void TakeDamage()
         { }
@@ -40,6 +48,10 @@ namespace TouhouPride
 
             if (_health <= 0)
             {
+                foreach (var r in _requirements)
+                {
+                    r.Unlock(this);
+                }
                 Destroy(gameObject);
             }
             else
