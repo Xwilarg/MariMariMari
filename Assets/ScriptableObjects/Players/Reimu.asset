@@ -19,4 +19,4 @@ MonoBehaviour:
   MaxHealth: 9999
   Range: 5
   Color: {r: 1, g: 0, b: 0, a: 1}
-  EndStory: {fileID: 4900000, guid: c5843f39996c0dd4691bff664b928998, type: 3}
+  EndStory: {fileID: 4900000, guid: ac1eac4358e71824d96277ae1c8e5a82, type: 3}
