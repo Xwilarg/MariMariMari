@@ -28,8 +28,14 @@ namespace TouhouPride
             ShootingManager.Instance.Shoot(direction, targetEnemy, _info.AttackType, transform.position);
         }
 
+        protected bool _canTakeDamage = true;
+
         public void TakeDamage(int amount)
         {
+            if (!_canTakeDamage)
+            {
+                return;
+            }
             _health -= amount;
 
             if (_health <= 0)

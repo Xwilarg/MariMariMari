@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TouhouPride.Enemy.Impl;
 using TouhouPride.Player;
 using TouhouPride.VN;
 using UnityEngine;
@@ -24,7 +25,7 @@ namespace TouhouPride.Manager
 
         public PlayerController Player { set; get; }
 
-        public Transform Boss { set; get; }
+        public BossEnemy Boss { set; get; }
 
         private void Awake()
         {

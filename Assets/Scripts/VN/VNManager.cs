@@ -31,6 +31,8 @@ namespace TouhouPride.VN
         private float _skipTimer;
         private float _skipTimerRef = .1f;
 
+        private System.Action _onEnd;
+
         private void Awake()
         {
             Instance = this;
@@ -54,7 +56,10 @@ namespace TouhouPride.VN
         public void PlayBossStory()
         {
             // TODO: Do that properly
-            ShowStory(PlayerManager.Instance.Follower.Info.EndStory);
+            ShowStory(PlayerManager.Instance.Follower.Info.EndStory, () =>
+            {
+                PlayerManager.Instance.Boss.AllowDamage();
+            });
         }
 
         private void ResetVN()
@@ -62,10 +67,11 @@ namespace TouhouPride.VN
             _isSkipEnabled = false;
         }
 
-        public void ShowStory(TextAsset asset)
+        public void ShowStory(TextAsset asset, System.Action onEnd = null)
         {
             Debug.Log($"[STORY] Playing {asset.name}");
             _story = new(asset.text);
+            _onEnd = onEnd;
             ResetVN();
             DisplayStory(_story.Continue());
         }
@@ -113,6 +119,7 @@ namespace TouhouPride.VN
             else if (!_story.canContinue && !_story.currentChoices.Any())
             {
                 _container.SetActive(false);
+                _onEnd?.Invoke();
             }
         }
 

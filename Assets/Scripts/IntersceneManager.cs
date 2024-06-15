@@ -1,3 +1,4 @@
+using TouhouPride.Enemy.Impl;
 using TouhouPride.Manager;
 using TouhouPride.VN;
 using UnityEngine;
@@ -7,7 +8,7 @@ namespace TouhouPride
     public class IntersceneManager : MonoBehaviour
     {
         [SerializeField]
-        private Transform _boss;
+        private BossEnemy _boss;
 
         private void Awake()
         {
