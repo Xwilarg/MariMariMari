@@ -18,3 +18,4 @@ MonoBehaviour:
   ReloadTime: 1
   MaxHealth: 10
   Range: 10
+  Color: {r: 0.92156863, g: 0.8980392, b: 0.45882353, a: 1}

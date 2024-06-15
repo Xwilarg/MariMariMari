@@ -11,5 +11,7 @@ namespace TouhouPride.SO
         public float ReloadTime;
         public int MaxHealth;
         public int Range;
+
+        public Color Color;
     }
 }

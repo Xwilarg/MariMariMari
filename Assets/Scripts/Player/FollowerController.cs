@@ -48,7 +48,7 @@ namespace TouhouPride.Player
 
             foreach (var p in _allPlayers)
             {
-                LoveMeter.Instance.Init(p.Name);
+                LoveMeter.Instance.Init(p.Name, p.Color);
             }
         }
 

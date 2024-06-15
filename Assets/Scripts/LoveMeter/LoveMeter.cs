@@ -3,17 +3,21 @@ using System.Linq;
 using TouhouPride.Manager;
 using TouhouPride.Player;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TouhouPride.Love
 {
     // forgive me if this is just a given, but we'll probably want to keep the UI logic for this seperate from here.
     public class LoveMeter : MonoBehaviour
     {
+        [SerializeField] private RectTransform _loveContainer;
+        [SerializeField] private GameObject _lovePrefab;
+
         public static LoveMeter Instance { private set; get; }
 
-        private int LoveMeterSize = 9;
-        private int ActionRequirement = 3;
-        [Tooltip("Amount of point we are starting wise")] private int BasePoint = 2;
+        [SerializeField] private int LoveMeterSize = 9;
+        [SerializeField] private int ActionRequirement = 3;
+        [Tooltip("Amount of point we are starting wise")][SerializeField] private int BasePoint = 2;
 
         public string CurrentPartner { set; get; }
 
@@ -26,10 +30,30 @@ namespace TouhouPride.Love
         /// Contains point for each character
         /// </summary>
         public Dictionary<string, int> pointList = new();
+        public Dictionary<string, RectTransform> _loveUI = new();
 
-        public void Init(string partner)
+        public void Init(string partner, Color color)
         {
             pointList.Add(partner, BasePoint);
+            var ui = Instantiate(_lovePrefab, _loveContainer);
+            ui.GetComponent<Image>().color = color;
+            _loveUI.Add(partner, (RectTransform)ui.transform);
+
+            UpdateUI();
+        }
+
+        private void UpdateUI()
+        {
+            var ttWidth = _loveContainer.sizeDelta.x;
+            var keys = pointList.Keys;
+            for (int i = 0; i < keys.Count; i++)
+            {
+                var partner = keys.ElementAt(i);
+                var score = pointList[partner];
+                var perc = score * ttWidth / LoveMeterSize;
+
+                _loveUI[partner].sizeDelta = new(perc, _loveUI[partner].sizeDelta.y);
+            }
         }
 
         public void AddPoint(string partner)
@@ -49,6 +73,8 @@ namespace TouhouPride.Love
                 // switch partner here.
                 PartnerSwitch(fc, partner);
             }
+
+            UpdateUI();
         }
 
         public bool CanBomb(string partner)
@@ -61,6 +87,7 @@ namespace TouhouPride.Love
         public bool UsePower(string partner)
         {
             pointList[partner] -= ActionRequirement;
+            UpdateUI();
             return true;
         }
 
