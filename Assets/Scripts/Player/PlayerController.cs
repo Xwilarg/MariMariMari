@@ -67,6 +67,7 @@ namespace TouhouPride.Player
 
             _anim.SetFloat("X", OneOne(_lastDir.x));
             _anim.SetFloat("Y", OneOne(_lastDir.y));
+            _anim.enabled = _rb.velocity.magnitude != 0f;
         }
 
         private float OneOne(float x)
