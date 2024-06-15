@@ -2,6 +2,7 @@ using System.Collections;
 using TouhouPride.Love;
 using TouhouPride.Manager;
 using TouhouPride.Utils;
+using TouhouPride.VN;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -49,7 +50,11 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
-            if (_isDashing)
+            if (VNManager.Instance.IsPlayingStory)
+            {
+                _rb.velocity = Vector2.zero;
+            }
+            else if (_isDashing)
             {
                 _rb.velocity = _lastDir * 3f * Info.Speed;
             }
@@ -74,7 +79,7 @@ namespace TouhouPride.Player
 
         public IEnumerator RapidFireCoroutine()
         {
-            while (_isDashing) yield return new WaitForEndOfFrame(); // Can't shoot while dashing
+            while (_isDashing || VNManager.Instance.IsPlayingStory) yield return new WaitForEndOfFrame(); // Can't shoot while dashing
             if (_isCurrentlyFiring && _canShoot)
             {
                 Shoot(_lastDir, true);
@@ -114,7 +119,7 @@ namespace TouhouPride.Player
 
         public void OnSwitchCharacter(InputAction.CallbackContext value)
         {
-            if (value.started)
+            if (value.started && !VNManager.Instance.IsPlayingStory)
             {
                 _follower.Switch();
             }
@@ -150,7 +155,7 @@ namespace TouhouPride.Player
         public void OnBomb(InputAction.CallbackContext value)
         {
             // pass in partner once we keep track of that.
-            if (value.started && LoveMeter.Instance.CanBomb(PlayerManager.Instance.Follower.Info.Name))
+            if (value.started && LoveMeter.Instance.CanBomb(PlayerManager.Instance.Follower.Info.Name) && !VNManager.Instance.IsPlayingStory)
             {
                 LoveMeter.Instance.UsePower(PlayerManager.Instance.Follower.Info.Name);
                 
@@ -161,7 +166,7 @@ namespace TouhouPride.Player
                     var e = EnemyManager.Instance.Enemies[i];
                     if (bounds.Contains((Vector2)e.transform.position))
                     {
-                        e.TakeDamage(9999);
+                        e.TakeDamage(25);
                     }
                 }
             }
