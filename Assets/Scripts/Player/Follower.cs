@@ -28,8 +28,13 @@ public class Follower : MonoBehaviour
 
     private CircleCollider2D _detectorRange;
 
+    private Animator _anim;
+
     private void Awake()
     {
+        // get animation component
+        _anim = GetComponent<Animator>();
+        
         _sr = GetComponent<SpriteRenderer>();
         _controller = GetComponent<PlayerController>();
 

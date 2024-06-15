@@ -39,6 +39,8 @@ namespace TouhouPride.Player
             _follower = GetComponent<Follower>();
             _anim = GetComponent<Animator>();
 
+            _anim.runtimeAnimatorController = _info.CharacterAnimator;
+
             _mainCam = Camera.main;
         }
 
@@ -52,12 +54,13 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
+            /*
             if (VNManager.Instance.IsPlayingStory)
             {
                 _rb.velocity = Vector2.zero;
             }
             else
-            if (_isDashing)
+            */if (_isDashing)
             {
                 _rb.velocity = _lastDir * 3f * Info.Speed;
             }

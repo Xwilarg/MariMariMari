@@ -20,3 +20,4 @@ MonoBehaviour:
   Range: 5
   Color: {r: 1, g: 0, b: 0, a: 1}
   EndStory: {fileID: 4900000, guid: ac1eac4358e71824d96277ae1c8e5a82, type: 3}
+  CharacterAnimator: {fileID: 22100000, guid: d34aba8691d7677bda2976c67e8ae398, type: 2}

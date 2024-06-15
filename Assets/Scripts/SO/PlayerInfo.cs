@@ -1,4 +1,6 @@
+using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Animations;
 
 namespace TouhouPride.SO
 {
@@ -14,6 +16,6 @@ namespace TouhouPride.SO
 
         public Color Color;
         public TextAsset EndStory;
-        public Animator CharacterAnimator;
+        public AnimatorOverrideController CharacterAnimator;
     }
 }

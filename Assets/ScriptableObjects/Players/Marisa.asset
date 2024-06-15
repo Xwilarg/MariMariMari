@@ -18,3 +18,6 @@ MonoBehaviour:
   ReloadTime: 0.5
   MaxHealth: 9999
   Range: 5
+  Color: {r: 0, g: 0, b: 0, a: 0}
+  EndStory: {fileID: 0}
+  CharacterAnimator: {fileID: 22100000, guid: b5b4d6aae5d376bb0997a127e6280fc4, type: 2}
