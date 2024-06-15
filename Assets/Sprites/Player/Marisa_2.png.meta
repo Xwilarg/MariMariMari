@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 806ee09fb0818134398d3dcd44d7beb6
+guid: ae840456e848ce06289062a0980b8580
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -96,7 +96,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -129,33 +129,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Win64
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -533,7 +507,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Marisa_2_0: -9058635881995659583
+      Marisa_2_1: 5197428356818534861
+      Marisa_2_10: 499565082285104656
+      Marisa_2_11: -6533621301736961115
+      Marisa_2_12: -768685587589777074
+      Marisa_2_13: 2333345265925126720
+      Marisa_2_14: 8121160405567273762
+      Marisa_2_15: 1495738167643131593
+      Marisa_2_2: -7164616728402126083
+      Marisa_2_3: 7256165456136306306
+      Marisa_2_4: -8585447385721122238
+      Marisa_2_5: -6332615393958215106
+      Marisa_2_6: -3075352975452473814
+      Marisa_2_7: -1127532982104511509
+      Marisa_2_8: 8909737006483777777
+      Marisa_2_9: -4858756635746303401
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
