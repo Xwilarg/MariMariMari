@@ -37,7 +37,7 @@ namespace TouhouPride.VN
 
         private string _displayLeft = string.Empty;
 
-        public bool IsDisplayDone => _index == _toDisplay.Length && _displayLeft == string.Empty;
+        public bool IsDisplayDone => _toDisplay == null || (_index == _toDisplay.Length && _displayLeft == string.Empty);
 
         /// <summary>
         /// Makes sure the current text vertically fit in the box

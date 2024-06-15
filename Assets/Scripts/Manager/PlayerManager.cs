@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using TouhouPride.Player;
+using TouhouPride.VN;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -56,11 +57,13 @@ namespace TouhouPride.Manager
         public void OnDash(InputAction.CallbackContext value)
         {
             foreach (var c in Controllers) c.OnDash(value);
+            VNManager.Instance.OnSkip(value);
         }
 
         public void OnShoot(InputAction.CallbackContext value)
         {
             foreach (var c in Controllers) c.OnShoot(value);
+            VNManager.Instance.OnNextDialogue(value);
         }
 
         public void OnBomb(InputAction.CallbackContext value)

@@ -1,6 +1,7 @@
 using Ink.Runtime;
 using System.Linq;
 using TMPro;
+using TouhouPride.Manager;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -52,7 +53,8 @@ namespace TouhouPride.VN
 
         public void PlayBossStory()
         {
-
+            // TODO: Do that properly
+            ShowStory(PlayerManager.Instance.Follower.Info.EndStory);
         }
 
         private void ResetVN()
@@ -80,6 +82,12 @@ namespace TouhouPride.VN
                 {
                     case "speaker":
                         _nameText.text = content;
+                        _cam.Target.TrackingTarget = content.ToUpperInvariant() switch
+                        {
+                            "MARISA" => PlayerManager.Instance.Player.transform,
+                            "MEIRA" => PlayerManager.Instance.Boss.transform,
+                            _ => PlayerManager.Instance.Follower.transform,
+                        };
                         break;
                 }
             }
@@ -116,18 +124,10 @@ namespace TouhouPride.VN
 
         public void OnNextDialogue(InputAction.CallbackContext value)
         {
-            if (value.performed && !_isSkipEnabled)
+            if (value.performed && _container.activeInHierarchy && !_isSkipEnabled)
             {
-                if (_container.activeInHierarchy)
-                {
-                    ResetVN();
-                    DisplayNextDialogue();
-                }
-                else
-                {
-                    // Hide mode is active
-                    _container.SetActive(true);
-                }
+                ResetVN();
+                DisplayNextDialogue();
             }
         }
 
