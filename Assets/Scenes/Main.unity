@@ -1585,6 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca4953b077af5a4dbcbec3e11bd6461, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cam: {fileID: 1545825856}
   _display: {fileID: 1595490872}
   _container: {fileID: 563897488}
   _nameText: {fileID: 1281365495}

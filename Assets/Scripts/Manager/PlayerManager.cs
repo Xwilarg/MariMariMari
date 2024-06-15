@@ -21,6 +21,10 @@ namespace TouhouPride.Manager
         public FollowerController Follower
             => _fc;
 
+        public PlayerController Player { set; get; }
+
+        public Transform Boss { set; get; }
+
         private void Awake()
         {
             Instance = this;
@@ -32,6 +36,10 @@ namespace TouhouPride.Manager
             if (controller.TryGetComponent<FollowerController>(out var fc))
             {
                 _fc = fc;
+            }
+            else
+            {
+                Player = controller;
             }
         }
 

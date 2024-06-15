@@ -1,6 +1,7 @@
 using Ink.Runtime;
 using System.Linq;
 using TMPro;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,9 @@ namespace TouhouPride.VN
     public class VNManager : MonoBehaviour
     {
         public static VNManager Instance { private set; get; }
+
+        [SerializeField]
+        private CinemachineCamera _cam;
 
         [SerializeField]
         private TextDisplay _display;
