@@ -12,6 +12,8 @@ namespace TouhouPride
         protected PlayerInfo _info;
         public virtual PlayerInfo Info { get => _info; }
 
+        protected Animator _animator;
+
         private int _health;
 
         private List<IRequirement<ACharacter>> _requirements = new();
@@ -24,7 +26,9 @@ namespace TouhouPride
         { }
 
         protected virtual void Awake()
-        { }
+        {
+            _animator = GetComponent<Animator>();
+        }
 
         protected virtual void Start()
         {
