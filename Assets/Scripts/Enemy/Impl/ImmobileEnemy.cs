@@ -1,8 +1,6 @@
-using TouhouPride.Enemy;
-using TouhouPride.Manager;
 using UnityEngine;
 
-namespace TouhouPride
+namespace TouhouPride.Enemy.Impl
 {
     public class ImmobileEnemy : AEnemyController
     {
