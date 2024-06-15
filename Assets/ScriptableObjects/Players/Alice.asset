@@ -17,3 +17,4 @@ MonoBehaviour:
   AttackType: 3
   ReloadTime: 1
   MaxHealth: 10
+  Range: 10

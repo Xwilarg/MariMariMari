@@ -17,7 +17,7 @@ namespace TouhouPride.Player
 
         private Rigidbody2D _rb;
         private Vector2 _mov;
-        private Follower _follower;
+        protected Follower _follower;
 
         private Vector2 _lastDir = Vector2.up;
 

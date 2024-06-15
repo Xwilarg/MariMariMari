@@ -35,13 +35,15 @@ namespace TouhouPride.Enemy
             _rb = GetComponent<Rigidbody2D>();
             _targettingLayer = LayerMask.GetMask("Wall", "Player");
 
-            GetComponentInChildren<Detector>().OnEnter.AddListener((c) =>
+            var detector = GetComponentInChildren<Detector>();
+            detector.OnEnter.AddListener((c) =>
             {
                 if (c.CompareTag("Player"))
                 {
                     IsActive = true;
                 }
             });
+            detector.GetComponent<CircleCollider2D>().radius = Info.Range;
         }
 
         protected override void Start()

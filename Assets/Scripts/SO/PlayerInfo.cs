@@ -10,5 +10,6 @@ namespace TouhouPride.SO
         public AttackType AttackType;
         public float ReloadTime;
         public int MaxHealth;
+        public int Range;
     }
 }

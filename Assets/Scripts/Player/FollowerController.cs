@@ -20,6 +20,7 @@ namespace TouhouPride.Player
             {
                 Debug.Log($"[FLLW] Changed from {_allPlayers[_infoIndex].Name} to {_allPlayers[value].Name}");
                 _infoIndex = value;
+                _follower.UpdateProperties();
             }
             get
             {
@@ -35,13 +36,15 @@ namespace TouhouPride.Player
             _allPlayers.Add(_info);
             _allPlayers.AddRange(_altInfo);
 
+            _follower = GetComponent<Follower>();
+
             InfoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));
         }
 
         protected override void Start()
         {
             PlayerManager.Instance.Register(this);
-            GetComponent<Follower>().SetInfo(true);
+            _follower.SetInfo(true);
 
             foreach (var p in _allPlayers)
             {

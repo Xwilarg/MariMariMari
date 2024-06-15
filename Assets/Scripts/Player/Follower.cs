@@ -26,6 +26,8 @@ public class Follower : MonoBehaviour
 
     private int _targettingLayer;
 
+    private CircleCollider2D _detectorRange;
+
     private void Awake()
     {
         _sr = GetComponent<SpriteRenderer>();
@@ -48,8 +50,22 @@ public class Follower : MonoBehaviour
                 _enemies.Remove(c.GetComponent<ACharacter>());
             }
         });
+        _detectorRange = d.GetComponent<CircleCollider2D>();
 
         StartCoroutine(Shoot());
+    }
+
+    private void Start()
+    {
+        UpdateProperties();
+    }
+
+    /// <summary>
+    /// This must be called on PlayerInfo change
+    /// </summary>
+    public void UpdateProperties()
+    {
+        _detectorRange.radius = _controller.Info.Range;
     }
 
     private void OnEnable()
