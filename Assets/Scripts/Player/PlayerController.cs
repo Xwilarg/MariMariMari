@@ -62,7 +62,6 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
-            
             if (VNManager.Instance.IsPlayingStory)
             {
                 _rb.velocity = Vector2.zero;
@@ -156,6 +155,8 @@ namespace TouhouPride.Player
             }
         }
 
+        // expects that the Strafe Input Event is an Axis; 
+        // allows us to more easily read it as a button that'd be 'Pressed' and 'Released'.
         public void OnStrafe(InputAction.CallbackContext value)
         {
             if (value.started && !VNManager.Instance.IsPlayingStory)
@@ -164,13 +165,13 @@ namespace TouhouPride.Player
                 _isStrafing = true;
             }
             
-            
             else if (value.canceled)
             {
+                // need to get the player's current mov input here. 
                 print("not strafing.");
                 _isStrafing = false;
+                _lastDir = _mov;
             }
-            
         }
         
         public void OnDash(InputAction.CallbackContext value)

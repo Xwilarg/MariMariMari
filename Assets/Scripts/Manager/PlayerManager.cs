@@ -71,7 +71,7 @@ namespace TouhouPride.Manager
         {
             foreach (var c in Controllers) c.OnBomb(value);
         }
-
+        
         public void OnStrafe(InputAction.CallbackContext value)
         {
             foreach (var c in Controllers) c.OnStrafe(value);

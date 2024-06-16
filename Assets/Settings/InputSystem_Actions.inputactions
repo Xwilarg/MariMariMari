@@ -61,12 +61,12 @@
                 },
                 {
                     "name": "Strafing",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "da9388aa-0c5c-4d96-bcbf-e0c8ab7b3940",
-                    "expectedControlType": "",
+                    "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
