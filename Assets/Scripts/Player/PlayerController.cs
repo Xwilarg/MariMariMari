@@ -20,6 +20,7 @@ namespace TouhouPride.Player
         private Vector2 _mov;
         protected Follower _follower;
         protected Animator _anim;
+        private SpriteRenderer _sr;
 
         private Vector2 _lastDir = Vector2.up;
 
@@ -45,6 +46,7 @@ namespace TouhouPride.Player
             _rb = GetComponent<Rigidbody2D>();
             _follower = GetComponent<Follower>();
             _anim = GetComponent<Animator>();
+            _sr = GetComponent<SpriteRenderer>();
 
             _anim.runtimeAnimatorController = _info.CharacterAnimator;
 
@@ -145,6 +147,17 @@ namespace TouhouPride.Player
             _canDash = true;
         }
 
+        private IEnumerator Invulnerability()
+        {
+            _canTakeDamage = false;
+            for (int i = 0; i < 10; i++)
+            {
+                _sr.color = i % 2 == 0 ? new Color(1f, 1f, 1f, 0f) : Color.white;
+                yield return new WaitForSeconds(.2f);
+            }
+            _canTakeDamage = true;
+        }
+
         protected override void TakeDamage()
         {
             base.TakeDamage();
@@ -159,8 +172,11 @@ namespace TouhouPride.Player
             }
             else
             {
+                PlayerManager.Instance.Follower.gameObject.SetActive(true);
                 // TODO: Reset or smth
             }
+
+            StartCoroutine(Invulnerability());
         }
 
         public void OnMove(InputAction.CallbackContext value)
