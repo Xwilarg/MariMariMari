@@ -167,9 +167,9 @@ namespace TouhouPride.Player
             
             else if (value.canceled)
             {
-                // need to get the player's current mov input here. 
                 print("not strafing.");
                 _isStrafing = false;
+                // need to update _lastDir. 
                 _lastDir = _mov;
             }
         }
