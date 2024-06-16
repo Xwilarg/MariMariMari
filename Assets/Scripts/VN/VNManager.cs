@@ -64,6 +64,7 @@ namespace TouhouPride.VN
                 PlayerManager.Instance.Boss.AllowDamage();
                 PlayerManager.Instance.Boss.HealthBar = (RectTransform)_healthBar.GetChild(0).transform;
                 _healthBar.gameObject.SetActive(true);
+                StaticData.CharacterEndSprite = PlayerManager.Instance.Player.Info.BombImage;
             });
         }
 
