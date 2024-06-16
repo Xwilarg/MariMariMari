@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -28,9 +27,15 @@ public class AudioManager : MonoBehaviour
         RuntimeManager.PlayOneShot(sound, worldPos);  
     }
 
-    public void PlayMusic(EventReference music)
+    public void PlayMusic(EventReference musicRef)
     {
-        // RuntimeManager.PlayOneShot();
+        music = this.CreateEventInstance(musicRef);
+        music.start();
+    }
+
+    public void StopMusic()
+    {
+        music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     public EventInstance CreateEventInstance(EventReference eventReference)
@@ -45,8 +50,7 @@ public class AudioManager : MonoBehaviour
     {
         // start playing the stage theme
         // once we have code for initializing the stage itself we'll probably want to move it there.
-        music = this.CreateEventInstance(FModReferences.instance.stage);
-        music.start();
+        // PlayMusic(FModReferences.instance.stage);
     }
 
     private void CleanUp()

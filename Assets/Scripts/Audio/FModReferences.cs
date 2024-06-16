@@ -14,4 +14,6 @@ public class FModReferences : MonoBehaviour
     // depending on the size, we might wanna reorganize this / do something else.
     [field: SerializeField] public EventReference stage { get; private set; }
     [field: SerializeField] public EventReference partnerSelect { get; private set; }
+    [field: SerializeField] public EventReference boss { get; private set; }
+    [field: SerializeField] public EventReference ending { get; private set; }
 }
