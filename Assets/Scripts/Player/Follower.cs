@@ -130,12 +130,14 @@ public class Follower : MonoBehaviour
         var max = next.Distance - zero.Distance;
         var me01 = me / max;
 
+        var old = transform.position;
         transform.position = Vector2.Lerp(zero.Position, next.Position, me01);
+        var dir = transform.position - old;
         
         // Animation stuff; we'll just copy the target's current float values.
-        _anim.SetFloat("X", OneOne(_target.GetLastDirection().x));
-        _anim.SetFloat("Y", OneOne(_target.GetLastDirection().y));
-        _anim.enabled = _target.getVelocityMagnitude();
+        _anim.SetFloat("X", OneOne(dir.x));
+        _anim.SetFloat("Y", OneOne(dir.y));
+        _anim.enabled = dir.magnitude != 0f;
     }
     
     private float OneOne(float x)
