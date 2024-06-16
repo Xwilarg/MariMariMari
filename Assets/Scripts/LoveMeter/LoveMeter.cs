@@ -68,6 +68,11 @@ namespace TouhouPride.Love
 
             // check if we need to do switch.
             var fc = PlayerManager.Instance.Follower;
+            if (!fc.gameObject.activeInHierarchy)
+            {
+                fc.gameObject.SetActive(true);
+                fc.ResetFollowing();
+            }
             if (fc.Info.Name != partner)
             {
                 // switch partner here.
