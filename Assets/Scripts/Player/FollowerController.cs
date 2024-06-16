@@ -45,6 +45,7 @@ namespace TouhouPride.Player
 
         protected override void Start()
         {
+            base.Start();
             PlayerManager.Instance.Register(this);
             _follower.SetInfo(true);
 
@@ -53,6 +54,9 @@ namespace TouhouPride.Player
                 LoveMeter.Instance.Init(p.Name, p.Color);
             }
         }
+
+        protected override void StartInternal()
+        { }
 
         public void SwapInfo(string target)
         {

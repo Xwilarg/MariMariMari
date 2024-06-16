@@ -49,7 +49,11 @@ namespace TouhouPride.Player
         protected override void Start()
         {
             base.Start();
-            // TODO: fuckery with child class
+            StartInternal();
+        }
+
+        protected virtual void StartInternal()
+        {
             PlayerManager.Instance.Register(this);
             GetComponent<Follower>().SetInfo(false);
         }
@@ -135,6 +139,17 @@ namespace TouhouPride.Player
             yield return new WaitForSeconds(1f);
 
             _canDash = true;
+        }
+
+        protected override void TakeDamage()
+        {
+            base.TakeDamage();
+
+            if (PlayerManager.Instance.Follower.gameObject.GetInstanceID() == gameObject.GetInstanceID())
+            {
+                _follower.Switch();
+            }
+            PlayerManager.Instance.Follower.gameObject.SetActive(false);
         }
 
         public void OnMove(InputAction.CallbackContext value)

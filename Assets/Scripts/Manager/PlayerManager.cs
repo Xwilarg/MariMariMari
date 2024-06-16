@@ -14,7 +14,7 @@ namespace TouhouPride.Manager
 
         private List<PlayerController> _controllers = new();
         private FollowerController _fc;
-        private PlayerController[] Controllers => _controllers.Where(x => x.enabled).ToArray();
+        private PlayerController[] Controllers => _controllers.Where(x => x.gameObject.activeInHierarchy && x.enabled).ToArray();
 
         public PlayerController GetPriorityTarget(Vector2 _)
             => Controllers.First(x => x.enabled);
