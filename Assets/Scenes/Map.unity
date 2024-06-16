@@ -1549,6 +1549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _info: {fileID: 11400000, guid: 72b4b3d07044f944bb118c2869426e05, type: 2}
+  _healthBar: {fileID: 0}
 --- !u!1 &1380730194
 GameObject:
   m_ObjectHideFlags: 0

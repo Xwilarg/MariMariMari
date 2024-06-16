@@ -12,6 +12,8 @@ namespace TouhouPride
         protected PlayerInfo _info;
         public virtual PlayerInfo Info { get => _info; }
 
+        public RectTransform HealthBar { set; private get; }
+
         protected Animator _animator;
 
         private int _health;
@@ -56,10 +58,18 @@ namespace TouhouPride
                 {
                     r.Unlock(this);
                 }
+                if (HealthBar != null)
+                {
+                    HealthBar.localScale = Vector3.zero;
+                }
                 Destroy(gameObject);
             }
             else
             {
+                if (HealthBar != null)
+                {
+                    HealthBar.localScale = new(_health / (float)Info.MaxHealth, 1f, 1f);
+                }
                 TakeDamage();
             }
         }

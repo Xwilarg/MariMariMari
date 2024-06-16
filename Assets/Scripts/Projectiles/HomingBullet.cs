@@ -32,7 +32,6 @@ namespace Projectiles
 
         public void StartTargeting(GameObject targetObj)
         {
-            print("start targeting");
             _rigidbody2D.velocity = Vector2.zero;
             target = targetObj;
             isTargeting = true;

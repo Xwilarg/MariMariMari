@@ -27,6 +27,9 @@ namespace TouhouPride.VN
         [SerializeField]
         private TMP_Text _nameText;
 
+        [SerializeField]
+        private RectTransform _healthBar;
+
         private bool _isSkipEnabled;
         private float _skipTimer;
         private float _skipTimerRef = .1f;
@@ -59,6 +62,8 @@ namespace TouhouPride.VN
             ShowStory(PlayerManager.Instance.Follower.Info.EndStory, () =>
             {
                 PlayerManager.Instance.Boss.AllowDamage();
+                PlayerManager.Instance.Boss.HealthBar = (RectTransform)_healthBar.GetChild(0).transform;
+                _healthBar.gameObject.SetActive(true);
             });
         }
 
