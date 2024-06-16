@@ -75,7 +75,7 @@ public class Follower : MonoBehaviour
 
     public void ResetFollowing()
     {
-        _enemies.Clear();
+        _distances.Clear();
         transform.position = _target.transform.position;
         _lastFollowerPos = transform.position;
         _totalDistance = 0f;
