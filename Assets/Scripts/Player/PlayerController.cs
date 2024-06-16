@@ -19,7 +19,7 @@ namespace TouhouPride.Player
         private Rigidbody2D _rb;
         private Vector2 _mov;
         protected Follower _follower;
-        private Animator _anim;
+        protected Animator _anim;
 
         private Vector2 _lastDir = Vector2.up;
 
@@ -60,13 +60,11 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
-            /*
             if (VNManager.Instance.IsPlayingStory)
             {
                 _rb.velocity = Vector2.zero;
             }
-            else
-            */if (_isDashing)
+            else if (_isDashing)
             {
                 _rb.velocity = _lastDir * 3f * Info.Speed;
             }

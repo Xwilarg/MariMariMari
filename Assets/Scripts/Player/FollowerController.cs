@@ -21,6 +21,7 @@ namespace TouhouPride.Player
                 Debug.Log($"[FLLW] Changed from {_allPlayers[_infoIndex].Name} to {_allPlayers[value].Name}");
                 _infoIndex = value;
                 _follower.UpdateProperties();
+                _anim.runtimeAnimatorController = Info.CharacterAnimator;
             }
             get
             {
@@ -39,6 +40,7 @@ namespace TouhouPride.Player
             _follower = GetComponent<Follower>();
 
             InfoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));
+            _anim.runtimeAnimatorController = Info.CharacterAnimator;
         }
 
         protected override void Start()
