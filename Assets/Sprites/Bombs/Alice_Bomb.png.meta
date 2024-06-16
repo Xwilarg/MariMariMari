@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Alice_Bomb_0: 5216788301257058065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

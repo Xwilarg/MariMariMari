@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Reimu_Bomb_0: 7754109338108220278
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

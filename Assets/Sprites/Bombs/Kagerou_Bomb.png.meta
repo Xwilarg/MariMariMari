@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Kagerou_Bomb_0: -9140705283776671546
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

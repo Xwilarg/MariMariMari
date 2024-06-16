@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Yumemi_Ending_0: -6848897183987956234
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
