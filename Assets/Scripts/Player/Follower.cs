@@ -73,7 +73,7 @@ public class Follower : MonoBehaviour
         _detectorRange.radius = _controller.Info.Range;
     }
 
-    private void OnEnable()
+    public void ResetFollowing()
     {
         _enemies.Clear();
         transform.position = _target.transform.position;
@@ -96,8 +96,11 @@ public class Follower : MonoBehaviour
 
     public void Switch()
     {
-        _target.GetComponent<Follower>().SetInfo(false);
+        var f = _target.GetComponent<Follower>();
+        f.SetInfo(false);
+        f.ResetFollowing();
         SetInfo(true);
+        ResetFollowing();
     }
 
     private void Update()
