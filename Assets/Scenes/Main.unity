@@ -1592,6 +1592,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: d8040edb-1420-47ed-8794-b1b986d0b601
     m_ActionName: 'Player/Bomb[/Keyboard/c]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1943740244}
+        m_TargetAssemblyTypeName: TouhouPride.Manager.PlayerManager, Assembly-CSharp
+        m_MethodName: OnStrafe
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: da9388aa-0c5c-4d96-bcbf-e0c8ab7b3940
+    m_ActionName: 'Player/Strafing[/Keyboard/ctrl]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1773,15 +1789,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.038435604
+    x: 0
     y: 0
-    width: 0.92245454
+    width: 1
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 8.6875
+  orthographic size: 7.0208335
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

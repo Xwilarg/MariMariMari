@@ -19,7 +19,7 @@ namespace TouhouPride.Player
         private Rigidbody2D _rb;
         private Vector2 _mov;
         protected Follower _follower;
-        protected Animator _anim;
+        private Animator _anim;
 
         private Vector2 _lastDir = Vector2.up;
 
@@ -29,6 +29,8 @@ namespace TouhouPride.Player
         private bool _canDash = true;
 
         private bool _isCurrentlyFiring;
+
+        private bool _isStrafing;
 
         protected override void Awake()
         {
@@ -60,11 +62,13 @@ namespace TouhouPride.Player
 
         private void FixedUpdate()
         {
+            
             if (VNManager.Instance.IsPlayingStory)
             {
                 _rb.velocity = Vector2.zero;
             }
-            else if (_isDashing)
+            else
+            if (_isDashing)
             {
                 _rb.velocity = _lastDir * 3f * Info.Speed;
             }
@@ -137,7 +141,8 @@ namespace TouhouPride.Player
         public void OnMove(InputAction.CallbackContext value)
         {
             _mov = value.ReadValue<Vector2>();
-            if (_mov.magnitude != 0f && !_isDashing)
+            
+            if (_mov.magnitude != 0f && !_isDashing && !_isStrafing)
             {
                 _lastDir = _mov;
             }
@@ -151,6 +156,23 @@ namespace TouhouPride.Player
             }
         }
 
+        public void OnStrafe(InputAction.CallbackContext value)
+        {
+            if (value.started && !VNManager.Instance.IsPlayingStory)
+            {
+                print("is strafing");
+                _isStrafing = true;
+            }
+            
+            
+            else if (value.canceled)
+            {
+                print("not strafing.");
+                _isStrafing = false;
+            }
+            
+        }
+        
         public void OnDash(InputAction.CallbackContext value)
         {
             if (value.started && _canDash)
