@@ -49,7 +49,7 @@ namespace Projectiles
                 else
                 {
                     Vector2 newPosition =
-                        Vector2.MoveTowards(transform.position, target.transform.position, targetSpeed * Time.deltaTime); //_bulletInfo.bulletSpeed * Time.deltaTime);
+                        Vector2.Lerp(transform.position, target.transform.position, targetSpeed * Time.deltaTime); //_bulletInfo.bulletSpeed * Time.deltaTime);
                     _rigidbody2D.MovePosition(newPosition);
                 }
             }
