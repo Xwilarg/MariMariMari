@@ -1135,7 +1135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _info: {fileID: 11400000, guid: 426df202e7056ad449ad746d5e4a737f, type: 2}
-  HealthBar: {fileID: 0}
   _cam: {fileID: 1476258457}
   _altInfo:
   - {fileID: 11400000, guid: 1663ee0be13ffb381b91045ec0030d25, type: 2}
@@ -1921,7 +1920,7 @@ MonoBehaviour:
   _display: {fileID: 1595490872}
   _container: {fileID: 563897488}
   _nameText: {fileID: 1281365495}
-  _healthBar: {fileID: 1411232375}
+  _healthBar: {fileID: 1411232376}
 --- !u!1 &1976303375
 GameObject:
   m_ObjectHideFlags: 0
