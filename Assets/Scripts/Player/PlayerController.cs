@@ -149,11 +149,18 @@ namespace TouhouPride.Player
         {
             base.TakeDamage();
 
-            if (PlayerManager.Instance.Follower.gameObject.GetInstanceID() == gameObject.GetInstanceID())
+            if (PlayerManager.Instance.Follower.gameObject.activeInHierarchy)
             {
-                _follower.Switch();
+                if (PlayerManager.Instance.Follower.gameObject.GetInstanceID() == gameObject.GetInstanceID())
+                {
+                    _follower.Switch();
+                }
+                PlayerManager.Instance.Follower.gameObject.SetActive(false);
             }
-            PlayerManager.Instance.Follower.gameObject.SetActive(false);
+            else
+            {
+                // TODO: Reset or smth
+            }
         }
 
         public void OnMove(InputAction.CallbackContext value)
