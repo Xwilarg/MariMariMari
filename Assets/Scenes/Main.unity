@@ -846,7 +846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _info: {fileID: 11400000, guid: 426df202e7056ad449ad746d5e4a737f, type: 2}
-  _cam: {fileID: 0}
+  _cam: {fileID: 1476258457}
   _altInfo:
   - {fileID: 11400000, guid: 1663ee0be13ffb381b91045ec0030d25, type: 2}
 --- !u!1 &1476258453
@@ -913,7 +913,7 @@ MonoBehaviour:
     ScreenPosition: {x: 0, y: 0}
     DeadZone:
       Enabled: 1
-      Size: {x: 1, y: 0.25}
+      Size: {x: 2, y: 0.25}
     HardLimits:
       Enabled: 0
       Size: {x: 2, y: 0.8}
@@ -1484,15 +1484,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.04212638
+    x: 0.038435604
     y: 0
-    width: 0.91474426
+    width: 0.92245454
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.84375
+  orthographic size: 8.6875
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1801,7 +1801,7 @@ PrefabInstance:
     - target: {fileID: 6335026600493299082, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: _cam
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1476258457}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
