@@ -137,10 +137,12 @@ namespace TouhouPride.Player
         {
             _isDashing = true;
             _canDash = false;
+            _anim.runtimeAnimatorController = _info.CharacterDashAnimator;
 
             yield return new WaitForSeconds(.5f);
 
             _isDashing = false;
+            _anim.runtimeAnimatorController = _info.CharacterAnimator;
 
             yield return new WaitForSeconds(1f);
 

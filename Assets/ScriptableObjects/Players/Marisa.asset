@@ -21,4 +21,5 @@ MonoBehaviour:
   Color: {r: 0, g: 0, b: 0, a: 0}
   EndStory: {fileID: 0}
   CharacterAnimator: {fileID: 22100000, guid: b5b4d6aae5d376bb0997a127e6280fc4, type: 2}
+  CharacterDashAnimator: {fileID: 22100000, guid: 95913a40ec7094bf5a7f32a32f8d2502, type: 2}
   BombImage: {fileID: -6848897183987956234, guid: 5eb4d56ade7368741b392bd74e593887, type: 3}

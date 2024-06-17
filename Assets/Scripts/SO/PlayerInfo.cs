@@ -16,6 +16,7 @@ namespace TouhouPride.SO
         public Color Color;
         public TextAsset EndStory;
         public AnimatorOverrideController CharacterAnimator;
+        public AnimatorOverrideController CharacterDashAnimator;
 
         public Sprite BombImage;
     }

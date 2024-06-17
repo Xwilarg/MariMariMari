@@ -1048,6 +1048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Follower
       objectReference: {fileID: 0}
+    - target: {fileID: 499027861407857607, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1031241667858255043, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1789,15 +1793,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.045816734
     y: 0
-    width: 1
+    width: 0.90836656
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.875
+  orthographic size: 5.8854165
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2040,6 +2044,20 @@ MonoBehaviour:
       Data3: -1027588676
       Data4: 164465831
     Path: event:/MUSIC_Screen-Partner
+  <boss>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <ending>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1001 &7893098269183928184
 PrefabInstance:
   m_ObjectHideFlags: 0
