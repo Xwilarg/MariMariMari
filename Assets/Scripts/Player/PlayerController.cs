@@ -19,7 +19,6 @@ namespace TouhouPride.Player
         private Rigidbody2D _rb;
         private Vector2 _mov;
         protected Follower _follower;
-        protected Animator _anim;
         private SpriteRenderer _sr;
 
         private Vector2 _lastDir = Vector2.up;
@@ -47,8 +46,6 @@ namespace TouhouPride.Player
             _follower = GetComponent<Follower>();
             _anim = GetComponent<Animator>();
             _sr = GetComponent<SpriteRenderer>();
-
-            _anim.runtimeAnimatorController = _info.CharacterAnimator;
 
             _mainCam = Camera.main;
         }

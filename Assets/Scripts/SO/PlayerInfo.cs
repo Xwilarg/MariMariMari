@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Animations;
 
 namespace TouhouPride.SO
 {
@@ -15,8 +14,8 @@ namespace TouhouPride.SO
 
         public Color Color;
         public TextAsset EndStory;
-        public AnimatorOverrideController CharacterAnimator;
-        public AnimatorOverrideController CharacterDashAnimator;
+        public RuntimeAnimatorController CharacterAnimator;
+        public RuntimeAnimatorController CharacterDashAnimator;
 
         public Sprite BombImage;
     }

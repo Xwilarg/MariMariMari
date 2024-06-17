@@ -19,3 +19,7 @@ MonoBehaviour:
   MaxHealth: 100
   Range: 5
   Color: {r: 0, g: 0, b: 0, a: 0}
+  EndStory: {fileID: 0}
+  CharacterAnimator: {fileID: 9100000, guid: 691fc6681bb623145b174d51302ddd57, type: 2}
+  CharacterDashAnimator: {fileID: 0}
+  BombImage: {fileID: 0}

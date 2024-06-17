@@ -14,7 +14,7 @@ namespace TouhouPride
 
         public RectTransform HealthBar { set; private get; }
 
-        protected Animator _animator;
+        protected Animator _anim;
 
         private int _health;
 
@@ -29,12 +29,16 @@ namespace TouhouPride
 
         protected virtual void Awake()
         {
-            _animator = GetComponent<Animator>();
+            _anim = GetComponent<Animator>();
         }
 
         protected virtual void Start()
         {
             _health = Info.MaxHealth;
+            if (Info.CharacterAnimator != null)
+            {
+                _anim.runtimeAnimatorController = Info.CharacterAnimator;
+            }
         }
 
         protected void Shoot(Vector2 direction, bool targetEnemy)
