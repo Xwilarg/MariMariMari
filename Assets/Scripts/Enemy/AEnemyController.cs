@@ -28,6 +28,8 @@ namespace TouhouPride.Enemy
         protected abstract Vector2 Move();
         protected abstract Vector2? DoesAttack();
 
+        protected virtual bool PlayMoveAnimations => true;
+
         protected override void Awake()
         {
             base.Awake();
@@ -55,14 +57,7 @@ namespace TouhouPride.Enemy
 
         private void FixedUpdate()
         {
-            if (IsActive)
-            {
-                _rb.velocity = Move();
-            }
-            else
-            {
-                _rb.velocity = Vector2.zero;
-            }
+            _rb.velocity = Move();
         }
 
         protected Vector2? AttackClosest()

@@ -19,5 +19,7 @@ namespace TouhouPride.Enemy.Impl
         {
             _canTakeDamage = true;
         }
+
+        protected override bool PlayMoveAnimations => false;
     }
 }

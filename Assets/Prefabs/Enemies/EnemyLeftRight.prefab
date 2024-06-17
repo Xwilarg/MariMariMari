@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2198237666436708286, guid: 1c6f7bd6ffd319a44938357c0908cb7c, type: 3}
       propertyPath: m_Color.b
-      value: 0.7924266
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2198237666436708286, guid: 1c6f7bd6ffd319a44938357c0908cb7c, type: 3}
       propertyPath: m_Color.g
-      value: 0.39215684
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2198237666436708286, guid: 1c6f7bd6ffd319a44938357c0908cb7c, type: 3}
       propertyPath: m_Color.r
@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3598612052999589554, guid: 1c6f7bd6ffd319a44938357c0908cb7c, type: 3}
       propertyPath: m_Name
-      value: Enemy (1) Variant
+      value: EnemyLeftRight
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3872815196696828701, guid: 1c6f7bd6ffd319a44938357c0908cb7c, type: 3}
@@ -90,4 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7f0fb8d8996404abe57abfa38c3326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _info: {fileID: 11400000, guid: ddc533a7b108d264ba15342f040e2646, type: 2}
+  _info: {fileID: 11400000, guid: b67c063a5ce921342878ac9e1b7fbf44, type: 2}
