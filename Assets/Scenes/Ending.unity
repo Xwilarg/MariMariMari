@@ -177,8 +177,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: love wins
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+  m_sharedMaterial: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -283,8 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 498254538bc477f528dc95529adda413, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _image: {fileID: 813786803}
-  spriteToSet: {fileID: -6848897183987956234, guid: 5eb4d56ade7368741b392bd74e593887, type: 3}
+  image: {fileID: 813786803}
 --- !u!4 &268617661
 Transform:
   m_ObjectHideFlags: 0
@@ -404,8 +403,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Strategic Polygamy
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
+  m_sharedMaterial: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
