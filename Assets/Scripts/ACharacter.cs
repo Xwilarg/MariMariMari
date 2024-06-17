@@ -3,6 +3,7 @@ using TouhouPride.Manager;
 using TouhouPride.Map;
 using TouhouPride.SO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TouhouPride
 {
@@ -65,6 +66,7 @@ namespace TouhouPride
                 if (HealthBar != null)
                 {
                     HealthBar.localScale = Vector3.zero;
+                    SceneManager.LoadScene("Ending");
                 }
                 Destroy(gameObject);
             }
