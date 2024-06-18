@@ -82,7 +82,7 @@ namespace TouhouPride.Enemy
                     Debug.DrawLine(transform.position, hit.collider == null ? (transform.position + (Vector3)attackDir.Value) : hit.point, Color.red, 1f);
                     if (hit.collider != null && hit.collider.CompareTag("Player"))
                     {
-                        Shoot(attackDir.Value, false);
+                        Shoot(attackDir.Value, false, 0);
                     }
                     else
                     {

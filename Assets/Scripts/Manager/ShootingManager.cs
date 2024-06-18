@@ -33,13 +33,15 @@ namespace TouhouPride.Manager
 			}
 		}
 
-		public void Shoot(Vector2 direction, bool targetEnemy, AttackType attack, Vector2 pos)
+		public void Shoot(Vector2 direction, bool targetEnemy, AttackType attack, Vector2 pos, int soundEventParameter)
 		{
 			direction = direction.normalized;
 
 			switch (attack)
 			{
 				case AttackType.Straight:
+					// play SFX
+					AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
 					
 					var prefab = ResourcesManager.Instance.Bullet;
 
@@ -67,6 +69,8 @@ namespace TouhouPride.Manager
 					break;
 				case AttackType.Homing:
 					// shoot bullet in direction aimed
+					// play SFX
+					AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
 
 					// TODO: get enemies in immediate vicinity, and then aim the bullet there. 
 
@@ -82,6 +86,9 @@ namespace TouhouPride.Manager
 					StartCoroutine(HomeIn(goHoming));
 					break;
 				case AttackType.Laser:
+					// play SFX
+					AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
+					
 					var layer = LayerMask.GetMask(targetEnemy ? "Enemy" : "Player", "Wall");
 					var maxDist = 10f;
 

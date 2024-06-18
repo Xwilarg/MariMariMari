@@ -8,8 +8,17 @@ namespace TouhouPride.Menu
     {
         public void LoadCharacter(PlayerInfo info)
         {
+            // play sound effect
+            AudioManager.instance.PlayOneShot(FModReferences.instance.partnerSelect, transform.position);
+            
+            // stop music here
+            AudioManager.instance.StopMusic();
+            
             StaticData.CharacterName = info.Name;
             SceneManager.LoadScene("Main");
+            
+            // play stage music; might wanna do that in the main scene though.
+            AudioManager.instance.PlayMusic(FModReferences.instance.stage);
         }
     }
 }

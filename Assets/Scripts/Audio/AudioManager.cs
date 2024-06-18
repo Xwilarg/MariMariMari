@@ -15,13 +15,21 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
+        // singleton stuff
+        if (instance != null && instance != this)
         {
             Debug.LogError("More than one Audio Manager in the scene!");
+            Destroy(this);
         }
-        instance = this;
-
+        else
+        {
+            instance = this;
+        }
+        
         _eventInstances = new List<EventInstance>();
+        
+        // we want to keep this persistent i think
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
@@ -41,6 +49,11 @@ public class AudioManager : MonoBehaviour
     {
         music = this.CreateEventInstance(musicRef);
         music.start();
+    }
+
+    public void ChangeMusicParameter(String parameterName, int parameterValue)
+    {
+        music.setParameterByName(parameterName, parameterValue);
     }
 
     public void StopMusic()
