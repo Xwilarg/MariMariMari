@@ -16,9 +16,6 @@ namespace TouhouPride.Menu
             
             StaticData.CharacterName = info.Name;
             SceneManager.LoadScene("Main");
-            
-            // play stage music; might wanna do that in the main scene though.
-            AudioManager.instance.PlayMusic(FModReferences.instance.stage);
         }
     }
 }
