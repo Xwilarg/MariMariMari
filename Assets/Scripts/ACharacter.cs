@@ -42,9 +42,9 @@ namespace TouhouPride
             }
         }
 
-        protected void Shoot(Vector2 direction, bool targetEnemy)
+        protected void Shoot(Vector2 direction, bool targetEnemy, int eventSoundParameter)
         {
-            ShootingManager.Instance.Shoot(direction, targetEnemy, _info.AttackType, transform.position);
+            ShootingManager.Instance.Shoot(direction, targetEnemy, _info.AttackType, transform.position, eventSoundParameter);
         }
 
         protected bool _canTakeDamage = true;

@@ -1,13 +1,14 @@
 using System.Collections;
+using FMOD.Studio;
 using Projectiles;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace TouhouPride.Manager
 {
 	public class ShootingManager : MonoBehaviour
 	{
-
 		private GameObject[] _enemiesInScene;
 
 		public static ShootingManager Instance { private set; get; }
@@ -16,7 +17,7 @@ namespace TouhouPride.Manager
 		{
 			Instance = this;
 		}
-
+		
 		private IEnumerator HomeIn(GameObject bullet)
 		{
 			// wait
@@ -25,7 +26,6 @@ namespace TouhouPride.Manager
 			// home in
 			_enemiesInScene = GameObject.FindGameObjectsWithTag("Enemy");
 
-
 			if (bullet && _enemiesInScene.Length > 0)
 			{
 				// lets just target first in array for now.
@@ -33,13 +33,16 @@ namespace TouhouPride.Manager
 			}
 		}
 
-		public void Shoot(Vector2 direction, bool targetEnemy, AttackType attack, Vector2 pos)
+		public void Shoot(Vector2 direction, bool targetEnemy, AttackType attack, Vector2 pos, int soundEventParameter)
 		{
 			direction = direction.normalized;
 
 			switch (attack)
 			{
 				case AttackType.Straight:
+					// play SFX
+					AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
+					
 					var prefab = ResourcesManager.Instance.Bullet;
 
 					var go = Instantiate(prefab, pos, Quaternion.identity);
@@ -66,6 +69,8 @@ namespace TouhouPride.Manager
 					break;
 				case AttackType.Homing:
 					// shoot bullet in direction aimed
+					// play SFX
+					AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
 
 					// TODO: get enemies in immediate vicinity, and then aim the bullet there. 
 
@@ -86,9 +91,11 @@ namespace TouhouPride.Manager
 
                     var laserPrefab = ResourcesManager.Instance.Laser;
                     var goLaser = Instantiate(laserPrefab, pos, Quaternion.identity);
+					print("destroying laser");
 					Destroy(goLaser, 1f);
 					var laser = goLaser.GetComponent<LineRenderer>();
 
+					print("hit stuff");
                     var hit = Physics2D.Raycast(pos, direction, maxDist, layer);
 					if (hit.collider != null)
                     {
@@ -103,6 +110,7 @@ namespace TouhouPride.Manager
 						laser.SetPositions(new[] { (Vector3)pos, (Vector3)(pos + (direction * maxDist)) });
 
                     }
+					
 					break;
 			}
 		}

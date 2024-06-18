@@ -158,7 +158,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Marisa_Still_Render_0: -2641475631133078599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2310399304873525258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9196976633106401966}
+  - component: {fileID: 481365057188134327}
+  - component: {fileID: 8573588411693744183}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9196976633106401966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310399304873525258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &481365057188134327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310399304873525258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe495d173dc9e1dbb9b68c9095703e5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8573588411693744183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310399304873525258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1990adc5a4bffa668fdfad8cb5a8d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <stage>k__BackingField:
+    Guid:
+      Data1: 1711699704
+      Data2: 1196065259
+      Data3: 231527601
+      Data4: -1050029658
+    Path: event:/MUSIC/MUSIC_Stage
+  <partnerSelect>k__BackingField:
+    Guid:
+      Data1: 1065734515
+      Data2: 1242126726
+      Data3: -1027588676
+      Data4: 164465831
+    Path: event:/MUSIC/MUSIC_Start
+  <boss>k__BackingField:
+    Guid:
+      Data1: 1444640046
+      Data2: 1307942284
+      Data3: 1705270673
+      Data4: -2038641083
+    Path: event:/MUSIC/MUSIC_Boss
+  <ending>k__BackingField:
+    Guid:
+      Data1: 595627442
+      Data2: 1175266993
+      Data3: 371184012
+      Data4: 599203329
+    Path: event:/MUSIC/MUSIC_End
+  <shoot>k__BackingField:
+    Guid:
+      Data1: -619626938
+      Data2: 1172870292
+      Data3: 251683728
+      Data4: 1736563321
+    Path: event:/SFX/SFX_Shoot
+  <dash>k__BackingField:
+    Guid:
+      Data1: 217076782
+      Data2: 1078641559
+      Data3: -402242627
+      Data4: 1734501681
+    Path: event:/SFX/SFX_Dash
+  <hit>k__BackingField:
+    Guid:
+      Data1: -1926787518
+      Data2: 1305914295
+      Data3: -1713288537
+      Data4: 105658710
+    Path: event:/SFX/SFX_Hurt
+  <defeat>k__BackingField:
+    Guid:
+      Data1: 1463139485
+      Data2: 1087865686
+      Data3: -2145817451
+      Data4: 1832416560
+    Path: event:/SFX/SFX_Defeat
+  <orb>k__BackingField:
+    Guid:
+      Data1: 1831605942
+      Data2: 1244050159
+      Data3: -1857084746
+      Data4: -1637136997
+    Path: event:/SFX/SFX_Orb
+  <bomb>k__BackingField:
+    Guid:
+      Data1: 1494070039
+      Data2: 1073882307
+      Data3: -1799331408
+      Data4: 1827231052
+    Path: event:/SFX/SFX_Bomb
+  <menuMove>k__BackingField:
+    Guid:
+      Data1: -1117566921
+      Data2: 1254868794
+      Data3: 49755821
+      Data4: -193091571
+    Path: event:/SFX/SFX_Menu-Move

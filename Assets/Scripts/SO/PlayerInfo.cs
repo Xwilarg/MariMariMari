@@ -18,5 +18,10 @@ namespace TouhouPride.SO
         public RuntimeAnimatorController CharacterDashAnimator;
 
         public Sprite BombImage;
+        
+        //== sound stuff==
+        // all the shoot sound effects are stored in one 'Event';
+        // we pass a parameter to said event based on who is firing (i.e; Alice, Marisa, Enemy, etc)
+        public int ShootParamValue;
     }
 }

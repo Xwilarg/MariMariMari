@@ -169,7 +169,7 @@ public class Follower : MonoBehaviour
                     var hit = Physics2D.Raycast(transform.position, attackDir, 100f, _targettingLayer);
                     if (hit.collider != null && hit.collider.CompareTag("Enemy"))
                     {
-                        ShootingManager.Instance.Shoot(attackDir, true, _controller.Info.AttackType, transform.position);
+                        ShootingManager.Instance.Shoot(attackDir, true, _controller.Info.AttackType, transform.position, _controller.Info.ShootParamValue);
                         didShoot = true;
                         Debug.DrawLine(transform.position, hit.point, Color.black, 1f);
                         break;

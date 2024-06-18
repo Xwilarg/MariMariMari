@@ -1,5 +1,6 @@
 using TouhouPride.SO;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace TouhouPride.Love
@@ -20,7 +21,7 @@ namespace TouhouPride.Love
             if (other.CompareTag("Player"))
             {
                 LoveMeter.Instance.AddPoint(_partnerTarget.Name);
-
+                AudioManager.instance.PlayOneShot(FModReferences.instance.orb, gameObject.transform.position);
                 Destroy(gameObject);
             }
         }
