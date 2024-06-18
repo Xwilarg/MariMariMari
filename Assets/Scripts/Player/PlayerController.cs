@@ -118,6 +118,8 @@ namespace TouhouPride.Player
             while (_isDashing || VNManager.Instance.IsPlayingStory) yield return new WaitForEndOfFrame(); // Can't shoot while dashing
             if (_isCurrentlyFiring && _canShoot)
             {
+                // play SFX
+                AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", _info.ShootParamValue);
                 Shoot(_lastDir, true);
                 _canShoot = false;
                 yield return new WaitForSeconds(Info.ReloadTime);
@@ -135,6 +137,8 @@ namespace TouhouPride.Player
             _isDashing = true;
             _canDash = false;
             _anim.runtimeAnimatorController = _info.CharacterDashAnimator;
+            
+            AudioManager.instance.PlayOneShot(FModReferences.instance.dash, gameObject.transform.position);
 
             yield return new WaitForSeconds(.5f);
 

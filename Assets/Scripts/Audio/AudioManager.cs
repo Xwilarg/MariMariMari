@@ -8,6 +8,8 @@ public class AudioManager : MonoBehaviour
 {
     private List<EventInstance> _eventInstances;
     private EventInstance music;
+
+    private EventInstance sound;
     
     public static AudioManager instance { get; private set; }
 
@@ -25,6 +27,14 @@ public class AudioManager : MonoBehaviour
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound, worldPos);  
+    }
+
+    public void PlayOneShotParam(EventReference sound, Vector3 worldPos, String parameterName, int parameterValue)
+    {
+        this.sound = this.CreateEventInstance(sound);
+        this.sound.setParameterByName(parameterName, parameterValue);
+        this.sound.start();
+        this.sound.release();
     }
 
     public void PlayMusic(EventReference musicRef)

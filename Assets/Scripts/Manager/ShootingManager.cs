@@ -40,6 +40,7 @@ namespace TouhouPride.Manager
 			switch (attack)
 			{
 				case AttackType.Straight:
+					
 					var prefab = ResourcesManager.Instance.Bullet;
 
 					var go = Instantiate(prefab, pos, Quaternion.identity);
