@@ -16,20 +16,32 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         // singleton stuff
-        if (instance != null && instance != this)
-        {
-            Debug.LogError("More than one Audio Manager in the scene!");
-            Destroy(this);
-        }
-        else
+        if (instance == null)
         {
             instance = this;
+        }
+        
+        else if (instance != this)
+        {
+            print("More than one Audio Manager in the scene!");
+            music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            music.release();
+            sound.release();
+            /*
+            for (int i = 0; i < _eventInstances.Count; i++)
+            {
+                _eventInstances[i].release();
+            }
+            */
+            CleanUp();
+            Destroy(this);
+            //Debug.LogError("More than one Audio Manager in the scene!");
         }
         
         _eventInstances = new List<EventInstance>();
         
         // we want to keep this persistent i think
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
@@ -79,15 +91,24 @@ public class AudioManager : MonoBehaviour
     private void CleanUp()
     {
         // stop and release any created event instances.
+        /*
         for (int i = 0; i < _eventInstances.Count; i++)
         {
-            _eventInstances[i].stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            _eventInstances[i].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             _eventInstances[i].release();
         }
+        */
     }
 
     private void OnDestroy()
     {
+        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        music.release();
+        sound.release();
+        for (int i = 0; i < _eventInstances.Count; i++)
+        {
+            _eventInstances[i].release();
+        }
         CleanUp();
     }
 }
