@@ -1585,7 +1585,19 @@ MonoBehaviour:
     m_ActionId: 41df65c9-85fd-4fdf-8c75-6d58c4973a2f
     m_ActionName: 'Player/Dash[/Keyboard/shift]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943740244}
+        m_TargetAssemblyTypeName: TouhouPride.Manager.PlayerManager, Assembly-CSharp
+        m_MethodName: OnSwitchCharacter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 70265ee9-9ec4-4f13-b4d6-4d3a8a2863f0
     m_ActionName: 'Player/PartnerSwitch[/Keyboard/c]'
   - m_PersistentCalls:
@@ -1801,15 +1813,15 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.04212638
+    x: 0.18
     y: 0
-    width: 0.91474426
-    height: 1
+    width: 0.41454545
+    height: 0.3796446
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5.84375
+  orthographic size: 7.34375
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
