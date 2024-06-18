@@ -46,11 +46,11 @@ namespace TouhouPride.Enemy.Impl
                         var p1 = transform.position;
                         var p2 = _basePos;
                         var mid = new Vector2((p1.x + p2.x) / 2f, (p1.y + p2.y) / 2f);
-                        var dir = (Vector2)transform.position - mid;
+                        var dir = (Vector2)PlayerManager.Instance.Player.transform.position - mid;
 
                         var prefab = ResourcesManager.Instance.Bullet;
                         var max = Vector2.Distance(p1, p2);
-                        for (float x = 0; x < max; x += .5f)
+                        for (float x = 0; x < max; x += 2f)
                         {
 
                             var go = Instantiate(prefab, Vector2.Lerp(p1, p2, x / max), Quaternion.identity);
