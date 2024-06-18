@@ -27,6 +27,7 @@ namespace TouhouPride.Enemy
 
         protected abstract Vector2 Move();
         protected abstract Vector2? DoesAttack();
+        protected virtual float MoveSpeed => 1f;
 
         protected virtual bool PlayMoveAnimations => true;
 
@@ -57,7 +58,7 @@ namespace TouhouPride.Enemy
 
         private void FixedUpdate()
         {
-            _rb.velocity = Move();
+            _rb.velocity = Move().normalized * MoveSpeed;
         }
 
         protected Vector2? AttackClosest()
