@@ -24,16 +24,6 @@ public class AudioManager : MonoBehaviour
         else if (instance != this)
         {
             print("More than one Audio Manager in the scene!");
-            music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-            music.release();
-            sound.release();
-            /*
-            for (int i = 0; i < _eventInstances.Count; i++)
-            {
-                _eventInstances[i].release();
-            }
-            */
-            CleanUp();
             Destroy(this);
             //Debug.LogError("More than one Audio Manager in the scene!");
         }
@@ -90,6 +80,10 @@ public class AudioManager : MonoBehaviour
 
     private void CleanUp()
     {
+        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        music.release();
+        sound.release();
+        CleanUp();
         // stop and release any created event instances.
         /*
         for (int i = 0; i < _eventInstances.Count; i++)
