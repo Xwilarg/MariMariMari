@@ -93,13 +93,6 @@ namespace TouhouPride.Player
             return _rb.velocity.magnitude != 0f;
         }
 
-        private float OneOne(float x)
-        {
-            if (x < 0f) return -1f;
-            if (x > 0f) return 1f;
-            return 0f;
-        }
-
         private void OnDisable()
         {
             _rb.velocity = Vector2.zero;

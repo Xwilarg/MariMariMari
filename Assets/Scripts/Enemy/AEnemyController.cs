@@ -59,6 +59,11 @@ namespace TouhouPride.Enemy
         private void FixedUpdate()
         {
             _rb.velocity = Move().normalized * MoveSpeed;
+            if (PlayMoveAnimations)
+            {
+                _anim.SetFloat("X", OneOne(_rb.velocity.x));
+                _anim.SetFloat("Y", OneOne(_rb.velocity.y));
+            }
         }
 
         protected Vector2? AttackClosest()

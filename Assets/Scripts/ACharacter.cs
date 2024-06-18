@@ -42,6 +42,13 @@ namespace TouhouPride
             }
         }
 
+        protected float OneOne(float x)
+        {
+            if (x < 0f) return -1f;
+            if (x > 0f) return 1f;
+            return 0f;
+        }
+
         protected void Shoot(Vector2 direction, bool targetEnemy, int eventSoundParameter)
         {
             ShootingManager.Instance.Shoot(direction, targetEnemy, _info.AttackType, transform.position, eventSoundParameter);
