@@ -13,7 +13,7 @@ namespace TouhouPride.Menu
 
         public void Play()
         {
-            AudioManager.instance.PlayOneShot(FModReferences.instance.partnerSelect, transform.position);
+            AudioManager.instance.PlayOneShot(FModReferences.instance.menuMove, transform.position);
             AudioManager.instance.ChangeMusicParameter("PartnerSelect", 1);
             SceneManager.LoadScene("PlayerSelect");
         }

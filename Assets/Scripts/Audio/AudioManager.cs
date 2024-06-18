@@ -24,14 +24,14 @@ public class AudioManager : MonoBehaviour
         else if (instance != this)
         {
             print("More than one Audio Manager in the scene!");
-            Destroy(this);
+            Destroy(this.gameObject);
             //Debug.LogError("More than one Audio Manager in the scene!");
         }
         
         _eventInstances = new List<EventInstance>();
         
         // we want to keep this persistent i think
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
@@ -80,29 +80,18 @@ public class AudioManager : MonoBehaviour
 
     private void CleanUp()
     {
-        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        music.release();
-        sound.release();
-        CleanUp();
         // stop and release any created event instances.
-        /*
         for (int i = 0; i < _eventInstances.Count; i++)
         {
-            _eventInstances[i].stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            _eventInstances[i].stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             _eventInstances[i].release();
         }
-        */
     }
 
     private void OnDestroy()
     {
-        music.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         music.release();
         sound.release();
-        for (int i = 0; i < _eventInstances.Count; i++)
-        {
-            _eventInstances[i].release();
-        }
         CleanUp();
     }
 }

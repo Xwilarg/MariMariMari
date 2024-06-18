@@ -9,7 +9,7 @@ namespace TouhouPride.Menu
         public void LoadCharacter(PlayerInfo info)
         {
             // play sound effect
-            AudioManager.instance.PlayOneShot(FModReferences.instance.partnerSelect, transform.position);
+            AudioManager.instance.PlayOneShot(FModReferences.instance.menuMove, transform.position);
             
             // stop music here
             AudioManager.instance.StopMusic();
