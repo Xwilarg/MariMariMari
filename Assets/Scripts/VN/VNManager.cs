@@ -35,6 +35,7 @@ namespace TouhouPride.VN
         private float _skipTimerRef = .1f;
 
         private System.Action _onEnd;
+        private Transform _initialCamTarget;
 
         private void Awake()
         {
@@ -78,6 +79,7 @@ namespace TouhouPride.VN
             Debug.Log($"[STORY] Playing {asset.name}");
             _story = new(asset.text);
             _onEnd = onEnd;
+            _initialCamTarget = _cam.Target.TrackingTarget;
             ResetVN();
             DisplayStory(_story.Continue());
         }
@@ -126,6 +128,7 @@ namespace TouhouPride.VN
             {
                 _container.SetActive(false);
                 _onEnd?.Invoke();
+                _cam.Target.TrackingTarget = _initialCamTarget;
             }
         }
 
