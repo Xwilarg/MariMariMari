@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Marisa
   Speed: 5
   AttackType: 0
-  ReloadTime: 0.5
+  ReloadTime: 0.1
   MaxHealth: 9999
   Range: 5
   Color: {r: 0, g: 0, b: 0, a: 0}
