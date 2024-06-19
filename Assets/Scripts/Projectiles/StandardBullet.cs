@@ -28,6 +28,7 @@ namespace Projectiles
         // TODO; do we want this to be a Scriptable Object?
         public virtual void Movement(Vector2 direction)
         {
+            direction = direction.normalized;
             this.direction = direction;
             _rigidbody2D.AddForce(direction * _bulletInfo.bulletSpeed, ForceMode2D.Impulse);
         }
