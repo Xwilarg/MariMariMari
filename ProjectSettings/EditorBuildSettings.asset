@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingOver.unity
     guid: ef1096136f2ae254e857c734f9d320db
+  - enabled: 1
+    path: Assets/Scenes/Ending.unity
+    guid: 6d6a520a5e6a56308b74941a619142f0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
