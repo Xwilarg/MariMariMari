@@ -4,8 +4,15 @@ namespace TouhouPride.Enemy.Impl
 {
     public class LeftRightEnemy : AEnemyController
     {
+        /*
         private bool _goLeft;
         private bool _goDown;
+        */
+
+        private bool _goForward;
+
+        private Vector2 forwardDirection = Vector2.left;
+        private Vector2 backwardDirection = Vector2.right;
         
         private int _wallMask;
 
@@ -15,6 +22,12 @@ namespace TouhouPride.Enemy.Impl
         {
             base.Awake();
 
+            if (verticalMovement == true)
+            {
+                forwardDirection = Vector2.up;
+                backwardDirection = Vector2.down;
+            }
+            
             _wallMask = LayerMask.GetMask("Wall");
         }
 
@@ -22,6 +35,14 @@ namespace TouhouPride.Enemy.Impl
 
         protected override Vector2 Move()
         {
+            var check = Physics2D.Raycast(transform.position, _goForward ? forwardDirection : backwardDirection, 100f, _wallMask);
+            if (check.collider != null && check.distance < 1f)
+            {
+                _goForward = !_goForward;
+            }
+            return backwardDirection * (_goForward ? -1 : 1);
+            
+            /*
             if (verticalMovement)
             {
                 var check = Physics2D.Raycast(transform.position, _goDown ? Vector2.down : Vector2.up, 100f, _wallMask);
@@ -40,6 +61,7 @@ namespace TouhouPride.Enemy.Impl
                 }
                 return Vector2.right * (_goLeft ? -1 : 1);
             }
+            */
         }
     }
 }
