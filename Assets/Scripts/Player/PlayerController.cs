@@ -42,6 +42,8 @@ namespace TouhouPride.Player
             Instance = this;
             base.Awake();
 
+            StaticData.IsPerfect = true;
+
             _rb = GetComponent<Rigidbody2D>();
             _follower = GetComponent<Follower>();
             _anim = GetComponent<Animator>();
@@ -156,6 +158,7 @@ namespace TouhouPride.Player
         {
             base.TakeDamage();
 
+            StaticData.IsPerfect = false;
             if (PlayerManager.Instance.Follower.gameObject.activeInHierarchy)
             {
                 if (PlayerManager.Instance.Follower.gameObject.GetInstanceID() == gameObject.GetInstanceID())

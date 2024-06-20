@@ -6,5 +6,7 @@ namespace TouhouPride
     {
         public static string CharacterName { set; get; } = "Reimu";
         public static Sprite CharacterEndSprite { set; get; }
+
+        public static bool IsPerfect { set; get; } = true;
     }
 }
