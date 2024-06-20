@@ -17,6 +17,8 @@ namespace TouhouPride.SO
         public RuntimeAnimatorController CharacterAnimator;
         public RuntimeAnimatorController CharacterDashAnimator;
 
+        public float Scale = 1f;
+
         public Sprite BombImage;
         
         //== sound stuff==

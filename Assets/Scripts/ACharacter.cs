@@ -40,6 +40,7 @@ namespace TouhouPride
             {
                 _anim.runtimeAnimatorController = Info.CharacterAnimator;
             }
+            transform.localScale = Vector3.one * Info.Scale;
         }
 
         protected float OneOne(float x)
