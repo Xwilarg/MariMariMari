@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3982050020900784122}
   - component: {fileID: 7452909980151245085}
   m_Layer: 13
-  m_Name: LovePoint_Reimu 1
+  m_Name: LovePoint_Kagerou
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
