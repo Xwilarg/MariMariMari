@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000394e821c
+  m_ApplyToSortingLayers: 00000000394e821cf3241698
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -1389,6 +1389,18 @@ PrefabInstance:
     - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1743379213
       objectReference: {fileID: 0}
     - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -2400,6 +2412,18 @@ PrefabInstance:
     - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3166426151251362740, guid: f2568532e120766498e0a2d0d6055457, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1743379213
       objectReference: {fileID: 0}
     - target: {fileID: 6335026600493299082, guid: f2568532e120766498e0a2d0d6055457, type: 3}
       propertyPath: _cam
