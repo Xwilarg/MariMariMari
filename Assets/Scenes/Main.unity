@@ -1546,6 +1546,7 @@ MonoBehaviour:
   _cam: {fileID: 1476258457}
   _altInfo:
   - {fileID: 11400000, guid: 1663ee0be13ffb381b91045ec0030d25, type: 2}
+  - {fileID: 11400000, guid: b72d2390642bcc346ac5fee2efc85354, type: 2}
 --- !u!1 &1476258453
 GameObject:
   m_ObjectHideFlags: 0
