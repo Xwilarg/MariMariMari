@@ -114,7 +114,7 @@ public class Follower : MonoBehaviour
         _distances.Add(new() { Distance = _totalDistance, Position = _lastFollowerPos });
 
         var myDistance = _totalDistance - FollowOffset;
-        if (myDistance < 0f)
+        if (myDistance < 0f || _distances.Count < 2)
         {
             return; // Start of the game, we wait a bit to get some distance
         }

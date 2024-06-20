@@ -1,7 +1,6 @@
 using Projectiles;
 using TouhouPride.Manager;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 namespace TouhouPride.Enemy.Impl
 {
