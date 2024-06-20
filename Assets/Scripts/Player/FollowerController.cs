@@ -62,5 +62,12 @@ namespace TouhouPride.Player
         {
             InfoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == target));
         }
+        
+        // needed so the game doesn't softlock if the controlled partner takes damage.
+        protected override void TakeDamage()
+        {
+            base.TakeDamage();
+            _follower.Switch();
+        }
     }
 }
