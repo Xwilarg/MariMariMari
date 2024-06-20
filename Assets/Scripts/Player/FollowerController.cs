@@ -38,13 +38,13 @@ namespace TouhouPride.Player
             _allPlayers.AddRange(_altInfo);
 
             _follower = GetComponent<Follower>();
-
-            InfoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));
-            _anim.runtimeAnimatorController = Info.CharacterAnimator;
         }
 
         protected override void Start()
         {
+            InfoIndex = _allPlayers.IndexOf(_allPlayers.First(x => x.Name == StaticData.CharacterName));
+            _anim.runtimeAnimatorController = Info.CharacterAnimator;
+
             base.Start();
             PlayerManager.Instance.Register(this);
             _follower.SetInfo(true);

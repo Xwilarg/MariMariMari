@@ -20,10 +20,10 @@ public class SwitchConfiningBoxTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print("collision entered; " + other.gameObject.name);
+        //print("collision entered; " + other.gameObject.name);
         if (other.CompareTag("Player"))
         {
-            print("collideded with player");
+            //print("collideded with player");
             // disable cam confines
             confiner.enabled = false;
             
