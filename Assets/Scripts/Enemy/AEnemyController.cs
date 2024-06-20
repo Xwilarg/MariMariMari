@@ -22,6 +22,7 @@ namespace TouhouPride.Enemy
         }
 
         private Rigidbody2D _rb;
+        private SpriteRenderer _sr;
 
         private int _targettingLayer;
 
@@ -36,6 +37,7 @@ namespace TouhouPride.Enemy
             base.Awake();
 
             _rb = GetComponent<Rigidbody2D>();
+            _sr = GetComponent<SpriteRenderer>();
             _targettingLayer = LayerMask.GetMask("Wall", "Player");
 
             var detector = GetComponentInChildren<Detector>();
@@ -72,8 +74,15 @@ namespace TouhouPride.Enemy
         protected override void TakeDamage()
         {
             base.TakeDamage();
-
+            StartCoroutine(TakeDamageEffect());
             IsActive = true;
+        }
+
+        private IEnumerator TakeDamageEffect()
+        {
+            _sr.color = new Color(1f, 1f, 1f, 0f);
+            yield return new WaitForSeconds(.1f);
+            _sr.color = Color.white;
         }
 
         private IEnumerator AttackTimerCoroutine()
