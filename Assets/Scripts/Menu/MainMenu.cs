@@ -8,10 +8,16 @@ namespace TouhouPride.Menu
 {
     public class MainMenu : MonoBehaviour
     {
-        public UnityEvent<EventReference, Vector3, string, int> onClick;        
-        private void Awake()
+        public UnityEvent<EventReference, Vector3, string, int> onClick;
+
+        private void Start()
         {
             AudioManager.instance.PlayMusic(FModReferences.instance.partnerSelect);
+        }
+
+        private void Awake()
+        {
+            //AudioManager.instance.PlayMusic(FModReferences.instance.partnerSelect);
             onClick.AddListener(AudioAction);
         }
 
