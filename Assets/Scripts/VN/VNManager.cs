@@ -62,6 +62,8 @@ namespace TouhouPride.VN
             // TODO: Do that properly
             ShowStory(PlayerManager.Instance.Follower.Info.EndStory, () =>
             {
+                AudioManager.instance.StopMusic();
+                AudioManager.instance.PlayMusic(FModReferences.instance.boss);
                 PlayerManager.Instance.Boss.AllowDamage();
                 PlayerManager.Instance.Boss.HealthBar = (RectTransform)_healthBar.GetChild(0).transform;
                 _healthBar.gameObject.SetActive(true);

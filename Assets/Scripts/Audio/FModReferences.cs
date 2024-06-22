@@ -15,6 +15,7 @@ public class FModReferences : MonoBehaviour
     [field: SerializeField] public EventReference stage { get; private set; }
     [field: SerializeField] public EventReference partnerSelect { get; private set; }
     [field: SerializeField] public EventReference boss { get; private set; }
+    [field: SerializeField] public EventReference bossCutscene { get; private set; }
     [field: SerializeField] public EventReference ending { get; private set; }
     
     [field: Header("Sound Effects")] 

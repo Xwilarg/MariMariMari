@@ -78,6 +78,13 @@ MonoBehaviour:
       Data3: 1705270673
       Data4: -2038641083
     Path: event:/MUSIC/MUSIC_Boss
+  <bossCutscene>k__BackingField:
+    Guid:
+      Data1: 1182636752
+      Data2: 1217737418
+      Data3: -857856361
+      Data4: 1776995852
+    Path: event:/MUSIC/MUSIC_Dialogue
   <ending>k__BackingField:
     Guid:
       Data1: 595627442

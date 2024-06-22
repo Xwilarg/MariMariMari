@@ -188,7 +188,7 @@ namespace TouhouPride.Player
 
         public void OnSwitchCharacter(InputAction.CallbackContext value)
         {
-            if (value.started && !VNManager.Instance.IsPlayingStory && _follower.enabled)
+            if (value.started && !VNManager.Instance.IsPlayingStory && PlayerManager.Instance.Follower.gameObject.activeInHierarchy)
             {
                 _follower.Switch();
             }

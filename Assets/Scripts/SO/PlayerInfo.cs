@@ -20,6 +20,8 @@ namespace TouhouPride.SO
         public float Scale = 1f;
 
         public Sprite BombImage;
+
+        public Sprite BulletImage;
         
         //== sound stuff==
         // all the shoot sound effects are stored in one 'Event';

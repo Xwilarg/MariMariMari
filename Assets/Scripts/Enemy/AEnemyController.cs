@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TouhouPride.Manager;
 using TouhouPride.Utils;
@@ -76,6 +77,8 @@ namespace TouhouPride.Enemy
             base.TakeDamage();
             StartCoroutine(TakeDamageEffect());
             IsActive = true;
+            
+            
         }
 
         private IEnumerator TakeDamageEffect()

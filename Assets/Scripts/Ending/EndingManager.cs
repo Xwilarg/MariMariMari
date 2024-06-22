@@ -11,7 +11,8 @@ namespace TouhouPride.Menu
 
         void Start()
         {
-            AudioManager.instance.PlayMusic(FModReferences.instance.partnerSelect);
+            AudioManager.instance.StopMusic();
+            AudioManager.instance.PlayMusic(FModReferences.instance.ending);
             /*if (StaticData.IsPerfect) TODO
             {
                 image.sprite = perfect;

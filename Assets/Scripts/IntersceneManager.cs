@@ -19,5 +19,17 @@ namespace TouhouPride
         {
             VNManager.Instance.PlayBossStory();
         }
+
+        public void PlayBossInterludeTheme()
+        {
+            AudioManager.instance.StopMusic();
+            AudioManager.instance.PlayMusic(FModReferences.instance.bossCutscene);
+        }
+        
+        public void PlayBossTheme()
+        {
+            AudioManager.instance.StopMusic();
+            AudioManager.instance.PlayMusic(FModReferences.instance.boss);
+        }
     }
 }
