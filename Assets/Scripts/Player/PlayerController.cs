@@ -243,7 +243,7 @@ namespace TouhouPride.Player
         public void OnBomb(InputAction.CallbackContext value)
         {
             // pass in partner once we keep track of that.
-            if (value.started && LoveMeter.Instance.CanBomb(PlayerManager.Instance.Follower.Info.Name) && !VNManager.Instance.IsPlayingStory)
+            if (value.started && PlayerManager.Instance.Follower.gameObject.activeInHierarchy && LoveMeter.Instance.CanBomb(PlayerManager.Instance.Follower.Info.Name) && !VNManager.Instance.IsPlayingStory)
             {
                 LoveMeter.Instance.UsePower(PlayerManager.Instance.Follower.Info.Name);
                 
