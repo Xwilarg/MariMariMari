@@ -59,6 +59,11 @@ namespace TouhouPride.Enemy
             EnemyManager.Instance.Register(this);
         }
 
+        private void OnDestroy()
+        {
+            EnemyManager.Instance.Unregister(this);
+        }
+
         private void FixedUpdate()
         {
             _rb.velocity = Move().normalized * MoveSpeed;

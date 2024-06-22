@@ -18,5 +18,10 @@ namespace TouhouPride.Manager
         {
             Enemies.Add(c);
         }
+
+        public void Unregister(ACharacter c)
+        {
+            Enemies.Remove(c);
+        }
     }
 }
