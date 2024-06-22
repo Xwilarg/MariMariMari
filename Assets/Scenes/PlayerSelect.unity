@@ -423,16 +423,28 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 300
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 121.2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868645373837558918, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 5868645373837558918, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 13.77
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_text
@@ -606,7 +618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -614,15 +626,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 266.66666
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 362.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -654,11 +666,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 666.6666
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -181.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2054116606778348905, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -674,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_text
-      value: Kgerou Imaizumi
+      value: Kagerou Imaizumi
       objectReference: {fileID: 0}
     - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_fontAsset
@@ -688,17 +700,43 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4181963691381092775, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.48771805
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181963691381092775, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5926646
+      objectReference: {fileID: 0}
+    - target: {fileID: 4181963691381092775, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.754717
+      objectReference: {fileID: 0}
     - target: {fileID: 4425459829914196079, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_Name
       value: Kagerou
       objectReference: {fileID: 0}
     - target: {fileID: 4425459829914196079, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 121.2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_text
+      value: "Marisa\u2019s one true love, favorite dog, and a powerful lycanthrope.\r\nWith
+        her fearsome claws, she can cause lots of close-range damage.\r\nNotably,
+        they\u2019re a bit of a hindrance for hand-holding\u2026\r\n"
       objectReference: {fileID: 0}
     - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_fontSize
@@ -724,6 +762,18 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1177117205}
+    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 11400000, guid: 426df202e7056ad449ad746d5e4a737f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1203,74 +1253,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
-    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
-    - target: {fileID: 2128187404789078206, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181963691381092775, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_Color.b
-      value: 0.59846354
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181963691381092775, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_Color.g
-      value: 0.9630104
-      objectReference: {fileID: 0}
-    - target: {fileID: 4181963691381092775, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_Color.r
-      value: 0.9567381
-      objectReference: {fileID: 0}
     - target: {fileID: 4425459829914196079, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_Name
       value: Alice
       objectReference: {fileID: 0}
     - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 121.2
+      propertyPath: m_SizeDelta.x
+      value: -20
       objectReference: {fileID: 0}
-    - target: {fileID: 5868645373837558918, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 13.77
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_text
-      value: 'Marisa''s close friend, a fellow witch, and one true love.
-
-        With
-        the power of her dolls, she can fire powerful, forward beams.
-
-        They''re
-        able to be aimed more directly than her feelings.'
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_fontSize
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
-    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
-    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6146218713321719936, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_hasFontAssetChanged
+    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
