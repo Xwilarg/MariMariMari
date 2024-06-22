@@ -69,7 +69,10 @@ namespace TouhouPride.Enemy.Impl
                         _timer = 2f;
                         foreach (var b in _bullets)
                         {
-                            b.Movement(_bulletThrowDir);
+                            if (b != null)
+                            {
+                                b.Movement(_bulletThrowDir);
+                            }
                         }
                         break;
 
