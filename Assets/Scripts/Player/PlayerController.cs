@@ -161,15 +161,18 @@ namespace TouhouPride.Player
             StaticData.IsPerfect = false;
             if (PlayerManager.Instance.Follower.gameObject.activeInHierarchy)
             {
-                if (PlayerManager.Instance.Follower.gameObject.GetInstanceID() == gameObject.GetInstanceID())
+                if (LoveMeter.Instance.LooseHealth(PlayerManager.Instance.Follower.Info.Name))
                 {
-                    _follower.Switch();
+                    if (PlayerManager.Instance.Follower.gameObject.GetInstanceID() == gameObject.GetInstanceID())
+                    {
+                        _follower.Switch();
+                    }
+                    PlayerManager.Instance.Follower.gameObject.SetActive(false);
                 }
-                PlayerManager.Instance.Follower.gameObject.SetActive(false);
             }
             else
             {
-                PlayerManager.Instance.Follower.gameObject.SetActive(true);
+                //PlayerManager.Instance.Follower.gameObject.SetActive(true);
                 // TODO: Reset or smth
             }
 

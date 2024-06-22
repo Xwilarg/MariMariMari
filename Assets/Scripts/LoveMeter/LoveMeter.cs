@@ -96,6 +96,15 @@ namespace TouhouPride.Love
             return true;
         }
 
+        /// <returns>Is the partner dead</returns>
+        public bool LooseHealth(string partner)
+        {
+            if (pointList[partner] == 0) return true;
+            pointList[partner]--;
+            UpdateUI();
+            return false;
+        }
+
         public void PartnerSwitch(FollowerController fc, string newPartner)
         {
             GameObject followerRef = GameObject.Find("Follower");
