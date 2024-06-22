@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Kagerou
   Speed: 5
   AttackType: 5
-  ReloadTime: 0.2
+  ReloadTime: 1
   MaxHealth: 9999
   Range: 5
   Color: {r: 0.38679248, g: 0.24300788, b: 0.16237986, a: 1}
