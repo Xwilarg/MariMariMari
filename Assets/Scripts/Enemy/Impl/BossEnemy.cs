@@ -1,4 +1,6 @@
+using Ink.Parsed;
 using Projectiles;
+using System.Collections.Generic;
 using TouhouPride.Manager;
 using UnityEngine;
 
@@ -13,6 +15,8 @@ namespace TouhouPride.Enemy.Impl
         private Vector2 _direction = Vector2.zero;
 
         private Vector2 _basePos;
+        private List<StandardBullet> _bullets = new();
+        private Vector2 _bulletThrowDir;
 
         protected override void Awake()
         {
@@ -40,7 +44,8 @@ namespace TouhouPride.Enemy.Impl
                     case BossStateType.AttackSword:
                         _speed = 0f;
                         _direction = Vector2.zero;
-                        _timer = 5f;
+                        _timer = 1f;
+                        _bullets.Clear();
 
                         var p1 = transform.position;
                         var p2 = _basePos;
@@ -49,21 +54,29 @@ namespace TouhouPride.Enemy.Impl
 
                         var prefab = ResourcesManager.Instance.Bullet;
                         var max = Vector2.Distance(p1, p2);
+                        _bulletThrowDir = dir;
                         for (float x = 0; x < max; x += 2f)
                         {
-
                             var go = Instantiate(prefab, Vector2.Lerp(p1, p2, x / max), Quaternion.identity);
                             go.layer = LayerMask.NameToLayer("EnemyProjectile");
-                            go.GetComponent<StandardBullet>().Movement(dir);
+                            _bullets.Add(go.GetComponent<StandardBullet>());
                         }
 
                         // TODO: Spawn bullets
                         break;
 
+                    case BossStateType.ThrowBullets:
+                        _timer = 2f;
+                        foreach (var b in _bullets)
+                        {
+                            b.Movement(_bulletThrowDir);
+                        }
+                        break;
+
                     default:
                         throw new System.NotImplementedException();
                 }
-                if (_state == BossStateType.AttackSword) _state = BossStateType.Idle;
+                if (_state == BossStateType.ThrowBullets) _state = BossStateType.Idle;
                 else _state++;
             }
         }
@@ -84,7 +97,8 @@ namespace TouhouPride.Enemy.Impl
         private enum BossStateType
         {
             Idle,
-            AttackSword
+            AttackSword,
+            ThrowBullets
         }
     }
 }
