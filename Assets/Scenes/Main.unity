@@ -2410,6 +2410,7 @@ MonoBehaviour:
   _nameText: {fileID: 1281365495}
   _healthBar: {fileID: 1411232376}
   _aimTargetBoss: {fileID: 1702738565}
+  _soloEndSprite: {fileID: 1208040086343421634, guid: 571d6dd8dc75ecc4cb3e374ed3295a1e, type: 3}
 --- !u!114 &1943740248
 MonoBehaviour:
   m_ObjectHideFlags: 0
