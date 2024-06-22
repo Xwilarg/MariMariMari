@@ -74,6 +74,14 @@ namespace TouhouPride
                 if (HealthBar != null)
                 {
                     HealthBar.localScale = Vector3.zero;
+                    if (PlayerManager.Instance.Follower.gameObject.activeInHierarchy)
+                    {
+                        StaticData.CharacterEndSprite = PlayerManager.Instance.Follower.Info.BombImage;
+                    }
+                    else
+                    {
+                        StaticData.CharacterEndSprite = ResourcesManager.Instance.SoloSprite;
+                    }
                     SceneManager.LoadScene("Ending");
                 }
                 Die();
