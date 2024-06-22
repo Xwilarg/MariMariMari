@@ -15,7 +15,7 @@ namespace TouhouPride.Love
 
         public static LoveMeter Instance { private set; get; }
 
-        [SerializeField] private int LoveMeterSize = 9;
+        [SerializeField] private int LoveMeterSize = 7;
         [SerializeField] private int ActionRequirement = 3;
         [Tooltip("Amount of point we are starting wise")][SerializeField] private int BasePoint = 2;
 

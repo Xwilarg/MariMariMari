@@ -2388,7 +2388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loveContainer: {fileID: 191571921}
   _lovePrefab: {fileID: 5586633569088279095, guid: aa7940b1569dcbd4dacdbfe76472c1de, type: 3}
-  LoveMeterSize: 9
+  LoveMeterSize: 7
   ActionRequirement: 3
   BasePoint: 2
 --- !u!114 &1943740247
