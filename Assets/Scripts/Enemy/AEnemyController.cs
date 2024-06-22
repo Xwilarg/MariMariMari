@@ -9,7 +9,7 @@ namespace TouhouPride.Enemy
     public abstract class AEnemyController : ACharacter
     {
         private bool _isActive;
-        protected bool IsActive
+        public bool IsActive
         {
             set
             {
