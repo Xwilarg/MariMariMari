@@ -27,6 +27,11 @@ namespace TouhouPride.Menu
             SceneManager.LoadScene("PlayerSelect");
         }
 
+        public void Options()
+        {
+            SceneManager.LoadScene("Settings");
+        }
+
         public void AudioAction(EventReference eventRef, Vector3 pos, String parameter, int parameterValue)
         {
             AudioManager.instance.PlayOneShot(eventRef, pos);

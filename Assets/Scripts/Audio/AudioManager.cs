@@ -11,7 +11,15 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance sound;
     
+    private Bus masterBus;
+    private Bus musicBus;
+    private Bus sfxBus;
+    
     public static AudioManager instance { get; private set; }
+
+    public float masterVolume = 1;
+    public float sfxVolume = 1;
+    public float musicVolume = 1;
 
     private void Awake()
     {
@@ -29,6 +37,11 @@ public class AudioManager : MonoBehaviour
         }
         
         _eventInstances = new List<EventInstance>();
+        
+        // bus configuration stuff
+        masterBus = RuntimeManager.GetBus("bus:/");
+        musicBus = RuntimeManager.GetBus("bus:/MUSIC");
+        sfxBus = RuntimeManager.GetBus("bus:/SOUND");
         
         // we want to keep this persistent i think
         DontDestroyOnLoad(this.gameObject);
@@ -49,10 +62,16 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(EventReference musicRef)
     {
-        music = this.CreateEventInstance(musicRef);
-        music.start();
-    }
+        PLAYBACK_STATE playbackstate;
+        music.getPlaybackState(out playbackstate);
 
+        if (playbackstate != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        {
+            music = this.CreateEventInstance(musicRef);
+            music.start();
+        }
+    }
+    
     public void PauseMusic()
     {
         music.setPaused(true);
@@ -97,6 +116,34 @@ public class AudioManager : MonoBehaviour
             _eventInstances[i].release();
         }
     }
+
+    public void SetMasterVolume(float volume)
+    {
+        masterVolume = volume;
+        masterBus.setVolume(masterVolume);
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = volume;
+        musicBus.setVolume(musicVolume);
+    }
+
+    public void SetSfxVolume(float volume)
+    {
+        sfxVolume = volume;
+        sfxBus.setVolume(sfxVolume);
+    }
+
+    /*
+    private void Update()
+    {
+        masterBus.setVolume(masterVolume);
+        musicBus.setVolume(musicVolume);
+        sfxBus.setVolume(sfxVolume);
+    }
+    */
+    
 
     private void OnDestroy()
     {
