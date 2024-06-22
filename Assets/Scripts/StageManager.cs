@@ -23,13 +23,14 @@ public class StageManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        // disable game over screen in case its enabled
+        GameOverScreen.SetActive(false); // = false;
         // play stage music
         AudioManager.instance.PlayMusic(FModReferences.instance.stage);
         
         // disable ready text
-        StartCoroutine(coroutine());
-
-        GameOverScreen.SetActive(false); // = false;
+        StartCoroutine(Ready());
+        
     }
 
     public void RestartGame()
@@ -70,7 +71,7 @@ public class StageManager : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
-    IEnumerator coroutine()
+    IEnumerator Ready()
     {
         yield return new WaitForSeconds(6f);
         ReadyText.enabled = false;

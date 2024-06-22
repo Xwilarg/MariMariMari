@@ -28,6 +28,7 @@ public class SwitchConfiningBoxTrigger : MonoBehaviour
             confiner.enabled = false;
             
             // focus cinemachine cam on new bounding shape; wait until thats done. 
+            //cam.LookAt = shapeToSwitchTo.transform;
             
             // switch camera over. 
             confiner.m_BoundingShape2D = shapeToSwitchTo.GetComponent<CompositeCollider2D>();

@@ -357,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Strategic Polygamy
+  m_text: Mari! Mari! Mari!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
   m_sharedMaterial: {fileID: 6291240845461755568, guid: d01d8c8983f61f04898fe2b7b370e488, type: 2}
