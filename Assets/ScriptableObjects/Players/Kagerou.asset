@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Kagerou
   Speed: 5
-  AttackType: 0
+  AttackType: 5
   ReloadTime: 0.2
   MaxHealth: 9999
   Range: 5
@@ -24,4 +24,5 @@ MonoBehaviour:
   CharacterDashAnimator: {fileID: 0}
   Scale: 1
   BombImage: {fileID: -9140705283776671546, guid: 0e3fe6f9184f807459ea0a9bb68e859a, type: 3}
+  BulletImage: {fileID: 0}
   ShootParamValue: 4

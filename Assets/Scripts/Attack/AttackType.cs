@@ -7,6 +7,7 @@ namespace TouhouPride
         // adding these
         Homing,
         Laser,
-        BossStraight
+        BossStraight,
+        Shotgun
     }
 }

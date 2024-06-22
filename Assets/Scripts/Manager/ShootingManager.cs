@@ -41,33 +41,38 @@ namespace TouhouPride.Manager
 			{
 				case AttackType.Straight:
 				case AttackType.BossStraight:
-					// play SFX
-					AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
-					
-					var prefab = attack == AttackType.Straight ? ResourcesManager.Instance.Bullet : ResourcesManager.Instance.BossBullet;
+                    {
+                        // play SFX
+                        AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
 
-					var go = Instantiate(prefab, pos, Quaternion.identity);
+                        var prefab = attack == AttackType.Straight ? ResourcesManager.Instance.Bullet : ResourcesManager.Instance.BossBullet;
 
-					go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+                        var go = Instantiate(prefab, pos, Quaternion.identity);
 
-					go.GetComponent<StandardBullet>().Movement(direction);
+                        go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
 
+                        go.GetComponent<StandardBullet>().Movement(direction);
+                    }
 					break;
-				case AttackType.Wave:
-					/*
-                    // TODO; actually make it wavey
-                    var prefab = ResourcesManager.Instance.Bullet;
+				case AttackType.Shotgun:
+                    {
+                        // play SFX
+                        AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
 
-                    var go = Instantiate(prefab, pos, Quaternion.identity);
-                    go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+                        for (int i = -1; i <= 1; i++)
+                        {
+                            var prefab = ResourcesManager.Instance.Bullet;
 
-                    // TODO:
-                    // Throw the projectile in direction
-                    
-                    
-                    // Make a projectile script that GetComponent<ACharacter> and call TakeDamage()
-                    */
-					break;
+                            var go = Instantiate(prefab, pos, Quaternion.identity);
+
+                            go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+
+							var a = Vector2.Angle(direction, Vector2.left);
+							a += .2f * i;
+                            go.GetComponent<StandardBullet>().Movement(new(Mathf.Cos(a), Mathf.Sin(a)));
+                        }
+                    }
+                    break;
 				case AttackType.Homing:
 					// shoot bullet in direction aimed
 					// play SFX
