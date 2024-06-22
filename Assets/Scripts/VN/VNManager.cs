@@ -96,6 +96,7 @@ namespace TouhouPride.VN
             _onEnd = onEnd;
             _initialCamTarget = _cam.Target.TrackingTarget;
             _cam.GetComponent<CinemachineConfiner>().enabled = false;
+            _cam.GetComponent<CinemachinePositionComposer>().Composition.DeadZone.Enabled = false;
             ResetVN();
             DisplayStory(_story.Continue());
         }
