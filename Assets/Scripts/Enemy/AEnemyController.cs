@@ -1,5 +1,5 @@
-using System;
 using System.Collections;
+using TouhouPride.Love;
 using TouhouPride.Manager;
 using TouhouPride.Utils;
 using UnityEngine;
@@ -50,6 +50,17 @@ namespace TouhouPride.Enemy
                 }
             });
             detector.GetComponent<CircleCollider2D>().radius = Info.Range;
+        }
+
+        protected override void Die()
+        {
+            base.Die();
+
+            if (Random.Range(0, 100) < 10)
+            {
+                var go = Instantiate(ResourcesManager.Instance.Heart, transform.position, Quaternion.identity);
+                go.GetComponent<PartnerPickup>()._partnerTarget = PlayerManager.Instance.Follower.Info;
+            }
         }
 
         protected override void Start()

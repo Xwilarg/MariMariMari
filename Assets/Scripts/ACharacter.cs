@@ -76,6 +76,7 @@ namespace TouhouPride
                     HealthBar.localScale = Vector3.zero;
                     SceneManager.LoadScene("Ending");
                 }
+                Die();
                 Destroy(gameObject);
             }
             else
@@ -87,5 +88,8 @@ namespace TouhouPride
                 TakeDamage();
             }
         }
+
+        protected virtual void Die()
+        { }
     }
 }

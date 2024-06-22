@@ -1,7 +1,5 @@
 using TouhouPride.SO;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace TouhouPride.Love
 {
@@ -9,9 +7,9 @@ namespace TouhouPride.Love
     {
         // TODO; probably want to pick graphic / animation based on this value here.
         [SerializeField]
-        private PlayerInfo _partnerTarget;
+        public PlayerInfo _partnerTarget;
 
-        private void Awake()
+        private void Start()
         {
             GetComponent<SpriteRenderer>().color = _partnerTarget.Color;
         }

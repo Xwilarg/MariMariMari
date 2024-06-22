@@ -20,6 +20,9 @@ namespace TouhouPride.Manager
         [SerializeField] private GameObject _laser;
         public GameObject Laser => _laser;
 
+        [SerializeField] private GameObject _heart;
+        public GameObject Heart => _heart;
+
         public static ResourcesManager Instance { private set; get; }
 
         private void Awake()

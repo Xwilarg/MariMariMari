@@ -2366,7 +2366,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 7.9895835
+  orthographic size: 7.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2438,6 +2438,7 @@ MonoBehaviour:
   _bossBullet: {fileID: 1005665979229693349, guid: 20acd04245c30894a930d138172d4f21, type: 3}
   _homingBullet: {fileID: 1005665979229693349, guid: efa11a3061a74e4f69f5813d6ab5c35e, type: 3}
   _laser: {fileID: 8422730071456421249, guid: d59914056b19b66f098980659783df5e, type: 3}
+  _heart: {fileID: 1647095216130298776, guid: b24e39f3f6f1a2d1ca32e0753b23ae8a, type: 3}
 --- !u!114 &1943740243
 MonoBehaviour:
   m_ObjectHideFlags: 0
