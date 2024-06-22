@@ -2,6 +2,7 @@ using Ink.Runtime;
 using System.Linq;
 using TMPro;
 using TouhouPride.Manager;
+using TouhouPride.SO;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -74,7 +75,7 @@ namespace TouhouPride.VN
                 _healthBar.gameObject.SetActive(true);
                 if (PlayerManager.Instance.Follower.gameObject.activeInHierarchy)
                 {
-                    StaticData.CharacterEndSprite = PlayerManager.Instance.Player.Info.BombImage;
+                    StaticData.CharacterEndSprite = PlayerManager.Instance.Follower.Info.BombImage;
                 }
                 else
                 {

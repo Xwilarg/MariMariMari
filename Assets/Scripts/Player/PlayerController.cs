@@ -203,13 +203,11 @@ namespace TouhouPride.Player
         {
             if (value.started && !VNManager.Instance.IsPlayingStory)
             {
-                print("is strafing");
                 _isStrafing = true;
             }
             
             else if (value.canceled)
             {
-                print("not strafing.");
                 _isStrafing = false;
                 // need to update _lastDir. 
                 _lastDir = _mov;
