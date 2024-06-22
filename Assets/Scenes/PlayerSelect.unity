@@ -414,6 +414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Reimu
       objectReference: {fileID: 0}
+    - target: {fileID: 4749296756919521910, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -5138268188825941705, guid: 47191fb7d713d554787bc4a72ec7bbf4, type: 3}
     - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_Pivot.y
       value: 1
@@ -720,6 +724,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4749296756919521910, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -3190248059773192998, guid: 47191fb7d713d554787bc4a72ec7bbf4, type: 3}
     - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_SizeDelta.x
       value: -20
@@ -1256,14 +1264,6 @@ PrefabInstance:
     - target: {fileID: 4425459829914196079, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_Name
       value: Alice
-      objectReference: {fileID: 0}
-    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5640265103645715841, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7251895504571081680, guid: 39c10127297f6254e91165b9fe05339f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
