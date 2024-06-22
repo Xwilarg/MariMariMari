@@ -19,6 +19,8 @@ namespace TouhouPride.Love
             if (other.CompareTag("Player"))
             {
                 LoveMeter.Instance.AddPoint(_partnerTarget.Name);
+                // need to store a reference, and i think "CurrentPartner" in LoveMeter is being used for switching so im just Not Touching That.
+                StaticData.CharacterName = _partnerTarget.Name;
                 AudioManager.instance.PlayOneShot(FModReferences.instance.orb, gameObject.transform.position);
                 Destroy(gameObject);
             }

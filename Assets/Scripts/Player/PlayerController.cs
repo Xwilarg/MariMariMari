@@ -174,6 +174,7 @@ namespace TouhouPride.Player
             {
                 //PlayerManager.Instance.Follower.gameObject.SetActive(true);
                 // TODO: Reset or smth
+                StageManager.instance.ShowGameOver();
             }
 
             StartCoroutine(Invulnerability());

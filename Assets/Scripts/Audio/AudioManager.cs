@@ -53,6 +53,16 @@ public class AudioManager : MonoBehaviour
         music.start();
     }
 
+    public void PauseMusic()
+    {
+        music.setPaused(true);
+    }
+
+    public void UnPauseMusic()
+    {
+        music.setPaused(false);
+    }
+
     public void ChangeMusicParameter(String parameterName, int parameterValue)
     {
         music.setParameterByName(parameterName, parameterValue);
