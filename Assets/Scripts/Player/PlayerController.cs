@@ -210,7 +210,10 @@ namespace TouhouPride.Player
             {
                 _isStrafing = false;
                 // need to update _lastDir. 
-                _lastDir = _mov;
+                if (_mov.magnitude != 0f)
+                {
+                    _lastDir = _mov;
+                }
             }
         }
         
