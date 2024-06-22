@@ -30,6 +30,9 @@ namespace TouhouPride.VN
         [SerializeField]
         private RectTransform _healthBar;
 
+        [SerializeField]
+        private Transform _aimTargetBoss;
+
         private bool _isSkipEnabled;
         private float _skipTimer;
         private float _skipTimerRef = .1f;
@@ -68,6 +71,7 @@ namespace TouhouPride.VN
                 PlayerManager.Instance.Boss.HealthBar = (RectTransform)_healthBar.GetChild(0).transform;
                 _healthBar.gameObject.SetActive(true);
                 StaticData.CharacterEndSprite = PlayerManager.Instance.Player.Info.BombImage;
+                _cam.Target.TrackingTarget = _aimTargetBoss;
             });
         }
 
@@ -129,8 +133,8 @@ namespace TouhouPride.VN
             else if (!_story.canContinue && !_story.currentChoices.Any())
             {
                 _container.SetActive(false);
-                _onEnd?.Invoke();
                 _cam.Target.TrackingTarget = _initialCamTarget;
+                _onEnd?.Invoke();
             }
         }
 

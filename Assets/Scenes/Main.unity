@@ -1838,6 +1838,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 903d4238494111e40869ab1b9fafb1ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1702738564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1702738565}
+  m_Layer: 0
+  m_Name: BossroomCameraAim
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1702738565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1702738564}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 117.38, y: 132.17, z: 0.8216785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1767234100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +2267,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 0
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2377,6 +2408,7 @@ MonoBehaviour:
   _container: {fileID: 563897488}
   _nameText: {fileID: 1281365495}
   _healthBar: {fileID: 1411232376}
+  _aimTargetBoss: {fileID: 1702738565}
 --- !u!114 &1943740248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2556,4 +2588,5 @@ SceneRoots:
   - {fileID: 1943740241}
   - {fileID: 1144772174}
   - {fileID: 34126451}
+  - {fileID: 1702738565}
   - {fileID: 1280311015}
