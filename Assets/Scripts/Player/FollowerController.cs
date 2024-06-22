@@ -53,6 +53,8 @@ namespace TouhouPride.Player
             {
                 LoveMeter.Instance.Init(p.Name, p.Color);
             }
+
+            for (int i = 0; i < 2; i++) LoveMeter.Instance.AddPoint(Info.Name);
         }
 
         protected override void StartInternal()

@@ -34,7 +34,7 @@ namespace TouhouPride.Love
 
         public void Init(string partner, Color color)
         {
-            pointList.Add(partner, BasePoint);
+            pointList.Add(partner, 0);
             var ui = Instantiate(_lovePrefab, _loveContainer);
             ui.GetComponent<Image>().color = color;
             _loveUI.Add(partner, (RectTransform)ui.transform);
