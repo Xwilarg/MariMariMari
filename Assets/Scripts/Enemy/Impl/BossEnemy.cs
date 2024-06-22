@@ -52,7 +52,7 @@ namespace TouhouPride.Enemy.Impl
                         var mid = new Vector2((p1.x + p2.x) / 2f, (p1.y + p2.y) / 2f);
                         var dir = (Vector2)PlayerManager.Instance.Player.transform.position - mid;
 
-                        var prefab = ResourcesManager.Instance.Bullet;
+                        var prefab = ResourcesManager.Instance.BossBullet;
                         var max = Vector2.Distance(p1, p2);
                         _bulletThrowDir = dir;
                         for (float x = 0; x < max; x += 2f)
