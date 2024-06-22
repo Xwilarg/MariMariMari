@@ -40,10 +40,11 @@ namespace TouhouPride.Manager
 			switch (attack)
 			{
 				case AttackType.Straight:
+				case AttackType.BossStraight:
 					// play SFX
 					AudioManager.instance.PlayOneShotParam(FModReferences.instance.shoot, gameObject.transform.position, "SHOOT", soundEventParameter);
 					
-					var prefab = ResourcesManager.Instance.Bullet;
+					var prefab = attack == AttackType.Straight ? ResourcesManager.Instance.Bullet : ResourcesManager.Instance.BossBullet;
 
 					var go = Instantiate(prefab, pos, Quaternion.identity);
 

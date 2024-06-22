@@ -2336,6 +2336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 1005665979229693349, guid: 69f14f39b3cc9c94f9561f0921e18c18, type: 3}
+  _bossBullet: {fileID: 1005665979229693349, guid: 20acd04245c30894a930d138172d4f21, type: 3}
   _homingBullet: {fileID: 1005665979229693349, guid: efa11a3061a74e4f69f5813d6ab5c35e, type: 3}
   _laser: {fileID: 8422730071456421249, guid: d59914056b19b66f098980659783df5e, type: 3}
 --- !u!114 &1943740243

@@ -6,6 +6,7 @@ namespace TouhouPride
         Wave,
         // adding these
         Homing,
-        Laser
+        Laser,
+        BossStraight
     }
 }

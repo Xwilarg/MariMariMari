@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   Speed: 3
-  AttackType: 0
+  AttackType: 4
   ReloadTime: 1
   MaxHealth: 100
   Range: 5
@@ -22,4 +22,7 @@ MonoBehaviour:
   EndStory: {fileID: 0}
   CharacterAnimator: {fileID: 9100000, guid: 691fc6681bb623145b174d51302ddd57, type: 2}
   CharacterDashAnimator: {fileID: 0}
+  Scale: 1
   BombImage: {fileID: 0}
+  BulletImage: {fileID: 0}
+  ShootParamValue: 0
