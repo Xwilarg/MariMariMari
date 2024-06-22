@@ -12,6 +12,9 @@ namespace TouhouPride.Manager
     {
         public static PlayerManager Instance { private set; get; }
 
+        [SerializeField]
+        private Animator _flash;
+
         private List<PlayerController> _controllers = new();
         private FollowerController _fc;
         private PlayerController[] Controllers => _controllers.Where(x => x.gameObject.activeInHierarchy && x.enabled).ToArray();
@@ -30,6 +33,11 @@ namespace TouhouPride.Manager
         private void Awake()
         {
             Instance = this;
+        }
+
+        public void Flash()
+        {
+            _flash.SetTrigger("Flash");
         }
 
         public void Register(PlayerController controller)

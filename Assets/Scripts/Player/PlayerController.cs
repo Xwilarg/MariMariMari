@@ -258,6 +258,8 @@ namespace TouhouPride.Player
                         e.TakeDamage(25);
                     }
                 }
+
+                PlayerManager.Instance.Flash();
             }
         }
     }
