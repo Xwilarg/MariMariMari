@@ -20,6 +20,7 @@ namespace TouhouPride.Enemy.Impl
         protected override void Awake()
         {
             base.Awake();
+            _anim = GetComponent<Animator>();
 
             _canTakeDamage = false;
         }
@@ -38,9 +39,12 @@ namespace TouhouPride.Enemy.Impl
                         _direction = PlayerManager.Instance.Player.transform.position - transform.position;
                         _basePos = transform.position;
                         _timer = 2f;
+                        _anim.SetBool("IsAttacking", false);
                         break;
 
                     case BossStateType.AttackSword:
+                        _anim.SetBool("IsAttacking", true);
+                        
                         _speed = 0f;
                         _direction = Vector2.zero;
                         _timer = 1f;
@@ -65,6 +69,7 @@ namespace TouhouPride.Enemy.Impl
                         break;
 
                     case BossStateType.ThrowBullets:
+                        _anim.SetBool("IsAttacking", true);
                         _timer = 2f;
                         foreach (var b in _bullets)
                         {
