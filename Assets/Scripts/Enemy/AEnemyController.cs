@@ -72,6 +72,7 @@ namespace TouhouPride.Enemy
 
         private void OnDestroy()
         {
+            AudioManager.instance.PlayOneShot(FModReferences.instance.defeat, gameObject.transform.position);
             EnemyManager.Instance.Unregister(this);
         }
 
@@ -90,11 +91,10 @@ namespace TouhouPride.Enemy
 
         protected override void TakeDamage()
         {
+            AudioManager.instance.PlayOneShot(FModReferences.instance.hit, gameObject.transform.position);
             base.TakeDamage();
             StartCoroutine(TakeDamageEffect());
             IsActive = true;
-            
-            
         }
 
         private IEnumerator TakeDamageEffect()
@@ -125,5 +125,7 @@ namespace TouhouPride.Enemy
                 }
             }
         }
+        
+        
     }
 }

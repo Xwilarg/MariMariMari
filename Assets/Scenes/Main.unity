@@ -3119,7 +3119,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3230,6 +3230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4c584ed1a29c644a30b17dd32b62d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MarisaShotSprite: {fileID: 7431529995326980795, guid: daa522897942da91ebbcef47e1ab4735, type: 3}
 --- !u!114 &1943740244
 MonoBehaviour:
   m_ObjectHideFlags: 0

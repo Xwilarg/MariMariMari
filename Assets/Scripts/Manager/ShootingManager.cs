@@ -17,6 +17,8 @@ namespace TouhouPride.Manager
 		{
 			Instance = this;
 		}
+
+		public Sprite MarisaShotSprite;
 		
 		private IEnumerator HomeIn(GameObject bullet)
 		{
@@ -50,6 +52,11 @@ namespace TouhouPride.Manager
                         var go = Instantiate(prefab, pos, Quaternion.identity);
 
                         go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+
+                        if (targetEnemy)
+                        {
+	                        go.GetComponent<SpriteRenderer>().sprite = MarisaShotSprite;
+                        }
 
                         go.GetComponent<StandardBullet>().Movement(direction);
                     }
