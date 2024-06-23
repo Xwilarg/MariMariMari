@@ -14,6 +14,9 @@ public class StageManager : MonoBehaviour
     public static StageManager instance { get; private set; }
 
     public GameObject GameOverScreen;
+    public GameObject PauseScreen;
+
+    private bool _gameIsPaused = false;
 
     private void Awake()
     {
@@ -25,6 +28,7 @@ public class StageManager : MonoBehaviour
     {
         // disable game over screen in case its enabled
         GameOverScreen.SetActive(false); // = false;
+        PauseScreen.SetActive(false);
         // play stage music
         AudioManager.instance.PlayMusic(FModReferences.instance.stage);
         
@@ -59,6 +63,32 @@ public class StageManager : MonoBehaviour
         AudioManager.instance.UnPauseMusic();
         GameOverScreen.SetActive(false);
         Unpause();
+    }
+
+    public void ShowPauseScreen()
+    {
+        _gameIsPaused = true;
+        Pause();
+        PauseScreen.SetActive(true);
+    }
+    
+    public void HidePauseScreen()
+    {
+        _gameIsPaused = false;
+        Unpause();
+        PauseScreen.SetActive(false);
+    }
+
+    public void TogglePauseScreen()
+    {
+        if (_gameIsPaused)
+        {
+            HidePauseScreen();
+        }
+        else
+        {
+            ShowPauseScreen();
+        }
     }
 
     public void Pause()
