@@ -4025,6 +4025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MarisaShotSprite: {fileID: 7431529995326980795, guid: daa522897942da91ebbcef47e1ab4735, type: 3}
+  KagerouShotSprite: {fileID: -7803065417098437583, guid: daa522897942da91ebbcef47e1ab4735, type: 3}
 --- !u!114 &1943740244
 MonoBehaviour:
   m_ObjectHideFlags: 0

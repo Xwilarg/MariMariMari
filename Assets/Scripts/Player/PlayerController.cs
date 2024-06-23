@@ -31,6 +31,9 @@ namespace TouhouPride.Player
         private bool _isCurrentlyFiring;
 
         private bool _isStrafing;
+        
+        // bombing stuff
+        private CinemachineImpulseSource _impulseSource;
 
         public void ResetFollowing()
         {
@@ -251,6 +254,8 @@ namespace TouhouPride.Player
             if (value.started && PlayerManager.Instance.Follower.gameObject.activeInHierarchy && LoveMeter.Instance.CanBomb(PlayerManager.Instance.Follower.Info.Name) && !VNManager.Instance.IsPlayingStory)
             {
                 LoveMeter.Instance.UsePower(PlayerManager.Instance.Follower.Info.Name);
+                
+                AudioManager.instance.PlayOneShot(FModReferences.instance.bomb, gameObject.transform.position);
                 
                 var bounds = _mainCam.CalculateBounds();
 

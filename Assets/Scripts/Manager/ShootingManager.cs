@@ -19,6 +19,7 @@ namespace TouhouPride.Manager
 		}
 
 		public Sprite MarisaShotSprite;
+		public Sprite KagerouShotSprite;
 		
 		private IEnumerator HomeIn(GameObject bullet)
 		{
@@ -73,6 +74,7 @@ namespace TouhouPride.Manager
                             var go = Instantiate(prefab, pos, Quaternion.identity);
 
                             go.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
+                            go.GetComponent<SpriteRenderer>().sprite = KagerouShotSprite;
 
 							var a = Vector2.Angle(direction, Vector2.left);
 							a += .2f * i;
