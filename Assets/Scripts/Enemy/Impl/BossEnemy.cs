@@ -75,7 +75,7 @@ namespace TouhouPride.Enemy.Impl
                         {
                             if (b != null)
                             {
-                                b.Movement(_bulletThrowDir);
+                                b.Movement(_bulletThrowDir, .5f);
                             }
                         }
                         break;

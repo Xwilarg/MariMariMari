@@ -1,9 +1,6 @@
 using System.Collections;
-using FMOD.Studio;
 using Projectiles;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace TouhouPride.Manager
 {
@@ -36,7 +33,7 @@ namespace TouhouPride.Manager
 			}
 		}
 
-		public void Shoot(Vector2 direction, bool targetEnemy, AttackType attack, Vector2 pos, int soundEventParameter)
+		public void Shoot(Vector2 direction, bool targetEnemy, AttackType attack, Vector2 pos, int soundEventParameter, float speedOverride = 1f)
 		{
 			direction = direction.normalized;
 
@@ -59,7 +56,7 @@ namespace TouhouPride.Manager
 	                        go.GetComponent<SpriteRenderer>().sprite = MarisaShotSprite;
                         }
 
-                        go.GetComponent<StandardBullet>().Movement(direction);
+                        go.GetComponent<StandardBullet>().Movement(direction, speedOverride);
                     }
 					break;
 				case AttackType.Shotgun:
@@ -78,7 +75,7 @@ namespace TouhouPride.Manager
 
 							var a = Vector2.Angle(direction, Vector2.left);
 							a += .2f * i;
-                            go.GetComponent<StandardBullet>().Movement(new(Mathf.Cos(a), Mathf.Sin(a)));
+                            go.GetComponent<StandardBullet>().Movement(new(Mathf.Cos(a), Mathf.Sin(a)), speedOverride);
                         }
                     }
                     break;
@@ -96,7 +93,7 @@ namespace TouhouPride.Manager
 					goHoming.layer = targetEnemy ? LayerMask.NameToLayer("PlayerProjectile") : LayerMask.NameToLayer("EnemyProjectile");
 
 					// Throw the projectile in direction
-					goHoming.GetComponent<StandardBullet>().Movement(direction);
+					goHoming.GetComponent<StandardBullet>().Movement(direction, speedOverride);
 
 					StartCoroutine(HomeIn(goHoming));
 					break;

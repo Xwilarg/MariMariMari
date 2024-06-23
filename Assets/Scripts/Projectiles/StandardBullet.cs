@@ -26,11 +26,11 @@ namespace Projectiles
 
         // movement code. can be overriden for custom movements.
         // TODO; do we want this to be a Scriptable Object?
-        public virtual void Movement(Vector2 direction)
+        public virtual void Movement(Vector2 direction, float speedOverride = 1f)
         {
             direction = direction.normalized;
             this.direction = direction;
-            _rigidbody2D.AddForce(direction * _bulletInfo.bulletSpeed, ForceMode2D.Impulse);
+            _rigidbody2D.AddForce(direction * _bulletInfo.bulletSpeed * speedOverride, ForceMode2D.Impulse);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

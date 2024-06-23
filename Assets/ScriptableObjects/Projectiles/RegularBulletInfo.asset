@@ -15,4 +15,3 @@ MonoBehaviour:
   damage: 2
   bulletSpeed: 12
   timeToLive: 5
-  isFriendly: 1

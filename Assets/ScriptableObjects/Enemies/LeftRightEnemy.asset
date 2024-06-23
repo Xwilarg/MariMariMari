@@ -17,9 +17,12 @@ MonoBehaviour:
   AttackType: 0
   ReloadTime: 1
   MaxHealth: 1
-  Range: 5
+  Range: 10
   Color: {r: 0, g: 0, b: 0, a: 0}
   EndStory: {fileID: 0}
   CharacterAnimator: {fileID: 22100000, guid: 0e6b157b94682734aa142a39b4486110, type: 2}
   CharacterDashAnimator: {fileID: 0}
+  Scale: 1
   BombImage: {fileID: 0}
+  BulletImage: {fileID: 0}
+  ShootParamValue: 0

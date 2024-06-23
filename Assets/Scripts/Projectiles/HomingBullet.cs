@@ -10,12 +10,6 @@ namespace Projectiles
         public bool isTargeting = false;
 
         public int targetSpeed = 30;
-        
-        public override void Movement(Vector2 direction)
-        {
-            //print("cool homing stuff here.");
-            //base.Movement(direction);
-        }
 
         public void Start()
         {
