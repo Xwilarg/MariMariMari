@@ -81,8 +81,16 @@ namespace TouhouPride.Enemy
             _rb.velocity = Move().normalized * MoveSpeed;
             if (PlayMoveAnimations)
             {
-                _anim.SetFloat("X", OneOne(_rb.velocity.x));
-                _anim.SetFloat("Y", OneOne(_rb.velocity.y));
+                if (Mathf.Abs(_rb.velocity.x) > Mathf.Abs(_rb.velocity.y))
+                {
+                    _anim.SetFloat("X", OneOne(_rb.velocity.x));
+                    _anim.SetFloat("Y", 0f);
+                }
+                else
+                {
+                    _anim.SetFloat("X", 0f);
+                    _anim.SetFloat("Y", OneOne(_rb.velocity.y));
+                }
             }
         }
 

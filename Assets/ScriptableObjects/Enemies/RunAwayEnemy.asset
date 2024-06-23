@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RunAwayEnemy
   m_EditorClassIdentifier: 
   Name: 
-  Speed: 5
+  Speed: 8
   AttackType: 0
   ReloadTime: 1
   MaxHealth: 1
