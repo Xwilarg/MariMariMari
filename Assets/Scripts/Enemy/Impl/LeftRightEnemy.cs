@@ -23,7 +23,7 @@ namespace TouhouPride.Enemy.Impl
                 _backwardDirection = Vector2.down;
             }
             
-            _wallMask = LayerMask.GetMask("Wall", "Water");
+            _wallMask = LayerMask.GetMask("Wall", "Water", "RayBlock");
         }
 
         protected override Vector2? DoesAttack() => AttackClosest();
