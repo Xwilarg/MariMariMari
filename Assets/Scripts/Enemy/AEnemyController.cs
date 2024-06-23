@@ -54,6 +54,7 @@ namespace TouhouPride.Enemy
 
         protected override void Die()
         {
+            AudioManager.instance.PlayOneShot(FModReferences.instance.defeat, gameObject.transform.position);
             base.Die();
 
             if (Random.Range(0, 100) < 10)
@@ -72,7 +73,6 @@ namespace TouhouPride.Enemy
 
         private void OnDestroy()
         {
-            AudioManager.instance.PlayOneShot(FModReferences.instance.defeat, gameObject.transform.position);
             EnemyManager.Instance.Unregister(this);
         }
 
