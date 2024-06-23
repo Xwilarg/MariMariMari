@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        FMODUnity.RuntimeManager.LoadBank("SOUND", true);
+        FMODUnity.RuntimeManager.LoadBank("MUSIC", true);
+        
         // singleton stuff
         if (instance == null)
         {
@@ -49,15 +52,21 @@ public class AudioManager : MonoBehaviour
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
-        RuntimeManager.PlayOneShot(sound, worldPos);  
+        if (FMODUnity.RuntimeManager.HasBankLoaded("SOUND"))
+        {
+            RuntimeManager.PlayOneShot(sound, worldPos);  
+        }
     }
 
     public void PlayOneShotParam(EventReference sound, Vector3 worldPos, String parameterName, int parameterValue)
     {
-        this.sound = this.CreateEventInstance(sound);
-        this.sound.setParameterByName(parameterName, parameterValue);
-        this.sound.start();
-        this.sound.release();
+        if (FMODUnity.RuntimeManager.HasBankLoaded("SOUND"))
+        {
+            this.sound = this.CreateEventInstance(sound);
+            this.sound.setParameterByName(parameterName, parameterValue);
+            this.sound.start();
+            this.sound.release();
+        }
     }
 
     public void PlayMusic(EventReference musicRef)
@@ -65,7 +74,7 @@ public class AudioManager : MonoBehaviour
         PLAYBACK_STATE playbackstate;
         music.getPlaybackState(out playbackstate);
 
-        if (playbackstate != FMOD.Studio.PLAYBACK_STATE.PLAYING)
+        if (playbackstate != FMOD.Studio.PLAYBACK_STATE.PLAYING && FMODUnity.RuntimeManager.HasBankLoaded("MUSIC"))
         {
             music = this.CreateEventInstance(musicRef);
             music.start();
