@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace TouhouPride.Menu
@@ -21,6 +22,12 @@ namespace TouhouPride.Menu
             {
             }*/
             image.sprite = StaticData.CharacterEndSprite;
+        }
+
+        public void ToTitle()
+        {
+            AudioManager.instance.StopMusic();
+            SceneManager.LoadScene("Menu");
         }
     }
 }
